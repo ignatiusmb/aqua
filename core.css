@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:400,600');
+
+html {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Muli', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: inherit;
+  margin: inherit;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+button {
+  padding: 0.2em 1em;
+}
