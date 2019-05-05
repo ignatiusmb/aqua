@@ -6,7 +6,7 @@
   --border-curvature: 5px;
   --bg-primary-dark: #2d2d2d;
   --code-font-size: 0.875em;
-  --transition-time: 0.44s;
+  --transition-time: 0.64s;
   --transition-func: cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
@@ -41,6 +41,7 @@ code {
   top: 0;
   left: 0;
   padding: 0.2em 0.8em;
+  margin: 0;
   border-top-right-radius: var(--border-curvature);
   border-top-left-radius: var(--border-curvature);
   background: #757575;
