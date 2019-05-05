@@ -1,0 +1,260 @@
+@import url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
+
+:root {
+  --bounce-distance: 10em;
+  --border-curvature: 5px;
+  --bg-primary-dark: #2d2d2d;
+  --code-font-size: 0.875em;
+  --transition-time: 0.44s;
+  --transition-func: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+code {
+  padding: 0;
+  background: var(--bg-primary-dark);
+  color: #cccccc;
+  font-family: 'Fira Code', monospace;
+  font-size: var(--code-font-size);
+  font-weight: 300;
+}
+
+/* Inline code */
+*:not(.code-box) code,
+*:not(.cb-format) code {
+  padding: 0.1em 0.25em;
+  border-radius: var(--border-curvature);
+}
+
+.code-box,
+.cb-format {
+  position: relative;
+}
+
+/*=================*
+ * Code Box Header *
+ *=================*/
+.cb-header {
+  z-index: 1;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.2em 0.8em;
+  border-top-right-radius: var(--border-curvature);
+  border-top-left-radius: var(--border-curvature);
+  background: #757575;
+  color: #f1f1f1;
+  letter-spacing: 0.05em;
+  font-size: var(--code-font-size);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cb-header.none~.cb-format {
+  padding-top: 1.5em;
+}
+
+.cb-header::before,
+.cb-header::after {
+  font-size: 0.5em;
+}
+
+/* Language Colored Line */
+.cb-header::before {
+  content: '';
+  z-index: 1;
+  height: 0.25em;
+  position: absolute;
+  top: 2em;
+  left: 0;
+  right: 0;
+
+  transition: var(--transition-time);
+  transition-timing-function: var(--transition-func);
+}
+
+.cb-header.none::before {
+  top: 0;
+  border-top-left-radius: var(--border-curvature);
+  border-top-right-radius: var(--border-curvature);
+}
+
+.code-box:hover>.cb-header::before {
+  right: var(--bounce-distance);
+  border-top-right-radius: var(--border-curvature);
+
+  transition: var(--transition-time);
+}
+
+/* Language Title */
+.cb-header::after {
+  z-index: 1;
+  position: absolute;
+  top: 2.4em;
+  right: 0;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  text-indent: 0.2em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-bottom-left-radius: 2px;
+
+  transition: var(--transition-time);
+  transition-timing-function: var(--transition-func);
+}
+
+.cb-header[data-language]::after {
+  content: attr(data-language);
+}
+
+.code-box:hover>.cb-header::after {
+  right: var(--bounce-distance);
+  border-bottom-right-radius: var(--border-curvature);
+  border-bottom-left-radius: var(--border-curvature);
+
+  transition: var(--transition-time);
+}
+
+/*============*
+ * Code Block *
+ *============*/
+.cb-format {
+  padding: 4em 1.5em 1em;
+  border-radius: var(--border-curvature);
+  background: var(--bg-primary-dark);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.cb-format.numbered {
+  padding-left: 0.6em;
+}
+
+.cb-format.numbered code::before {
+  content: attr(data-line);
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  max-width: 2em;
+  padding-right: 0.4em;
+  margin-right: 0.8em;
+  border-right: 1px solid #999;
+  letter-spacing: normal;
+  color: gray;
+  text-align: right;
+}
+
+/*=================*
+ * Language Styles *
+ *=================*/
+.cb-header[data-language='bash']::before,
+.cb-header[data-language='bash']::after {
+  background: #363377;
+  color: #a2a0d6;
+}
+
+.cb-header[data-language='html']::before,
+.cb-header[data-language='html']::after {
+  background: #f26428;
+  color: #feefe8;
+}
+
+.cb-header[data-language='python']::before,
+.cb-header[data-language='python']::after {
+  background: #ddd;
+  color: #2d2d2d;
+}
+
+.cb-header[data-language='shell']::before,
+.cb-header[data-language='shell']::after {
+  background: #f3e2bb;
+  color: #c09022;
+}
+
+.cb-header[data-language='terminal']::before,
+.cb-header[data-language='terminal']::after {
+  background: #ddd;
+  color: #444;
+}
+
+/* PrismJS 1.15.0
+ *
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ * Modified by Ignatius Bagus
+ */
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #999;
+}
+
+.token.punctuation {
+  color: #ccc;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+  color: #e2777a;
+}
+
+.token.function-name {
+  color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+  color: #f08d49;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+  color: #f8c555;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+  color: #cc99cd;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+  color: #7ec699;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.inserted {
+  color: green;
+}
