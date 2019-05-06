@@ -4,16 +4,19 @@
 :root {
   --bounce-distance: 10em;
   --border-curvature: 5px;
-  --bg-primary-dark: #2d2d2d;
   --code-font-size: 0.875em;
   --transition-time: 0.64s;
   --transition-func: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+
+  --bg-primary-dark: #2d2d2d;
+  --bg-faded-dark: #444444;
+  --cl-faded-white: #cccccc;
 }
 
 code {
   padding: 0;
   background: var(--bg-primary-dark);
-  color: #cccccc;
+  color: var(--cl-faded-white);
   font-family: 'Fira Code', monospace;
   font-size: var(--code-font-size);
   font-weight: 300;
