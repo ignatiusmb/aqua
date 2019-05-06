@@ -3,6 +3,7 @@
 :root {
   --bg-primary-dark: #2d2d2d;
   --bg-faded-dark: #444444;
+  --bg-faded-light: #eeeeee;
   --cl-faded-white: #cccccc;
 }
 
@@ -41,8 +42,23 @@ input {
   background-color: #eee;
 }
 
-section.bsh-dark {
+header.bsh-dark,
+section.bsh-dark,
+main.bsh-dark,
+footer.bsh-dark {
   background: var(--bg-faded-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header.bsh-light,
+section.bsh-light,
+main.bsh-light,
+footer.bsh-light {
+  background: var(--bg-faded-light);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
