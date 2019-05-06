@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/core.min.css" />
 ```
 
-### [Code Style](https://ignatiusmb.github.io/bluesheets)
+### [Code Style](https://ignatiusmb.github.io/bluesheets/#code)
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/code.min.css" />
