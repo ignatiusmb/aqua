@@ -1,18 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Muli:400,600');
 
-html {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: 'Muli', sans-serif;
-}
-
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
-  padding: inherit;
-  margin: inherit;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: 'Muli', sans-serif;
 }
 
 a,
