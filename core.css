@@ -27,6 +27,11 @@ button {
   padding: 0.2em 1em;
 }
 
+button.ghost {
+  background-color: transparent;
+  border-color: white;
+}
+
 input {
   width: 100%;
   padding: 0.8em 0.9em;
