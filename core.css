@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Muli:400,600');
 
+:root {
+  --bg-primary-dark: #2d2d2d;
+  --bg-faded-dark: #444444;
+  --cl-faded-white: #cccccc;
+}
+
 *,
 *::before,
 *::after {
@@ -19,4 +25,13 @@ a:visited {
 
 button {
   padding: 0.2em 1em;
+}
+
+section.bsh-dark {
+  background: var(--bg-faded-dark);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
