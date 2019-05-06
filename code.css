@@ -64,7 +64,7 @@ code {
 .cb-header::before {
   content: '';
   z-index: 1;
-  height: 0.25em;
+  height: 0.4em;
   position: absolute;
   top: 2em;
   left: 0;
@@ -91,7 +91,7 @@ code {
 .cb-header::after {
   z-index: 1;
   position: absolute;
-  top: 2.4em;
+  top: 2em;
   right: 0;
   padding: 0.5em 1em;
   font-weight: bold;
