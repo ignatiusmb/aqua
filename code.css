@@ -30,7 +30,9 @@ code {
 }
 
 .code-box,
+.cb-header,
 .cb-format {
+  width: 100%;
   position: relative;
 }
 
