@@ -2,12 +2,12 @@
 
 ### Core File - always use this to normalize a page
 
-```
-https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/core.min.css
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/core.min.css" />
 ```
 
 ### [Code Style](https://ignatiusmb.github.io/bluesheets)
 
-```
-https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/code.min.css
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/code.min.css" />
 ```
