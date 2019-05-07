@@ -5,7 +5,7 @@
   --bounce-distance: 10em;
   --border-curvature: 5px;
   --code-font-size: 0.875em;
-  --transition-time: 0.64s;
+  --transition-time: 87.5ms;
   --transition-func: cubic-bezier(0.6, -0.28, 0.735, 0.045);
 
   --bg-primary-dark: #2d2d2d;
