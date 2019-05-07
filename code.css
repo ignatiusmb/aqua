@@ -15,6 +15,7 @@
 
 code {
   padding: 0;
+  color: var(--cl-faded-white);
   font-family: 'Fira Code', monospace;
   font-size: var(--code-font-size);
   font-weight: 300;
@@ -22,7 +23,6 @@ code {
 
 code.bsh-dark {
   background: var(--bg-primary-dark);
-  color: var(--cl-faded-white);
 }
 
 code.bsh-light {
@@ -33,6 +33,7 @@ code.bsh-light {
 *:not(pre)>code {
   padding: 0.1em 0.25em;
   border-radius: var(--border-curvature);
+  color: initial;
 }
 
 .code-box,
