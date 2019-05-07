@@ -23,8 +23,7 @@ code {
 }
 
 /* Inline code */
-*:not(.code-box) code,
-*:not(.cb-format) code {
+*:not(pre)>code {
   padding: 0.1em 0.25em;
   border-radius: var(--border-curvature);
 }
