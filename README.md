@@ -10,4 +10,6 @@
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/code.min.css" />
+<!-- place before the closing body tag -->
+<script src="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/code.min.js"></script>
 ```
