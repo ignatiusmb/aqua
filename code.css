@@ -15,11 +15,18 @@
 
 code {
   padding: 0;
-  background: var(--bg-primary-dark);
-  color: var(--cl-faded-white);
   font-family: 'Fira Code', monospace;
   font-size: var(--code-font-size);
   font-weight: 300;
+}
+
+code.bsh-dark {
+  background: var(--bg-primary-dark);
+  color: var(--cl-faded-white);
+}
+
+code.bsh-light {
+  color: var(--bg-primary-dark);
 }
 
 /* Inline code */
