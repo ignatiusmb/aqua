@@ -56,8 +56,17 @@ code {
   font-family: 'Montserrat', sans-serif;
 }
 
+.cb-header.none {
+  background: transparent;
+}
+
+.cb-header.none::after {
+  top: 0.15em;
+  border-top-right-radius: 2px;
+}
+
 .cb-header.none~.cb-format {
-  padding-top: 1.5em;
+  padding-top: 2em;
 }
 
 .cb-header::before,
