@@ -1,0 +1,85 @@
+const createToolbar = () => {
+  const toolbar = document.createElement('div');
+  toolbar.className = 'cb-toolbar';
+
+  const createTool = (iconClass, text) => {
+    let tool = document.createElement('a');
+    let icon = document.createElement('i');
+    let tooltip = document.createElement('span');
+    tool.className = `cb-tb-item`;
+    icon.className = iconClass;
+    tooltip.className = 'cb-tb-tooltip';
+    tooltip.innerText = text;
+    tool.appendChild(icon);
+    tool.appendChild(tooltip);
+    return tool;
+  };
+
+  const copyButton = createTool('far fa-copy', 'Copy');
+  copyButton.addEventListener('click', e => {
+    const clickedTool = e.target;
+    const currentBox = clickedTool.parentElement.parentElement;
+    const codeLines = currentBox.getElementsByTagName('code');
+
+    const copyArea = document.createElement('textarea');
+    copyArea.className = 'ghost-area';
+    for (let j = 0; j < codeLines.length; j++) {
+      if (j !== codeLines.length - 1) copyArea.value += codeLines[j].innerText + '\n';
+      else copyArea.value += codeLines[j].innerText;
+    }
+    copyArea.value.trim();
+    document.body.appendChild(copyArea);
+    copyArea.focus();
+    copyArea.select();
+    try {
+      let success = document.execCommand('copy');
+      if (success) alert('Code Block Copied!');
+      else alert('Copy Unsuccessful...');
+    } catch (err) {
+      alert('Error, unable to copy');
+    }
+    document.body.removeChild(copyArea);
+  });
+  toolbar.appendChild(copyButton);
+
+  const toggleNumbering = createTool('fas fa-list-ol', 'Toggle Numbering');
+  toggleNumbering.addEventListener('click', e => {
+    const clickedTool = e.target;
+    const currentBox = clickedTool.parentElement.parentElement;
+    currentBox.getElementsByTagName('pre')[0].classList.toggle('numbered');
+  });
+  toolbar.appendChild(toggleNumbering);
+
+  return toolbar;
+};
+
+const codeBox = document.getElementsByClassName('code-box');
+for (const box of codeBox) {
+  const header = box.getElementsByClassName('cb-header');
+  if (header.length > 0) {
+    for (const head of header) {
+      if (head.innerHTML.length === 0) head.classList.add('none');
+      const dataLang = head.dataset.language;
+      // pre tag boxes
+      const pres = head.parentElement.getElementsByTagName('pre');
+      if (dataLang !== undefined && dataLang !== '') {
+        for (const pre of pres) pre.classList.add(`language-${dataLang}`);
+      } else {
+        for (const pre of pres) pre.classList.add('language-none');
+      }
+      // data lines
+      for (const pre of pres) {
+        const codes = pre.getElementsByTagName('code');
+        let dataLine = pre.dataset.line;
+        for (const num in codes) {
+          if (codes.hasOwnProperty(num)) {
+            if (dataLine === undefined) dataLine = 1;
+            codes[num].dataset.line = parseInt(dataLine, 10) + parseInt(num);
+          }
+        }
+        // code toolbar
+        pre.insertAdjacentElement('afterend', createToolbar());
+      }
+    }
+  }
+}

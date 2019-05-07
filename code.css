@@ -154,15 +154,14 @@ code.bsh-light {
 
 .cb-format.numbered code::before {
   content: attr(data-line);
-  box-sizing: border-box;
-  display: inline-block;
-  width: 100%;
   max-width: 2em;
+  width: 100%;
+  display: inline-block;
   padding-right: 0.4em;
-  margin-right: 0.8em;
   border-right: 1px solid #999;
-  letter-spacing: normal;
+  margin-right: 0.8em;
   color: gray;
+  letter-spacing: normal;
   text-align: right;
 }
 
@@ -197,6 +196,82 @@ code.bsh-light {
 .cb-header[data-language='terminal']::after {
   background: #ddd;
   color: #444;
+}
+
+/*==============*
+ * Code Toolbar *
+ *==============*/
+.cb-toolbar {
+  z-index: 2;
+  position: absolute;
+  top: 1.55em;
+  right: 0.1em;
+  display: flex;
+
+  opacity: 0;
+  transition: var(--transition-time);
+}
+
+.cb-header.none~.cb-toolbar {
+  top: 0.2em;
+}
+
+.code-box:hover>.cb-toolbar {
+  opacity: 1;
+}
+
+.cb-tb-item {
+  cursor: pointer;
+  width: 1.75em;
+  height: 1.75em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-left: 0.2em;
+  background: white;
+  text-align: center;
+  font-size: small;
+}
+
+.cb-tb-tooltip {
+  position: absolute;
+  bottom: 2.5em;
+  padding: 0.5em 1em;
+  border-radius: 0.6em;
+  background-color: #555;
+  color: white;
+  opacity: 0;
+  transition: var(--transition-time);
+}
+
+.cb-tb-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 97%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.cb-tb-item:hover>.cb-tb-tooltip,
+.cb-tb-item:focus>.cb-tb-tooltip {
+  opacity: 1;
+}
+
+.ghost-area {
+  width: 2em;
+  height: 2em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
 }
 
 /* PrismJS 1.15.0
