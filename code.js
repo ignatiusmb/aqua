@@ -17,7 +17,7 @@ const createToolbar = () => {
 
   const copyButton = createTool('far fa-copy', 'Copy');
   copyButton.addEventListener('click', e => {
-    const clickedTool = e.target;
+    const clickedTool = e.currentTarget;
     const currentBox = clickedTool.parentElement.parentElement;
     const codeLines = currentBox.getElementsByTagName('code');
 
@@ -44,9 +44,9 @@ const createToolbar = () => {
 
   const toggleNumbering = createTool('fas fa-list-ol', 'Toggle Numbering');
   toggleNumbering.addEventListener('click', e => {
-    const clickedTool = e.target;
+    const clickedTool = e.currentTarget;
     const currentBox = clickedTool.parentElement.parentElement;
-    currentBox.getElementsByTagName('pre')[0].classList.toggle('numbered');
+    currentBox.classList.toggle('numbered');
   });
   toolbar.appendChild(toggleNumbering);
 

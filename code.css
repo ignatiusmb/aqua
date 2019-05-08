@@ -148,11 +148,11 @@ code.bsh-light {
   overflow-y: hidden;
 }
 
-.cb-format.numbered {
+.numbered .cb-format {
   padding-left: 0.6em;
 }
 
-.cb-format.numbered code::before {
+.numbered .cb-format code::before {
   content: attr(data-line);
   max-width: 2em;
   width: 100%;
