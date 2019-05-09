@@ -39,6 +39,20 @@
       margin: 4em 0;
     }
 
+    section h1 {
+      margin-top: 1em;
+      font-family: var(--bsh-sans);
+      font-size: 3em;
+    }
+
+    section.bsh-dark h1 {
+      color: white;
+    }
+
+    section.bsh-light h1 {
+      color: var(--cl-primary-dark);
+    }
+
     main {
       max-width: 1024px;
       width: 100%;
@@ -53,9 +67,17 @@
 <body>
   <header class="bsh">
     <h1>BlueSheets</h1>
-    <h3>Open source UI toolkit &ndash; Version 1.0.0</h3>
+    <h3 class="bsh-row">
+      <span>Open source UI toolkit</span>
+      &nbsp;&ndash;&nbsp;
+      <span class="bsh">
+        <img alt="GitHub release"
+          src="https://img.shields.io/github/release/ignatiusmb/bluesheets.svg?label=Version&style=social">
+      </span>
+    </h3>
   </header>
-  <section id="code" class="bsh-dark">
+  <section id="code" class="bsh-light">
+    <h1 class="bsh">Code BlueSheet</h1>
     <main>
       <div class="code-box">
         <div class="cb-header" data-language="html"></div>
@@ -84,18 +106,18 @@
 <code></code>
 <code># Build paths inside the project like this: os.path.join(BASE_DIR, ...)</code>
 <code>BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))</code>
-<code>PRODUCTION = os.environ.get('DATABASE_URL') != None</code>
+<code>PRODUCTION = os.environ.get('DATABASE_URL') is not None</code>
 <code></code>
-<code>ALLOWED_HOSTS = ['ignatiusmb/bluesheets']</code>
+<code>ALLOWED_HOSTS = ['ignatiusmb', 'bluesheets']</code>
 <code></code>
 <code>INSTALLED_APPS = [</code>
 <code>    ...</code>
-<code>   'django_app',</code>
+<code>   'django.app',</code>
 <code>]</code>
 <code></code>
 <code>MIDDLEWARE = [</code>
 <code>    ...</code>
-<code>   'whitenoise.middleware.WhiteNoiseMiddleware',</code>
+<code>   'ignatiusmb.github.io.bluesheets',</code>
 <code>]</code>
 <code></code>
 <code>TEMPLATES = [</code>
@@ -116,9 +138,19 @@
       </div>
     </main>
   </section>
-  <section id="modal">
+  <section id="modal" class="bsh-dark">
+    <h1>Modal BlueSheet</h1>
     <main>
+      <div class="code-box">
+        <div class="cb-header" data-language="html"></div>
+        <pre class="cb-format">
+<code>&#60;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/modal.min.css" /&#62;</code>
+<code></code>
+<code>&#60;!-- place before the closing body tag --&#62;</code>
+<code>&#60;script src="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/modal.min.js"&#62;&#60;/script&#62;</code></pre>
+      </div>
 
+      </div>
     </main>
   </section>
 
