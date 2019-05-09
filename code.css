@@ -281,6 +281,10 @@ code.bsh-light {
  * @author Rose Pritchard
  * Modified by Ignatius Bagus
  */
+.token {
+  font-weight: 300;
+}
+
 .token.comment,
 .token.block-comment,
 .token.prolog,
