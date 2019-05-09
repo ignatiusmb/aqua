@@ -6,9 +6,9 @@ const createToolbar = () => {
     let tool = document.createElement('a');
     let icon = document.createElement('i');
     let tooltip = document.createElement('span');
-    tool.className = `cb-tb-item`;
+    tool.className = `tb-item`;
     icon.className = iconClass;
-    tooltip.className = 'cb-tb-tooltip';
+    tooltip.className = 'tb-tooltip';
     tooltip.innerText = text;
     tool.appendChild(icon);
     tool.appendChild(tooltip);
