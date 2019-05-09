@@ -12,17 +12,31 @@
   <link rel="stylesheet" href="code.css" />
 
   <style>
-    header h1 {
-      margin-bottom: 0.2em;
-      font-family: var(--bsh-sans);
-      font-size: 5em;
+    body {
+      background-color: var(--bg-primary-dark);
+    }
+
+    header {
+      background: #0082c8;
+      background: -webkit-linear-gradient(to right, #000046, #1CB5E0);
+      background: linear-gradient(to right, #000046, #1CB5E0);
+      color: white;
       font-weight: 400;
     }
 
+    header h1 {
+      margin-bottom: 0.2em;
+      font-size: 5em;
+      font-family: var(--bsh-sans);
+    }
+
     header h3 {
-      color: gray;
+      font-size: 1.25em;
       font-family: var(--bsh-mono);
-      font-weight: 400;
+    }
+
+    section {
+      margin: 4em 0;
     }
 
     main {
@@ -30,16 +44,16 @@
       width: 100%;
     }
 
-    #code main>* {
+    main>* {
       margin: 3em 0;
     }
   </style>
 </head>
 
 <body>
-  <header class="bsh-light">
+  <header class="bsh">
     <h1>BlueSheets</h1>
-    <h3>BlueSheets style sheets &ndash; Version 1.0.0</h3>
+    <h3>Open source UI toolkit &ndash; Version 1.0.0</h3>
   </header>
   <section id="code" class="bsh-dark">
     <main>
@@ -102,6 +116,12 @@
       </div>
     </main>
   </section>
+  <section id="modal">
+    <main>
+
+    </main>
+  </section>
+
   <script src="prism.js"></script>
   <script src="code.js"></script>
 </body>
