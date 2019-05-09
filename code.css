@@ -78,7 +78,7 @@ code.bsh-light {
 
 .cb-header::before,
 .cb-header::after {
-  font-size: 0.5em;
+  font-size: var(--code-font-size);
 }
 
 /* Language Colored Line */
@@ -87,7 +87,7 @@ code.bsh-light {
   z-index: 1;
   height: 0.4em;
   position: absolute;
-  top: 2em;
+  top: 1.85em;
   left: 0;
   right: 0;
 
@@ -112,7 +112,7 @@ code.bsh-light {
 .cb-header::after {
   z-index: 1;
   position: absolute;
-  top: 2em;
+  top: 1.85em;
   right: 0;
   padding: 0.5em 1em;
   font-weight: bold;
