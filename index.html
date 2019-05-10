@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
   <link rel="stylesheet" href="core.css" />
   <link rel="stylesheet" href="code.css" />
-
+  <link rel="stylesheet" href="modal.css" />
   <style>
     body {
       background-color: var(--bg-primary-dark);
@@ -18,31 +18,25 @@
 
     header {
       background: #0082c8;
-      background: -webkit-linear-gradient(to right, #000046, #1CB5E0);
-      background: linear-gradient(to right, #000046, #1CB5E0);
+      background: -webkit-linear-gradient(to right, #000046, #1cb5e0);
+      background: linear-gradient(to right, #000046, #1cb5e0);
       color: white;
       font-weight: 400;
     }
 
-    header h1 {
+    h1 {
       margin-bottom: 0.2em;
       font-size: 5em;
       font-family: var(--bsh-sans);
     }
 
-    header h3 {
+    h3 {
       font-size: 1.25em;
       font-family: var(--bsh-mono);
     }
 
     section {
       margin: 4em 0;
-    }
-
-    section h1 {
-      margin-top: 1em;
-      font-family: var(--bsh-sans);
-      font-size: 3em;
     }
 
     section.bsh-dark h1 {
@@ -61,6 +55,12 @@
     main>* {
       margin: 3em 0;
     }
+
+    main h1 {
+      margin: 1em 0 0;
+      font-family: var(--bsh-sans);
+      font-size: 3em;
+    }
   </style>
 </head>
 
@@ -72,19 +72,20 @@
       &nbsp;&ndash;&nbsp;
       <span class="bsh">
         <img alt="GitHub release"
-          src="https://img.shields.io/github/release/ignatiusmb/bluesheets.svg?label=Version&style=social">
+          src="https://img.shields.io/github/release/ignatiusmb/bluesheets.svg?label=Version&style=social" />
       </span>
     </h3>
   </header>
   <section id="code" class="bsh-light">
-    <h1 class="bsh">Code BlueSheet</h1>
     <main>
+      <h1 class="bsh">Code BlueSheet</h1>
       <div class="code-box">
         <div class="cb-header" data-language="html"></div>
         <pre class="cb-format">
 <code>&#60;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/code.min.css" /&#62;</code>
 <code></code>
 <code>&#60;!-- place before the closing body tag --&#62;</code>
+<code>&#60;script src="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/prism.js"&#62;&#60;/script&#62;</code>
 <code>&#60;script src="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/code.min.js"&#62;&#60;/script&#62;</code></pre>
       </div>
       <div class="code-box">
@@ -98,6 +99,7 @@
 <code>&#60;code&#62;here&#60;/code&#62;&#60;/pre&#62;</code>
 <code>&#60;/div&#62;</code></pre>
       </div>
+      <h1 class="bsh">Code Demo</h1>
       <div class="code-box">
         <div class="cb-header" data-language="python">Example</div>
         <pre class="cb-format">
@@ -139,8 +141,8 @@
     </main>
   </section>
   <section id="modal" class="bsh-dark">
-    <h1>Modal BlueSheet</h1>
     <main>
+      <h1 class="bsh">Modal BlueSheet</h1>
       <div class="code-box">
         <div class="cb-header" data-language="html"></div>
         <pre class="cb-format">
@@ -149,7 +151,16 @@
 <code>&#60;!-- place before the closing body tag --&#62;</code>
 <code>&#60;script src="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/modal.min.js"&#62;&#60;/script&#62;</code></pre>
       </div>
-
+      <div class="code-box">
+        <div class="cb-header" data-language="html">Template</div>
+        <pre class="cb-format">
+<code>&#60;div class="code-box"&#62;</code>
+<code>  &#60;div class="cb-header" data-language="html"&#62;&#60;/div&#62;</code>
+<code>  &#60;pre class="cb-format"&#62;</code>
+<code>&#60;code&#62;code&#60;/code&#62;</code>
+<code>&#60;code&#62;goes&#60;/code&#62;</code>
+<code>&#60;code&#62;here&#60;/code&#62;&#60;/pre&#62;</code>
+<code>&#60;/div&#62;</code></pre>
       </div>
     </main>
   </section>
