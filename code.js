@@ -32,8 +32,7 @@ const createToolbar = () => {
     copyArea.focus();
     copyArea.select();
     try {
-      let success = document.execCommand('copy');
-      if (success) alert('Code Block Copied!');
+      if (document.execCommand('copy')) alert('Code Block Copied!');
       else alert('Copy Unsuccessful...');
     } catch (err) {
       alert('Error, unable to copy');
@@ -53,9 +52,8 @@ const createToolbar = () => {
   return toolbar;
 };
 
-const codeBox = document.getElementsByClassName('code-box');
-for (const box of codeBox) {
-  const header = box.getElementsByClassName('cb-header');
+for (const codeBox of document.getElementsByClassName('code-box')) {
+  const header = codeBox.getElementsByClassName('cb-header');
   if (header.length > 0) {
     for (const head of header) {
       if (head.innerHTML.length === 0) head.classList.add('none');
