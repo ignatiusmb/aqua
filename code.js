@@ -1,4 +1,4 @@
-const createToolbar = () => {
+const bshCreateToolbar = () => {
   const toolbar = document.createElement('div');
   toolbar.className = 'cb-toolbar';
 
@@ -76,7 +76,7 @@ for (const codeBox of document.getElementsByClassName('code-box')) {
           }
         }
         // code toolbar
-        pre.insertAdjacentElement('afterend', createToolbar());
+        pre.insertAdjacentElement('afterend', bshCreateToolbar());
       }
     }
   }
