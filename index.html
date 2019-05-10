@@ -56,10 +56,17 @@
       margin: 3em 0;
     }
 
-    main h1 {
+    main>h1 {
       margin: 1em 0 0;
       font-family: var(--bsh-sans);
       font-size: 3em;
+    }
+
+    .popup>.content>.header {
+      flex: 2;
+      display: flex;
+      border: none;
+      color: white;
     }
   </style>
 </head>
@@ -68,12 +75,7 @@
   <header class="bsh">
     <h1>BlueSheets</h1>
     <h3 class="bsh-row">
-      <span>Open source UI toolkit</span>
-      &nbsp;&ndash;&nbsp;
-      <span class="bsh">
-        <img alt="GitHub release"
-          src="https://img.shields.io/github/release/ignatiusmb/bluesheets.svg?label=Version&style=social" />
-      </span>
+      Open source UI toolkit&nbsp;&mdash;&nbsp;Version 1.0.0
     </h3>
   </header>
   <section id="code" class="bsh-light">
@@ -154,19 +156,59 @@
       <div class="code-box">
         <div class="cb-header" data-language="html">Template</div>
         <pre class="cb-format">
-<code>&#60;div class="code-box"&#62;</code>
-<code>  &#60;div class="cb-header" data-language="html"&#62;&#60;/div&#62;</code>
-<code>  &#60;pre class="cb-format"&#62;</code>
-<code>&#60;code&#62;code&#60;/code&#62;</code>
-<code>&#60;code&#62;goes&#60;/code&#62;</code>
-<code>&#60;code&#62;here&#60;/code&#62;&#60;/pre&#62;</code>
-<code>&#60;/div&#62;</code></pre>
+<code>&#60;div class="bsh-modal"&#62;</code>
+<code>  &#60;div class="preview"&#62;</code>
+<code>    &#60;div class="bsh"&#62;</code>
+<code>      &#60;!-- your content preview here --&#62;</code>
+<code>    &#60;div&#62;</code>
+<code>    &#60;div class="overlay"&#62;</code>
+<code>      &#60;!-- your overlay content here --&#62;</code>
+<code>    &#60;div&#62;</code>
+<code>  &#60;div&#62;</code>
+<code>  &#60;div class="popup"&#62;</code>
+<code>    &#60;div class="content bsh"&#62;</code>
+<code>      &#60;!-- your popup content here --&#62;</code>
+<code>    &#60;div&#62;</code>
+<code>  &#60;div&#62;</code>
+<code>&#60;div&#62;</code></pre>
+      </div>
+      <h1 class="bsh">Modal Demo</h1>
+      <div class="bsh-row">
+        <div class="bsh-modal">
+          <div class="preview">
+            <div class="bsh" style="text-align: center">
+              <h3 style="margin-bottom: 1em">Modal Preview</h3>
+              <p>Lorem ipsum dolor sit, amet</p>
+            </div>
+            <div class="overlay"></div>
+          </div>
+          <div class="popup">
+            <div class="bsh content">
+              <h1>popup content</h1>
+            </div>
+          </div>
+        </div>
+        <div class="bsh-modal">
+          <div class="preview">
+            <div class="bsh" style="text-align: center">
+              <h3 style="margin-bottom: 1em">Modal Preview</h3>
+              <p>Lorem ipsum dolor sit, amet</p>
+            </div>
+            <div class="overlay"></div>
+          </div>
+          <div class="popup">
+            <div class="bsh content">
+              <h1>popup content</h1>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   </section>
 
   <script src="prism.js"></script>
   <script src="code.js"></script>
+  <script src="modal.js"></script>
 </body>
 
 </html>
