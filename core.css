@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500');
 
 :root {
+  --primary-blue: #0070BB;
   --bg-primary-dark: #2d2d2d;
   --bg-faded-dark: #444444;
   --bg-faded-light: #eeeeee;
