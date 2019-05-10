@@ -3,9 +3,11 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500');
 
 :root {
+  --primary-blue: #0070BB;
   --bg-primary-dark: #2d2d2d;
   --bg-faded-dark: #444444;
   --bg-faded-light: #eeeeee;
+  --cl-primary-dark: #242424;
   --cl-faded-white: #cccccc;
 
   --bsh-mono: 'Inconsolata', monospace;
@@ -18,6 +20,10 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+* {
+  font-weight: 400;
 }
 
 html {
@@ -44,29 +50,30 @@ input {
   margin: 0.5em 0;
   border: none;
   border-radius: 0.3em;
-  background-color: #eee;
+  background-color: var(--bg-faded-light);
 }
 
-header.bsh-dark,
-section.bsh-dark,
-main.bsh-dark,
-footer.bsh-dark {
+header[class*='bsh'] {
+  min-height: 100vh;
+}
+
+*[class^='bsh'] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+*[class*='-row'] {
+  flex-direction: row;
+}
+
+.bsh-dark {
   background: var(--bg-faded-dark);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  color: var(--cl-primary-dark);
 }
 
-header.bsh-light,
-section.bsh-light,
-main.bsh-light,
-footer.bsh-light {
+.bsh-light {
   background: var(--bg-faded-light);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  color: var(--cl-faded-white);
 }

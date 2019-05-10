@@ -1,4 +1,4 @@
-const createToolbar = () => {
+const bshCreateToolbar = () => {
   const toolbar = document.createElement('div');
   toolbar.className = 'cb-toolbar';
 
@@ -6,9 +6,9 @@ const createToolbar = () => {
     let tool = document.createElement('a');
     let icon = document.createElement('i');
     let tooltip = document.createElement('span');
-    tool.className = `cb-tb-item`;
+    tool.className = `tb-item`;
     icon.className = iconClass;
-    tooltip.className = 'cb-tb-tooltip';
+    tooltip.className = 'tb-tooltip';
     tooltip.innerText = text;
     tool.appendChild(icon);
     tool.appendChild(tooltip);
@@ -32,8 +32,7 @@ const createToolbar = () => {
     copyArea.focus();
     copyArea.select();
     try {
-      let success = document.execCommand('copy');
-      if (success) alert('Code Block Copied!');
+      if (document.execCommand('copy')) alert('Code Block Copied!');
       else alert('Copy Unsuccessful...');
     } catch (err) {
       alert('Error, unable to copy');
@@ -53,9 +52,8 @@ const createToolbar = () => {
   return toolbar;
 };
 
-const codeBox = document.getElementsByClassName('code-box');
-for (const box of codeBox) {
-  const header = box.getElementsByClassName('cb-header');
+for (const codeBox of document.getElementsByClassName('code-box')) {
+  const header = codeBox.getElementsByClassName('cb-header');
   if (header.length > 0) {
     for (const head of header) {
       if (head.innerHTML.length === 0) head.classList.add('none');
@@ -78,7 +76,7 @@ for (const box of codeBox) {
           }
         }
         // code toolbar
-        pre.insertAdjacentElement('afterend', createToolbar());
+        pre.insertAdjacentElement('afterend', bshCreateToolbar());
       }
     }
   }
