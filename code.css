@@ -39,8 +39,12 @@ code.bsh-light {
 .code-box,
 .cb-header,
 .cb-format {
-  width: 100%;
   position: relative;
+}
+
+.code-box {
+  width: 90%;
+  margin: 2em auto;
 }
 
 /*=================*
