@@ -1,7 +1,7 @@
+const formWrapper = document.getElementById('form-wrapper')
 document.getElementById('sign-up').addEventListener('click', () => {
-  document.getElementById('form-wrapper').classList.add('toggled')
+  formWrapper.classList.add('toggled')
 })
-
 document.getElementById('sign-in').addEventListener('click', () => {
-  document.getElementById('form-wrapper').classList.remove('toggled')
+  formWrapper.classList.remove('toggled')
 })
