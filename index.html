@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
   <link rel="stylesheet" href="core.css" />
   <link rel="stylesheet" href="code.css" />
+  <link rel="stylesheet" href="form.css" />
   <link rel="stylesheet" href="modal.css" />
   <style>
     body {
@@ -78,9 +79,9 @@
       Open source UI toolkit&nbsp;&mdash;&nbsp;Version 1.1.0
     </h3>
   </header>
-  <section id="code" class="bsh-light">
+  <section id="code">
     <main>
-      <h1 class="bsh">Code BlueSheet</h1>
+      <h1>Code BlueSheet</h1>
       <div class="code-box">
         <div class="cb-header" data-language="html"></div>
         <pre class="cb-format">
@@ -101,7 +102,7 @@
 <code>&#60;code&#62;here&#60;/code&#62;&#60;/pre&#62;</code>
 <code>&#60;/div&#62;</code></pre>
       </div>
-      <h1 class="bsh">Code Demo</h1>
+      <h1>Code Demo</h1>
       <div class="code-box">
         <div class="cb-header" data-language="python">Example</div>
         <pre class="cb-format">
@@ -142,9 +143,9 @@
       </div>
     </main>
   </section>
-  <section id="modal" class="bsh-dark">
+  <section id="modal">
     <main>
-      <h1 class="bsh">Modal BlueSheet</h1>
+      <h1>Modal BlueSheet</h1>
       <div class="code-box">
         <div class="cb-header" data-language="html"></div>
         <pre class="cb-format">
@@ -172,7 +173,7 @@
 <code>  &#60;div&#62;</code>
 <code>&#60;div&#62;</code></pre>
       </div>
-      <h1 class="bsh">Modal Demo</h1>
+      <h1>Modal Demo</h1>
       <div class="bsh-row">
         <div class="bsh-modal">
           <div class="preview">
@@ -209,6 +210,15 @@
   <script src="prism.js"></script>
   <script src="code.js"></script>
   <script src="modal.js"></script>
+  <script>
+    const section = document.getElementsByTagName('section')
+    for (let i = 0; i < section.length; i++) {
+      section[i].className = i % 2 === 0 ? 'bsh-light' : 'bsh-dark'
+      for (const title of section[i].getElementsByTagName('h1')) {
+        title.className = 'bsh'
+      }
+    }
+  </script>
 </body>
 
 </html>
