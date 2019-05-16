@@ -40,7 +40,11 @@ button {
 }
 
 button.ghost {
-  background-color: transparent;
+  background-color: transparent !important;
+  border-color: white;
+}
+
+button.ghost.white {
   border-color: white;
 }
 
