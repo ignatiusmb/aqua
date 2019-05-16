@@ -36,7 +36,9 @@ a:visited {
 }
 
 button {
+  cursor: pointer;
   padding: 0.2em 1em;
+  outline: none;
 }
 
 button.ghost {
