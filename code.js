@@ -69,7 +69,7 @@ for (const codeBox of document.getElementsByClassName('code-box')) {
         let dataLine = pre.dataset.line
         for (const code of pre.getElementsByTagName('code')) {
           if (dataLine === undefined) dataLine = 1
-          codes[code].dataset.line = parseInt(dataLine, 10) + parseInt(code)
+          code.dataset.line = dataLine++
         }
         // code toolbar
         pre.insertAdjacentElement('afterend', bshCreateToolbar())
