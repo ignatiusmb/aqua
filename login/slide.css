@@ -1,0 +1,196 @@
+.form-wrapper {
+  overflow: hidden;
+  width: 48em;
+  max-width: 100%;
+  min-height: 30em;
+  position: relative;
+  border-radius: 0.6em;
+  box-shadow: 0 0.9em 1.75em rgba(0, 0, 0, 0.25), 0 0.6em 0.6em rgba(0, 0, 0, 0.22);
+  background-color: white;
+}
+
+.form-wrapper h1 {
+  font-size: 2em;
+}
+
+.form-wrapper p {
+  font-weight: 100;
+  letter-spacing: 0.025em;
+  margin: 1em 0 1.5em;
+}
+
+.form-wrapper a {
+  color: #333;
+  font-size: 0.9em;
+  text-decoration: none;
+  margin: 1em 0;
+}
+
+.form-wrapper span {
+  font-size: 0.8em;
+}
+
+.form-wrapper button {
+  padding: 0.7em 3em;
+  border: 1px solid #0070BB;
+  border-radius: 1.5em;
+  margin-top: 1em;
+  letter-spacing: 0.1em;
+  background-color: #0070BB;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 80ms ease;
+}
+
+.form-wrapper button:active {
+  transform: scale(0.95);
+}
+
+.form-wrapper>.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.form-wrapper>.form-container.sign-in {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.form-wrapper.toggled>.form-container.sign-in {
+  transform: translateX(100%);
+}
+
+.form-wrapper>.form-container.sign-up {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.form-wrapper.toggled>.form-container.sign-up {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: bsa-show 0.6s;
+}
+
+.form-wrapper>.form-container>form {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 3em;
+  height: 100%;
+  text-align: center;
+}
+
+.form-wrapper>.form-container>form input {
+  width: 100%;
+  padding: 0.8em 0.9em;
+  margin: 0.5em 0;
+  border: none;
+  border-radius: 0.3em;
+  background-color: #eee;
+}
+
+@keyframes bsa-show {
+
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.form-wrapper>.form-overlay {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.form-wrapper.toggled>.form-overlay {
+  transform: translateX(-100%);
+}
+
+.form-wrapper .overlay {
+  height: 100%;
+  width: 200%;
+  position: relative;
+  left: -100%;
+  background: #0070BB;
+  background: -webkit-linear-gradient(to right, #66D6FF, #0070BB);
+  background: linear-gradient(to right, #66D6FF, #0070BB);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #ffffff;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.form-wrapper.toggled .overlay {
+  transform: translateX(50%);
+}
+
+.form-wrapper .overlay>.overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 2.5em;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.form-wrapper .overlay>.overlay-panel.left {
+  transform: translateX(-20%);
+}
+
+.form-wrapper.toggled .overlay>.overlay-panel.left {
+  transform: translateX(0);
+}
+
+.form-wrapper .overlay>.overlay-panel.right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.form-wrapper.toggled .overlay>.overlay-panel.right {
+  transform: translateX(20%);
+}
+
+.social-container {
+  margin: 1.25em 0;
+}
+
+.social-container a {
+  border: 1px solid #dddddd;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.3em;
+  height: 2.5em;
+  width: 2.5em;
+}
