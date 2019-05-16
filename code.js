@@ -48,7 +48,6 @@ const bshCreateToolbar = () => {
     currentBox.classList.toggle('numbered')
   })
   toolbar.appendChild(toggleNumbering)
-
   return toolbar
 }
 
@@ -67,13 +66,10 @@ for (const codeBox of document.getElementsByClassName('code-box')) {
       }
       // data lines
       for (const pre of pres) {
-        const codes = pre.getElementsByTagName('code')
         let dataLine = pre.dataset.line
-        for (const num in codes) {
-          if (codes.hasOwnProperty(num)) {
-            if (dataLine === undefined) dataLine = 1
-            codes[num].dataset.line = parseInt(dataLine, 10) + parseInt(num)
-          }
+        for (const code of pre.getElementsByTagName('code')) {
+          if (dataLine === undefined) dataLine = 1
+          codes[code].dataset.line = parseInt(dataLine, 10) + parseInt(code)
         }
         // code toolbar
         pre.insertAdjacentElement('afterend', bshCreateToolbar())
