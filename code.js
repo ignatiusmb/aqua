@@ -1,3 +1,9 @@
+window.onload = () => {
+  const prism = document.createElement('script')
+  prism.type = 'text/javascript'
+  prism.src = 'https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/prism.js'
+  document.getElementsByTagName('script')[0].insertAdjacentElement('beforebegin', prism)
+}
 const bshCreateToolbar = () => {
   const toolbar = document.createElement('div')
   toolbar.className = 'cb-toolbar'
