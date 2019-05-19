@@ -19,12 +19,14 @@ for (const modal of document.getElementsByClassName('bsh-modal')) {
     }
     preview.addEventListener('click', () => {
       popup.classList.add('pop')
+      document.body.style.overflow = 'hidden'
     })
   }
 
   for (const close of popup.getElementsByClassName('close')) {
     close.addEventListener('click', () => {
       popup.classList.remove('pop')
+      document.body.style.overflow = 'unset'
     })
   }
 }
