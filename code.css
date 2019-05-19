@@ -116,7 +116,7 @@ code.bsh-light {
 .cb-header::after {
   z-index: 1;
   position: absolute;
-  top: 1.85em;
+  top: 1.95em;
   right: 0;
   padding: 0.5em 1em;
   font-weight: 600;
