@@ -69,6 +69,10 @@
       border: none;
       color: white;
     }
+
+    .demo {
+      max-width: 90%;
+    }
   </style>
 </head>
 
@@ -143,6 +147,50 @@
       </div>
     </main>
   </section>
+  <section id="form">
+    <main>
+      <h1>Form BlueSheet</h1>
+      <div class="code-box">
+        <div class="cb-header" data-language="html"></div>
+        <pre class="cb-format">
+<code>&#60;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/form.min.css" /&#62;</code>
+<code></code>
+<code>&#60;!-- place before the closing body tag --&#62;</code>
+<code>&#60;script src="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/form.js"&#62;&#60;/script&#62;</code></pre>
+      </div>
+      <div class="code-box">
+        <div class="cb-header" data-language="html">Template</div>
+        <pre class="cb-format">
+<code>&#60;form class="bsh-form"&#62;</code>
+<code>  &#60;input type="email" placeholder="Email" /&#62;</code>
+<code>  &#60;input type="password" placeholder="Password" /&#62;</code>
+<code>  &#60;button type="submit"&#62;Login&#60;/button&#62;</code>
+<code>&#60;/form&#62;</code></pre>
+      </div>
+      <div class="code-box">
+        <div class="cb-header" data-language="html">Wrapped Template</div>
+        <pre class="cb-format">
+<code>&#60;div class="form-wrapper"&#62;</code>
+<code>  &#60;template /&#62;</code>
+<code>&#60;/div&#62;</code></pre>
+      </div>
+      <h1>Form Demo</h1>
+      <div class="bsh-row demo">
+        <form action="#" class="bsh-form">
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <button type="submit">Login</button>
+        </form>
+        <div class="form-wrapper">
+          <form action="#" class="bsh-form">
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <button type="submit">Login</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </section>
   <section id="modal">
     <main>
       <h1>Modal BlueSheet</h1>
@@ -207,9 +255,6 @@
     </main>
   </section>
 
-  <script src="prism.js"></script>
-  <script src="code.js"></script>
-  <script src="modal.js"></script>
   <script>
     const section = document.getElementsByTagName('section')
     for (let i = 0; i < section.length; i++) {
@@ -219,6 +264,9 @@
       }
     }
   </script>
+  <script src="code.js"></script>
+  <script src="form.js"></script>
+  <script src="modal.js"></script>
 </body>
 
 </html>
