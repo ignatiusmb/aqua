@@ -89,61 +89,65 @@
       <div class="code-box">
         <div class="cb-header" data-language="html"></div>
         <pre class="cb-format">
-<code>&#60;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/code.min.css" /&#62;</code>
-<code></code>
-<code>&#60;!-- place before the closing body tag --&#62;</code>
-<code>&#60;script src="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/prism.js"&#62;&#60;/script&#62;</code>
-<code>&#60;script src="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/code.min.js"&#62;&#60;/script&#62;</code></pre>
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/code.min.css" />
+
+&lt;!-- place before the closing body tag -->
+&lt;script src="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/code.min.js">&lt;/script></pre>
       </div>
       <div class="code-box">
         <div class="cb-header" data-language="html">Template</div>
         <pre class="cb-format">
-<code>&#60;div class="code-box"&#62;</code>
-<code>  &#60;div class="cb-header" data-language="html"&#62;&#60;/div&#62;</code>
-<code>  &#60;pre class="cb-format"&#62;</code>
-<code>&#60;code&#62;code&#60;/code&#62;</code>
-<code>&#60;code&#62;goes&#60;/code&#62;</code>
-<code>&#60;code&#62;here&#60;/code&#62;&#60;/pre&#62;</code>
-<code>&#60;/div&#62;</code></pre>
+&lt;div class="code-box">
+  &lt;div class="cb-header" data-language="html">&lt;/div>
+  &lt;pre class="cb-format">
+&lt;!-- place your code here -->
+
+&lt;!-- escape the first opening tag with &amp;lt; -->
+&lt;!-- specifically for css links and js scripts -->
+&lt;!-- e.g. &amp;lt;link href="style.css"> -->
+&lt;!-- e.g. &amp;lt;script src="index.js"> -->
+
+&lt;!-- pre ends after your last code to avoid new line -->&lt;/pre>
+&lt;/div></pre>
       </div>
       <h1>Code Demo</h1>
       <div class="code-box">
         <div class="cb-header" data-language="python">Example</div>
         <pre class="cb-format">
-<code>import os</code>
-<code>import dj_database_url</code>
-<code></code>
-<code># Build paths inside the project like this: os.path.join(BASE_DIR, ...)</code>
-<code>BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))</code>
-<code>PRODUCTION = os.environ.get('DATABASE_URL') is not None</code>
-<code></code>
-<code>ALLOWED_HOSTS = ['ignatiusmb', 'bluesheets']</code>
-<code></code>
-<code>INSTALLED_APPS = [</code>
-<code>    ...</code>
-<code>   'django.app',</code>
-<code>]</code>
-<code></code>
-<code>MIDDLEWARE = [</code>
-<code>    ...</code>
-<code>   'ignatiusmb.github.io.bluesheets',</code>
-<code>]</code>
-<code></code>
-<code>TEMPLATES = [</code>
-<code>    {</code>
-<code>        'BACKEND': 'django.template.backends.django.DjangoTemplates',</code>
-<code>        'DIRS': [os.path.join(BASE_DIR, 'bluesheets')],</code>
-<code>        'APP_DIRS': True,</code>
-<code>        'OPTIONS': {</code>
-<code>            'context_processors': [</code>
-<code>                'django.template.context_processors.debug',</code>
-<code>                'django.template.context_processors.request',</code>
-<code>                'django.contrib.auth.context_processors.auth',</code>
-<code>                'django.contrib.messages.context_processors.messages',</code>
-<code>            ],</code>
-<code>        },</code>
-<code>    },</code>
-<code>]</code></pre>
+import os
+import dj_database_url
+
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PRODUCTION = os.environ.get('DATABASE_URL') is not None
+
+ALLOWED_HOSTS = ['ignatiusmb', 'bluesheets']
+
+INSTALLED_APPS = [
+    ...
+   'django.app',
+]
+
+MIDDLEWARE = [
+    ...
+   'ignatiusmb.github.io.bluesheets',
+]
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'bluesheets')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]</pre>
       </div>
     </main>
   </section>
@@ -153,26 +157,26 @@
       <div class="code-box">
         <div class="cb-header" data-language="html"></div>
         <pre class="cb-format">
-<code>&#60;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/form.min.css" /&#62;</code>
-<code></code>
-<code>&#60;!-- place before the closing body tag --&#62;</code>
-<code>&#60;script src="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/form.js"&#62;&#60;/script&#62;</code></pre>
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/form.min.css" />
+
+&lt;!-- place before the closing body tag -->
+&lt;script src="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/form.js">&lt;/script></pre>
       </div>
       <div class="code-box">
         <div class="cb-header" data-language="html">Template</div>
         <pre class="cb-format">
-<code>&#60;form class="bsh-form"&#62;</code>
-<code>  &#60;input type="email" placeholder="Email" /&#62;</code>
-<code>  &#60;input type="password" placeholder="Password" /&#62;</code>
-<code>  &#60;button type="submit"&#62;Login&#60;/button&#62;</code>
-<code>&#60;/form&#62;</code></pre>
+&lt;form class="bsh-form">
+  &lt;input type="email" placeholder="Email" />
+  &lt;input type="password" placeholder="Password" />
+  &lt;button type="submit">Login&lt;/button>
+&lt;/form></pre>
       </div>
       <div class="code-box">
         <div class="cb-header" data-language="html">Wrapped Template</div>
         <pre class="cb-format">
-<code>&#60;div class="form-wrapper"&#62;</code>
-<code>  &#60;template /&#62;</code>
-<code>&#60;/div&#62;</code></pre>
+&lt;div class="form-wrapper">
+  &lt;template />
+&lt;/div></pre>
       </div>
       <h1>Form Demo</h1>
       <div class="bsh-row demo">
@@ -197,29 +201,29 @@
       <div class="code-box">
         <div class="cb-header" data-language="html"></div>
         <pre class="cb-format">
-<code>&#60;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/modal.min.css" /&#62;</code>
-<code></code>
-<code>&#60;!-- place before the closing body tag --&#62;</code>
-<code>&#60;script src="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/modal.min.js"&#62;&#60;/script&#62;</code></pre>
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/modal.min.css" />
+
+&lt;!-- place before the closing body tag -->
+&lt;script src="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/modal.min.js">&lt;/script></pre>
       </div>
       <div class="code-box">
         <div class="cb-header" data-language="html">Template</div>
         <pre class="cb-format">
-<code>&#60;div class="bsh-modal"&#62;</code>
-<code>  &#60;div class="preview"&#62;</code>
-<code>    &#60;div class="bsh"&#62;</code>
-<code>      &#60;!-- your content preview here --&#62;</code>
-<code>    &#60;div&#62;</code>
-<code>    &#60;div class="overlay"&#62;</code>
-<code>      &#60;!-- your overlay content here --&#62;</code>
-<code>    &#60;div&#62;</code>
-<code>  &#60;div&#62;</code>
-<code>  &#60;div class="popup"&#62;</code>
-<code>    &#60;div class="content bsh"&#62;</code>
-<code>      &#60;!-- your popup content here --&#62;</code>
-<code>    &#60;div&#62;</code>
-<code>  &#60;div&#62;</code>
-<code>&#60;div&#62;</code></pre>
+&lt;div class="bsh-modal">
+  &lt;div class="preview">
+    &lt;div class="bsh">
+      &lt;!-- your content preview here -->
+    &lt;div>
+    &lt;div class="overlay">
+      &lt;!-- your overlay content here -->
+    &lt;div>
+  &lt;div>
+  &lt;div class="popup">
+    &lt;div class="content bsh">
+      &lt;!-- your popup content here -->
+    &lt;div>
+  &lt;div>
+&lt;div></pre>
       </div>
       <h1>Modal Demo</h1>
       <div class="bsh-row">
