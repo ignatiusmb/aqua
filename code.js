@@ -70,14 +70,25 @@ for (const codeBox of document.getElementsByClassName('code-box')) {
       } else {
         for (const pre of pres) pre.classList.add('language-none')
       }
-      // data lines
+
+      const frag = document.createDocumentFragment()
       for (const pre of pres) {
+        for (const line of pre.innerHTML.split('\n')) {
+          // wrap in code tag
+          const codeLine = document.createElement('code')
+          codeLine.innerHTML = `${line}\n`
+          frag.appendChild(codeLine)
+        }
+        while (pre.lastChild) pre.removeChild(pre.firstChild)
+        pre.appendChild(frag)
+
+        // data lines
         let dataLine = pre.dataset.line
         for (const code of pre.getElementsByTagName('code')) {
           if (dataLine === undefined) dataLine = 1
           code.dataset.line = dataLine++
         }
-        // code toolbar
+
         pre.insertAdjacentElement('afterend', bshCreateToolbar())
       }
     }
