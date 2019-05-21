@@ -51,6 +51,7 @@ code.bsh-light {
  * Code Box Header *
  *=================*/
 .cb-header {
+  backface-visibility: hidden;
   z-index: 1;
   width: 100%;
   position: absolute;
@@ -91,7 +92,7 @@ code.bsh-light {
   z-index: 1;
   height: 0.4em;
   position: absolute;
-  top: 1.85em;
+  top: 1.8em;
   left: 0;
   right: 0;
 
@@ -107,8 +108,6 @@ code.bsh-light {
 
 .code-box:hover>.cb-header::before {
   right: var(--bounce-distance);
-  border-top-right-radius: var(--border-curvature);
-
   transition: var(--transition-time);
 }
 
