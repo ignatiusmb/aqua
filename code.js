@@ -73,10 +73,10 @@ for (const codeBox of document.getElementsByClassName('code-box')) {
 
       const frag = document.createDocumentFragment()
       for (const pre of pres) {
-        for (const line of pre.innerHTML.split('\n')) {
+        for (const line of pre.textContent.split('\n')) {
           // wrap in code tag
           const codeLine = document.createElement('code')
-          codeLine.innerHTML = `${line}\n`
+          codeLine.textContent = `${line}\n`
           frag.appendChild(codeLine)
         }
         while (pre.lastChild) pre.removeChild(pre.firstChild)
