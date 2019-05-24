@@ -23,17 +23,12 @@ const bshCreateToolbar = () => {
 
   const copyButton = createTool('far fa-copy', 'Copy')
   copyButton.addEventListener('click', e => {
-    const clickedTool = e.currentTarget
-    const currentBox = clickedTool.parentElement.parentElement
+    const currentBox = e.currentTarget.parentElement.parentElement
     const codeLines = currentBox.getElementsByTagName('code')
 
     const copyArea = document.createElement('textarea')
     copyArea.className = 'ghost-area'
-    for (let j = 0; j < codeLines.length; j++) {
-      if (j !== codeLines.length - 1) copyArea.value += codeLines[j].innerText + '\n'
-      else copyArea.value += codeLines[j].innerText
-    }
-    copyArea.value.trim()
+    for (const code of codeLines) copyArea.value += code.innerText
     document.body.appendChild(copyArea)
     copyArea.focus()
     copyArea.select()
