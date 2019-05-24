@@ -18,11 +18,11 @@ const bshCreateToolbar = () => {
     tooltip.innerText = text
     tool.appendChild(icon)
     tool.appendChild(tooltip)
-    return tool
+    return { tool: tool, tooltip: tooltip }
   }
 
   const copyButton = createTool('far fa-copy', 'Copy')
-  copyButton.addEventListener('click', e => {
+  copyButton.tool.addEventListener('click', e => {
     const currentBox = e.currentTarget.parentElement.parentElement
     const codeLines = currentBox.getElementsByTagName('code')
 
@@ -33,22 +33,31 @@ const bshCreateToolbar = () => {
     copyArea.focus()
     copyArea.select()
     try {
-      if (document.execCommand('copy')) alert('Code Block Copied!')
-      else alert('Copy Unsuccessful...')
+      if (document.execCommand('copy')) {
+        copyButton.tooltip.innerText = 'Copied!'
+        setTimeout(() => {
+          copyButton.tooltip.innerText = 'Copy'
+        }, 5000)
+      } else {
+        copyButton.tooltip.innerText = 'Copy Failed'
+        setTimeout(() => {
+          copyButton.tooltip.innerText = 'Copy'
+        }, 5000)
+      }
     } catch (err) {
-      alert('Error, unable to copy')
+      alert('An error occurred while copying, copy failed')
     }
     document.body.removeChild(copyArea)
   })
-  toolbar.appendChild(copyButton)
+  toolbar.appendChild(copyButton.tool)
 
   const toggleNumbering = createTool('fas fa-list-ol', 'Toggle Numbering')
-  toggleNumbering.addEventListener('click', e => {
+  toggleNumbering.tool.addEventListener('click', e => {
     const clickedTool = e.currentTarget
     const currentBox = clickedTool.parentElement.parentElement
     currentBox.classList.toggle('numbered')
   })
-  toolbar.appendChild(toggleNumbering)
+  toolbar.appendChild(toggleNumbering.tool)
   return toolbar
 }
 
