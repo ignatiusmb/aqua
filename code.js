@@ -61,7 +61,7 @@ const bshCreateToolbar = () => {
   return toolbar
 }
 
-for (const codeBox of document.getElementsByClassName('code-box')) {
+for (const codeBox of document.getElementsByClassName('bsh-code-box')) {
   const header = codeBox.getElementsByClassName('cb-header')
   if (header.length > 0) {
     for (const head of header) {

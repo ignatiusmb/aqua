@@ -36,13 +36,14 @@ code.bsh-light {
   color: initial;
 }
 
-.code-box,
+.bsh-code-box,
 .cb-header,
 .cb-format {
+  width: 100%;
   position: relative;
 }
 
-.code-box {
+.bsh-code-box {
   width: 100%;
   margin: 2em auto;
 }
@@ -106,7 +107,7 @@ code.bsh-light {
   border-top-right-radius: var(--border-curvature);
 }
 
-.code-box:hover>.cb-header::before {
+.bsh-code-box:hover>.cb-header::before {
   right: var(--bounce-distance);
   transition: var(--transition-time);
 }
@@ -132,7 +133,7 @@ code.bsh-light {
   content: attr(data-language);
 }
 
-.code-box:hover>.cb-header::after {
+.bsh-code-box:hover>.cb-header::after {
   right: var(--bounce-distance);
   border-bottom-right-radius: var(--border-curvature);
   border-bottom-left-radius: var(--border-curvature);
@@ -219,7 +220,7 @@ code.bsh-light {
   top: 0.2em;
 }
 
-.code-box:hover>.cb-toolbar {
+.bsh-code-box:hover>.cb-toolbar {
   opacity: 1;
 }
 
