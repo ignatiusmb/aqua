@@ -43,7 +43,7 @@ code.bsh-light {
 }
 
 .code-box {
-  width: 90%;
+  width: 100%;
   margin: 2em auto;
 }
 
@@ -241,11 +241,11 @@ code.bsh-light {
 .tb-item>.tb-tooltip {
   position: absolute;
   bottom: 2.5em;
+  display: none;
   padding: 0.5em 1em;
   border-radius: 0.6em;
   background-color: #555;
   color: white;
-  opacity: 0;
   transition: var(--transition-time);
 }
 
@@ -262,7 +262,7 @@ code.bsh-light {
 
 .tb-item:hover>.tb-tooltip,
 .tb-item:focus>.tb-tooltip {
-  opacity: 1;
+  display: block;
 }
 
 .ghost-area {
