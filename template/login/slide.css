@@ -28,7 +28,6 @@
 .form-wrapper>.form-container.sign-in {
   z-index: 2;
   width: 50%;
-  left: 0;
 }
 
 .form-wrapper.toggled>.form-container.sign-in {
@@ -38,7 +37,6 @@
 .form-wrapper>.form-container.sign-up {
   z-index: 1;
   width: 50%;
-  left: 0;
   opacity: 0;
 }
 
@@ -141,3 +139,5 @@
 .form-wrapper.toggled .overlay>.overlay-panel.right {
   transform: translateX(20%);
 }
+
+@media only screen and (max-width: 800px) {}
