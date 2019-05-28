@@ -1,4 +1,4 @@
-@import url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css');
+@import url('https://cdn.jsdelivr.net/gh/ignatiusmb/api/font/firacode.css');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
 
 :root {
@@ -36,17 +36,23 @@ code.bsh-light {
   color: initial;
 }
 
-.code-box,
+.bsh-code-box,
 .cb-header,
 .cb-format {
   width: 100%;
   position: relative;
 }
 
+.bsh-code-box {
+  width: 100%;
+  margin: 2em auto;
+}
+
 /*=================*
  * Code Box Header *
  *=================*/
 .cb-header {
+  backface-visibility: hidden;
   z-index: 1;
   width: 100%;
   position: absolute;
@@ -68,7 +74,7 @@ code.bsh-light {
 }
 
 .cb-header.none::after {
-  top: 0.15em;
+  top: 0;
   border-top-right-radius: 2px;
 }
 
@@ -87,7 +93,7 @@ code.bsh-light {
   z-index: 1;
   height: 0.4em;
   position: absolute;
-  top: 1.85em;
+  top: 1.8em;
   left: 0;
   right: 0;
 
@@ -101,10 +107,8 @@ code.bsh-light {
   border-top-right-radius: var(--border-curvature);
 }
 
-.code-box:hover>.cb-header::before {
+.bsh-code-box:hover>.cb-header::before {
   right: var(--bounce-distance);
-  border-top-right-radius: var(--border-curvature);
-
   transition: var(--transition-time);
 }
 
@@ -112,7 +116,7 @@ code.bsh-light {
 .cb-header::after {
   z-index: 1;
   position: absolute;
-  top: 1.85em;
+  top: 1.95em;
   right: 0;
   padding: 0.5em 1em;
   font-weight: 600;
@@ -129,7 +133,7 @@ code.bsh-light {
   content: attr(data-language);
 }
 
-.code-box:hover>.cb-header::after {
+.bsh-code-box:hover>.cb-header::after {
   right: var(--bounce-distance);
   border-bottom-right-radius: var(--border-curvature);
   border-bottom-left-radius: var(--border-curvature);
@@ -216,7 +220,7 @@ code.bsh-light {
   top: 0.2em;
 }
 
-.code-box:hover>.cb-toolbar {
+.bsh-code-box:hover>.cb-toolbar {
   opacity: 1;
 }
 
@@ -238,11 +242,11 @@ code.bsh-light {
 .tb-item>.tb-tooltip {
   position: absolute;
   bottom: 2.5em;
+  display: none;
   padding: 0.5em 1em;
   border-radius: 0.6em;
   background-color: #555;
   color: white;
-  opacity: 0;
   transition: var(--transition-time);
 }
 
@@ -259,7 +263,7 @@ code.bsh-light {
 
 .tb-item:hover>.tb-tooltip,
 .tb-item:focus>.tb-tooltip {
-  opacity: 1;
+  display: block;
 }
 
 .ghost-area {

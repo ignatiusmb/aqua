@@ -4,9 +4,11 @@
 
 .bsh-modal {
   object-fit: contain;
+  overflow: hidden;
   width: 15em;
   height: 15em;
   position: relative;
+  border-radius: 1em;
   margin: 1em;
   background: rgba(0, 0, 0, 0.3);
 }
