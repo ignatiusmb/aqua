@@ -1,0 +1,82 @@
+.form-wrapper form.bsh-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 300ms, box-shadow 300ms;
+  -moz-transition: -moz-transform 300ms, box-shadow 300ms;
+  transition: transform 300ms, box-shadow 300ms;
+}
+
+.form-wrapper form.bsh-form::before,
+.form-wrapper form.bsh-form::after {
+  content: '';
+  z-index: -1;
+  width: 37.5em;
+  height: 37.5em;
+  position: absolute;
+  border-radius: 40% 45% 40% 35%;
+}
+
+.form-wrapper form.bsh-form::before {
+  right: -20em;
+  bottom: -25.5em;
+  background-color: rgba(69, 105, 144, 0.15);
+  -webkit-animation: bsa-wave 6s infinite linear;
+  -moz-animation: bsa-wave 6s infinite linear;
+  animation: bsa-wave 6s infinite linear;
+}
+
+.form-wrapper form.bsh-form::after {
+  right: -16em;
+  bottom: -20em;
+  background-color: rgba(2, 128, 144, 0.2);
+  -webkit-animation: bsa-wave 7s infinite;
+  -moz-animation: bsa-wave 7s infinite;
+  animation: bsa-wave 7s infinite;
+}
+
+
+@-webkit-keyframes bsa-wave {
+  from {
+    -webkit-transform: rotate(0);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes bsa-wave {
+  from {
+    -moz-transform: rotate(0);
+  }
+
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@keyframes bsa-wave {
+  from {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

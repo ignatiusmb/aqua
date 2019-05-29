@@ -36,11 +36,17 @@ a:visited {
 }
 
 button {
+  cursor: pointer;
   padding: 0.2em 1em;
+  outline: none;
 }
 
 button.ghost {
-  background-color: transparent;
+  background-color: transparent !important;
+  border-color: white;
+}
+
+button.ghost.white {
   border-color: white;
 }
 

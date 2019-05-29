@@ -1,0 +1,143 @@
+.form-wrapper {
+  overflow: hidden;
+  min-width: 48em;
+  min-height: 32em;
+  background-color: white;
+}
+
+.form-wrapper p {
+  margin: 1em 0 1.5em;
+  letter-spacing: 0.025em;
+  font-weight: 100;
+}
+
+.form-wrapper a {
+  color: #333;
+  font-size: 0.9em;
+  text-decoration: none;
+  margin: 1em 0;
+}
+
+.form-wrapper>.form-container {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: all 0.6s ease-in-out;
+}
+
+.form-wrapper>.form-container.sign-in {
+  z-index: 2;
+  width: 50%;
+}
+
+.form-wrapper.toggled>.form-container.sign-in {
+  transform: translateX(100%);
+}
+
+.form-wrapper>.form-container.sign-up {
+  z-index: 1;
+  width: 50%;
+  opacity: 0;
+}
+
+.form-wrapper.toggled>.form-container.sign-up {
+  z-index: 5;
+  opacity: 1;
+  transform: translateX(100%);
+  animation: bsa-show 0.6s;
+}
+
+.form-wrapper>.form-container>form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3em;
+  background-color: white;
+  text-align: center;
+}
+
+@keyframes bsa-show {
+
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.form-wrapper>.form-overlay {
+  z-index: 100;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
+}
+
+.form-wrapper.toggled>.form-overlay {
+  transform: translateX(-100%);
+}
+
+.form-wrapper .overlay {
+  width: 200%;
+  height: 100%;
+  position: relative;
+  left: -100%;
+  background: #0070BB;
+  background: -webkit-linear-gradient(to right, #66D6FF, #0070BB);
+  background: linear-gradient(to right, #66D6FF, #0070BB);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #ffffff;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.form-wrapper.toggled .overlay {
+  transform: translateX(50%);
+}
+
+.form-wrapper .overlay>.overlay-panel {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2.5em;
+  text-align: center;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.form-wrapper .overlay>.overlay-panel.left {
+  transform: translateX(-20%);
+}
+
+.form-wrapper.toggled .overlay>.overlay-panel.left {
+  transform: translateX(0);
+}
+
+.form-wrapper .overlay>.overlay-panel.right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.form-wrapper.toggled .overlay>.overlay-panel.right {
+  transform: translateX(20%);
+}
+
+@media only screen and (max-width: 800px) {}
