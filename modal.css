@@ -13,12 +13,12 @@
   background: rgba(0, 0, 0, 0.3);
 }
 
-.bsh-modal>.preview {
+.bsh-modal > .preview {
   color: white;
 }
 
 /* overlay */
-.bsh-modal>.preview>.overlay {
+.bsh-modal > .preview > .overlay {
   cursor: pointer;
   opacity: 0;
   width: 100%;
@@ -30,12 +30,12 @@
   transition: var(--overlay-transition);
 }
 
-.bsh-modal:hover .preview>.overlay {
+.bsh-modal:hover .preview > .overlay {
   opacity: 1;
   transition: var(--overlay-transition);
 }
 
-.preview>.overlay>i.fa-plus {
+.preview > .overlay > i.fa-plus {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -45,11 +45,11 @@
 }
 
 /* popup */
-.bsh-modal>.popup.pop {
+.bsh-modal > .popup.pop {
   display: flex;
 }
 
-.bsh-modal>.popup {
+.bsh-modal > .popup {
   z-index: 9;
   width: 100%;
   height: 100%;
@@ -62,7 +62,7 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.popup>.content {
+.popup > .content {
   max-width: 90%;
   position: relative;
   padding: 2em 1em;
@@ -80,7 +80,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #0070BB;
+  color: #0070bb;
   text-align: center;
   text-decoration: none;
   font-size: 1.5em;

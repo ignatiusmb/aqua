@@ -1,6 +1,3 @@
-@import url('https://cdn.jsdelivr.net/gh/ignatiusmb/api/font/firacode.css');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
-
 :root {
   --bounce-distance: 10em;
   --border-curvature: 5px;
@@ -30,7 +27,7 @@ code.bsh-light {
 }
 
 /* Inline code */
-*:not(pre)>code {
+*:not(pre) > code {
   padding: 0.1em 0.25em;
   border-radius: var(--border-curvature);
   color: initial;
@@ -78,7 +75,7 @@ code.bsh-light {
   border-top-right-radius: 2px;
 }
 
-.cb-header.none~.cb-format {
+.cb-header.none ~ .cb-format {
   padding-top: 2em;
 }
 
@@ -107,7 +104,7 @@ code.bsh-light {
   border-top-right-radius: var(--border-curvature);
 }
 
-.bsh-code-box:hover>.cb-header::before {
+.bsh-code-box:hover > .cb-header::before {
   right: var(--bounce-distance);
   transition: var(--transition-time);
 }
@@ -133,7 +130,7 @@ code.bsh-light {
   content: attr(data-language);
 }
 
-.bsh-code-box:hover>.cb-header::after {
+.bsh-code-box:hover > .cb-header::after {
   right: var(--bounce-distance);
   border-bottom-right-radius: var(--border-curvature);
   border-bottom-left-radius: var(--border-curvature);
@@ -216,15 +213,15 @@ code.bsh-light {
   transition: var(--transition-time);
 }
 
-.cb-header.none~.cb-toolbar {
+.cb-header.none ~ .cb-toolbar {
   top: 0.2em;
 }
 
-.bsh-code-box:hover>.cb-toolbar {
+.bsh-code-box:hover > .cb-toolbar {
   opacity: 1;
 }
 
-.cb-toolbar>.tb-item {
+.cb-toolbar > .tb-item {
   cursor: pointer;
   width: 1.75em;
   height: 1.75em;
@@ -234,12 +231,12 @@ code.bsh-light {
   border-radius: 50%;
   margin-left: 0.2em;
   background: white;
-  color: #0070BB;
+  color: #0070bb;
   text-align: center;
   font-size: small;
 }
 
-.tb-item>.tb-tooltip {
+.tb-item > .tb-tooltip {
   position: absolute;
   bottom: 2.5em;
   display: none;
@@ -250,8 +247,8 @@ code.bsh-light {
   transition: var(--transition-time);
 }
 
-.tb-item>.tb-tooltip::after {
-  content: "";
+.tb-item > .tb-tooltip::after {
+  content: '';
   position: absolute;
   top: 95%;
   left: 50%;
@@ -261,8 +258,8 @@ code.bsh-light {
   border-color: #555 transparent transparent transparent;
 }
 
-.tb-item:hover>.tb-tooltip,
-.tb-item:focus>.tb-tooltip {
+.tb-item:hover > .tb-tooltip,
+.tb-item:focus > .tb-tooltip {
   display: block;
 }
 
