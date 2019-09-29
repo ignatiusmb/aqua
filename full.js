@@ -6,16 +6,16 @@ const addBlueSheet = (name, styling) => {
     tag = document.createElement('link')
     tag.rel = 'stylesheet'
     tag.type = 'text/css'
-    tag.href = `https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/${name}.css`
+    tag.href = `https://imbagus.com/bluesheets/${name}.css`
   } else {
     tag = document.createElement('script')
     tag.type = 'text/javascript'
-    tag.src = `https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/${name}.js`
+    tag.src = `https://imbagus.com/bluesheets/${name}.js`
   }
   return tag
 }
 window.addEventListener('DOMContentLoaded', () => {
-  frag.appendChild('core', true)
+  frag.appendChild(addBlueSheet('core', true))
   for (const name of filenames) frag.appendChild(addBlueSheet(name, true))
   document.head.appendChild(frag)
 })
