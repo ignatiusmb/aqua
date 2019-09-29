@@ -1,9 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
-@import url('https://fonts.googleapis.com/css?family=Muli:400,600');
-@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500');
-
 :root {
-  --primary-blue: #0070BB;
+  --primary-blue: #0070bb;
   --bg-primary-dark: #2d2d2d;
   --bg-faded-dark: #444444;
   --bg-faded-light: #eeeeee;
