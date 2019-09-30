@@ -20,6 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
   document.head.appendChild(frag)
 })
 window.addEventListener('load', () => {
+  frag.appendChild(addBlueSheet('prism', false))
   for (const name of filenames) frag.appendChild(addBlueSheet(name, false))
   document.body.appendChild(frag)
 })
