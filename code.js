@@ -1,7 +1,7 @@
 ;(async function() {
   const prism = document.createElement('script')
   prism.type = 'text/javascript'
-  prism.src = 'https://imbagus.com/bluesheets/prism.js'
+  prism.src = 'https://cdn.imbagus.com/ajax/prism.js'
   document.body.appendChild(prism)
 })()
 const bshCreateToolbar = () => {
