@@ -1,0 +1,55 @@
+body {
+  background-color: var(--bg-faded-light);
+}
+
+header {
+  background: #0082c8;
+  background: -webkit-linear-gradient(to right, #000046, #1cb5e0);
+  background: linear-gradient(to right, #000046, #1cb5e0);
+  color: white;
+  font-weight: 400;
+}
+
+h1 {
+  margin-bottom: 0.2em;
+  font-size: 4em;
+  font-family: 'Karla', sans-serif;
+}
+h3 {
+  font-size: 1.5em;
+  font-family: var(--bsh-mono);
+}
+
+section {
+  margin: 4em 0;
+}
+section.bsh-dark h1 {
+  color: white;
+}
+section.bsh-light h1 {
+  color: var(--cl-primary-dark);
+}
+
+main {
+  max-width: 1024px;
+  width: 100%;
+}
+main > * {
+  margin: 3em auto;
+}
+main > h1 {
+  margin: 1em 0 0;
+  font-family: var(--bsh-sans);
+  font-size: 3em;
+}
+
+.popup > .content > .header {
+  flex: 2;
+  display: flex;
+  border: none;
+  color: white;
+}
+
+.demo {
+  max-width: 90%;
+}

@@ -1,9 +1,9 @@
-window.onload = () => {
+;(async function() {
   const prism = document.createElement('script')
   prism.type = 'text/javascript'
-  prism.src = 'https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/prism.js'
-  document.getElementsByTagName('script')[0].insertAdjacentElement('beforebegin', prism)
-}
+  prism.src = 'https://cdn.imbagus.com/ajax/prism.js'
+  document.body.appendChild(prism)
+})()
 const bshCreateToolbar = () => {
   const toolbar = document.createElement('div')
   toolbar.className = 'cb-toolbar'
