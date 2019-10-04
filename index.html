@@ -2,86 +2,31 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>BlueSheets</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BlueSheets &rarr; JavaScript UI Toolkit & Templates</title>
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
-  <link rel="stylesheet" href="core.css" />
-  <link rel="stylesheet" href="code.css" />
-  <link rel="stylesheet" href="form.css" />
-  <link rel="stylesheet" href="modal.css" />
-  <style>
-    body {
-      background-color: var(--bg-primary-dark);
-    }
+  <link rel="stylesheet" href="https://cdn.imbagus.com/css/fa.v5.css">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla&display=swap">
+  <link rel="stylesheet" href="core.css">
+  <link rel="stylesheet" href="code.css">
+  <link rel="stylesheet" href="form.css">
+  <link rel="stylesheet" href="modal.css">
+  <link rel="stylesheet" href="src/style.css">
 
-    header {
-      background: #0082c8;
-      background: -webkit-linear-gradient(to right, #000046, #1cb5e0);
-      background: linear-gradient(to right, #000046, #1cb5e0);
-      color: white;
-      font-weight: 400;
-    }
+  <script defer src="code.js"></script>
+  <script defer src="form.js"></script>
+  <script defer src="modal.js"></script>
 
-    h1 {
-      margin-bottom: 0.2em;
-      font-size: 5em;
-      font-family: var(--bsh-sans);
-    }
-
-    h3 {
-      font-size: 1.25em;
-      font-family: var(--bsh-mono);
-    }
-
-    section {
-      margin: 4em 0;
-    }
-
-    section.bsh-dark h1 {
-      color: white;
-    }
-
-    section.bsh-light h1 {
-      color: var(--cl-primary-dark);
-    }
-
-    main {
-      max-width: 1024px;
-      width: 100%;
-    }
-
-    main>* {
-      margin: 3em auto;
-    }
-
-    main>h1 {
-      margin: 1em 0 0;
-      font-family: var(--bsh-sans);
-      font-size: 3em;
-    }
-
-    .popup>.content>.header {
-      flex: 2;
-      display: flex;
-      border: none;
-      color: white;
-    }
-
-    .demo {
-      max-width: 90%;
-    }
-  </style>
+  <script defer src="https://cdn.imbagus.com/complete/footer.js"></script>
 </head>
 
 <body>
   <header class="bsh">
     <h1>BlueSheets</h1>
-    <h3 class="bsh-row">
-      Open source UI toolkit&nbsp;&mdash;&nbsp;Version 1.1.0
-    </h3>
+    <h3>Version 0.19.10</h3>
   </header>
   <section id="code">
     <main>
@@ -89,10 +34,10 @@
       <div class="bsh-code-box">
         <div class="cb-header" data-language="html"></div>
         <pre class="cb-format">
-&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/code.min.css" />
+&lt;link rel="stylesheet" href="https://imbagus.com/bluesheets/code.css" />
 
 &lt;!-- place before the closing body tag -->
-&lt;script src="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/code.min.js">&lt;/script></pre>
+&lt;script src="https://imbagus.com/bluesheets/code.js">&lt;/script></pre>
       </div>
       <div class="bsh-code-box">
         <div class="cb-header" data-language="html">Template</div>
@@ -157,10 +102,10 @@ TEMPLATES = [
       <div class="bsh-code-box">
         <div class="cb-header" data-language="html"></div>
         <pre class="cb-format">
-&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/form.min.css" />
+&lt;link rel="stylesheet" href="https://imbagus.com/bluesheets/form.css" />
 
 &lt;!-- place before the closing body tag -->
-&lt;script src="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/form.min.js">&lt;/script></pre>
+&lt;script src="https://imbagus.com/bluesheets/form.js">&lt;/script></pre>
       </div>
       <div class="bsh-code-box">
         <div class="cb-header" data-language="html">Template</div>
@@ -201,10 +146,10 @@ TEMPLATES = [
       <div class="bsh-code-box">
         <div class="cb-header" data-language="html"></div>
         <pre class="cb-format">
-&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/modal.min.css" />
+&lt;link rel="stylesheet" href="https://imbagus.com/bluesheets/modal.css" />
 
 &lt;!-- place before the closing body tag -->
-&lt;script src="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/modal.min.js">&lt;/script></pre>
+&lt;script src="https://imbagus.com/bluesheets/modal.js">&lt;/script></pre>
       </div>
       <div class="bsh-code-box">
         <div class="cb-header" data-language="html">Template</div>
@@ -259,6 +204,8 @@ TEMPLATES = [
     </main>
   </section>
 
+  <footer class="gh-cdn"></footer>
+
   <script>
     const section = document.getElementsByTagName('section')
     for (let i = 0; i < section.length; i++) {
@@ -268,9 +215,6 @@ TEMPLATES = [
       }
     }
   </script>
-  <script src="code.js"></script>
-  <script src="form.js"></script>
-  <script src="modal.js"></script>
 </body>
 
 </html>
