@@ -32,19 +32,42 @@ html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
 }
+
 body {
-  margin: 0;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
 }
 
 main {
   display: block;
 }
 
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  font-weight: normal;
+}
+
 pre,
 code,
 kbd,
 samp {
+  margin: 0;
   font-family: var(--bss-font-code);
+  font-weight: lighter;
   font-size: 1em;
 }
 
@@ -54,17 +77,9 @@ hr {
   overflow: visible;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  font-weight: 400;
-}
-h1 {
-  font-size: 2em;
+ul[class],
+ol[class] {
+  padding: 0;
 }
 
 a,
@@ -136,13 +151,15 @@ input {
   margin: 0.5em 0;
   border: none;
   border-radius: 0.3em;
-  background-color: var(--bg-faded-light);
+  background-color: var(--bss-bg-light);
 }
 textarea {
   overflow: auto;
 }
 
 img {
+  max-width: 100%;
+  display: block;
   border-style: none;
 }
 
