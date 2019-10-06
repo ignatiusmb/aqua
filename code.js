@@ -59,34 +59,33 @@ const bssCreateToolbar = el => {
   return toolbar
 }
 
-for (const codeBox of document.querySelectorAll('.bss-code-box')) {
-  for (const head of codeBox.querySelectorAll('.bss-code-header')) {
-    if (!head.innerHTML.length) head.classList.add('none')
-    const dataLang = head.dataset.language
-    // pre tag boxes
-    const pres = codeBox.querySelectorAll('pre')
-    if (dataLang) for (const pre of pres) pre.classList.add(`language-${dataLang}`)
-    else for (const pre of pres) pre.classList.add('language-none')
+for (const bssCode of document.querySelectorAll('pre.bss-code')) {
+  const language = bssCode.dataset.language
+  const title = bssCode.dataset.title
+  let lineNumber = parseInt(bssCode.dataset.lineStart)
+  const wrapper = document.createElement('div')
+  const header = document.createElement('div')
+  const pre = document.createElement('pre')
+  wrapper.classList.add('bss-code-box')
+  header.classList.add('bss-code-header')
+  header.dataset.language = language
+  pre.className = bssCode.className
 
-    const frag = document.createDocumentFragment()
-    for (const pre of pres) {
-      for (const line of pre.textContent.split('\n')) {
-        // wrap in code tag
-        const codeLine = document.createElement('code')
-        codeLine.textContent = `${line}\n`
-        frag.appendChild(codeLine)
-      }
-      while (pre.lastChild) pre.removeChild(pre.firstChild)
-      pre.appendChild(frag)
+  if (title) header.textContent = title
+  else header.classList.add('empty')
+  if (language) pre.classList.add(`language-${language}`)
+  else pre.classList.add('language-none')
 
-      // data lines
-      let dataLine = pre.dataset.line
-      for (const code of pre.querySelectorAll('code')) {
-        if (!dataLine) dataLine = 1
-        code.dataset.line = dataLine++
-      }
-
-      head.appendChild(bssCreateToolbar(pre))
-    }
+  if (!lineNumber) lineNumber = 1
+  for (const line of bssCode.textContent.split('\n')) {
+    const code = document.createElement('code')
+    code.dataset.line = lineNumber++
+    code.textContent = `${line}\n`
+    pre.appendChild(code)
   }
+  while (!pre.lastChild.textContent.trim().length) pre.removeChild(pre.lastChild)
+  header.appendChild(bssCreateToolbar(pre))
+  wrapper.appendChild(header)
+  wrapper.appendChild(pre)
+  bssCode.replaceWith(wrapper)
 }
