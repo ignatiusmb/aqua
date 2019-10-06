@@ -60,36 +60,33 @@ const bssCreateToolbar = el => {
 }
 
 for (const codeBox of document.querySelectorAll('.bss-code-box')) {
-  const header = codeBox.querySelectorAll('.bss-code-header')
-  if (header.length) {
-    for (const head of header) {
-      if (!head.innerHTML.length) head.classList.add('none')
-      const dataLang = head.dataset.language
-      // pre tag boxes
-      const pres = head.parentElement.querySelectorAll('pre')
-      if (dataLang) for (const pre of pres) pre.classList.add(`language-${dataLang}`)
-      else for (const pre of pres) pre.classList.add('language-none')
+  for (const head of codeBox.querySelectorAll('.bss-code-header')) {
+    if (!head.innerHTML.length) head.classList.add('none')
+    const dataLang = head.dataset.language
+    // pre tag boxes
+    const pres = codeBox.querySelectorAll('pre')
+    if (dataLang) for (const pre of pres) pre.classList.add(`language-${dataLang}`)
+    else for (const pre of pres) pre.classList.add('language-none')
 
-      const frag = document.createDocumentFragment()
-      for (const pre of pres) {
-        for (const line of pre.textContent.split('\n')) {
-          // wrap in code tag
-          const codeLine = document.createElement('code')
-          codeLine.textContent = `${line}\n`
-          frag.appendChild(codeLine)
-        }
-        while (pre.lastChild) pre.removeChild(pre.firstChild)
-        pre.appendChild(frag)
-
-        // data lines
-        let dataLine = pre.dataset.line
-        for (const code of pre.querySelectorAll('code')) {
-          if (!dataLine) dataLine = 1
-          code.dataset.line = dataLine++
-        }
-
-        head.appendChild(bssCreateToolbar(pre))
+    const frag = document.createDocumentFragment()
+    for (const pre of pres) {
+      for (const line of pre.textContent.split('\n')) {
+        // wrap in code tag
+        const codeLine = document.createElement('code')
+        codeLine.textContent = `${line}\n`
+        frag.appendChild(codeLine)
       }
+      while (pre.lastChild) pre.removeChild(pre.firstChild)
+      pre.appendChild(frag)
+
+      // data lines
+      let dataLine = pre.dataset.line
+      for (const code of pre.querySelectorAll('code')) {
+        if (!dataLine) dataLine = 1
+        code.dataset.line = dataLine++
+      }
+
+      head.appendChild(bssCreateToolbar(pre))
     }
   }
 }
