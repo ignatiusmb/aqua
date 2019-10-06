@@ -1,4 +1,4 @@
-.form-wrapper form.bsh-form {
+.form-wrapper form.bss-form {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -14,8 +14,8 @@
   transition: transform 300ms, box-shadow 300ms;
 }
 
-.form-wrapper form.bsh-form::before,
-.form-wrapper form.bsh-form::after {
+.form-wrapper form.bss-form::before,
+.form-wrapper form.bss-form::after {
   content: '';
   z-index: -1;
   width: 37.5em;
@@ -24,7 +24,7 @@
   border-radius: 40% 45% 40% 35%;
 }
 
-.form-wrapper form.bsh-form::before {
+.form-wrapper form.bss-form::before {
   right: -20em;
   bottom: -25.5em;
   background-color: rgba(69, 105, 144, 0.15);
@@ -33,7 +33,7 @@
   animation: bsa-wave 6s infinite linear;
 }
 
-.form-wrapper form.bsh-form::after {
+.form-wrapper form.bss-form::after {
   right: -16em;
   bottom: -20em;
   background-color: rgba(2, 128, 144, 0.2);

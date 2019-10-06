@@ -1,4 +1,4 @@
-for (const form of document.getElementsByClassName('bsh-form')) {
+for (const form of document.getElementsByClassName('bss-form')) {
   if (form.tagName === 'FORM') {
     for (const input of form.getElementsByTagName('input')) {
       const label = document.createElement('label')

@@ -1,4 +1,4 @@
-for (const modal of document.getElementsByClassName('bsh-modal')) {
+for (const modal of document.getElementsByClassName('bss-modal')) {
   const popup = modal.getElementsByClassName('popup')[0]
   const popContent = popup.getElementsByClassName('content')[0]
   popContent.classList.add('bsa-zoom')

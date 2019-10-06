@@ -13,82 +13,82 @@ var a {
   color: white;
 }
 
-.bsh-info-box {
+.bss-info-box {
   padding: 1rem 1.5rem;
   margin: 2rem 0;
   border-radius: 5px;
   border-left: 5px solid #757575;
 }
 
-li>.bsh-info-box {
+li>.bss-info-box {
   margin: 0.7rem 1rem 1rem 0;
 }
 
-.bsh-info-box h4 {
+.bss-info-box h4 {
   margin-bottom: 0.3rem;
 }
 
-.bsh-info-box p,
-.bsh-info-box li {
+.bss-info-box p,
+.bss-info-box li {
   margin-bottom: 0;
 }
 
-.bsh-info-box#objective {
+.bss-info-box#objective {
   border-left-color: rgba(40, 10, 100, 0.4);
   background: rgba(40, 10, 100, 0.1);
   color: rgba(40, 10, 100, 0.7);
 }
 
-.bsh-info-box#objective var,
-.bsh-info-box#objective code {
+.bss-info-box#objective var,
+.bss-info-box#objective code {
   background: rgba(40, 10, 100, 1);
   color: white;
 }
 
-.bsh-info-box.warning {
+.bss-info-box.warning {
   border-left-color: rgba(240, 100, 100, 0.4);
   background: rgba(240, 100, 100, 0.1);
   color: rgba(240, 100, 100, 1);
 }
 
-.bsh-info-box.warning var,
-.bsh-info-box.warning code {
+.bss-info-box.warning var,
+.bss-info-box.warning code {
   background: rgba(240, 100, 100, 1);
   color: white;
 }
 
-.bsh-info-box.tip {
+.bss-info-box.tip {
   border-left-color: rgba(150, 200, 60, 0.4);
   background: rgba(150, 200, 60, 0.1);
   color: rgba(150, 200, 60, 1);
 }
 
-.bsh-info-box.tip var,
-.bsh-info-box.tip code {
+.bss-info-box.tip var,
+.bss-info-box.tip code {
   background: rgba(150, 200, 60, 1);
   color: white;
 }
 
-.bsh-info-box.important {
+.bss-info-box.important {
   border-left-color: rgb(226, 177, 0, 1);
   background: rgba(254, 239, 179, 0.5);
   color: rgb(226, 177, 0, 1);
 }
 
-.bsh-info-box.important var,
-.bsh-info-box.important code {
+.bss-info-box.important var,
+.bss-info-box.important code {
   background: rgb(226, 177, 0, 1);
   color: white;
 }
 
-.bsh-info-box.note {
+.bss-info-box.note {
   border-left-color: rgba(25, 160, 215, 0.4);
   background: rgba(25, 160, 215, 0.1);
   color: rgba(25, 160, 215, 1);
 }
 
-.bsh-info-box.note var,
-.bsh-info-box.note code {
+.bss-info-box.note var,
+.bss-info-box.note code {
   background: rgba(25, 160, 215, 1);
   color: white;
 }
