@@ -13,12 +13,12 @@
   background: rgba(0, 0, 0, 0.3);
 }
 
-.bss-modal > .preview {
+.bss-modal > .bss-modal-preview {
   color: white;
 }
 
 /* overlay */
-.bss-modal > .preview > .overlay {
+.bss-modal > .bss-modal-preview > .overlay {
   cursor: pointer;
   opacity: 0;
   width: 100%;
@@ -30,12 +30,12 @@
   transition: var(--bss-overlay-transition);
 }
 
-.bss-modal:hover .preview > .overlay {
+.bss-modal:hover .bss-modal-preview > .overlay {
   opacity: 1;
   transition: var(--bss-overlay-transition);
 }
 
-.preview > .overlay > i.fa-plus {
+.bss-modal-preview > .overlay > i.fa-plus {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -45,11 +45,11 @@
 }
 
 /* popup */
-.bss-modal > .popup.pop {
+.bss-modal > .bss-modal-popup.pop {
   display: flex;
 }
 
-.bss-modal > .popup {
+.bss-modal > .bss-modal-popup {
   z-index: 9;
   width: 100%;
   height: 100%;
@@ -62,7 +62,7 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.popup > .content {
+.bss-modal-popup > .content {
   max-width: 90%;
   position: relative;
   padding: 2em 1em;
@@ -72,7 +72,7 @@
   background-color: var(--bss-bg-dark);
 }
 
-.popup .close {
+.bss-modal-popup .close {
   cursor: pointer;
   position: absolute;
   top: 0;

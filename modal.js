@@ -1,6 +1,6 @@
-for (const modal of document.getElementsByClassName('bss-modal')) {
-  const popup = modal.getElementsByClassName('popup')[0]
-  const popContent = popup.getElementsByClassName('content')[0]
+for (const modal of document.querySelectorAll('.bss-modal')) {
+  const popup = modal.querySelector('.bss-modal-popup')
+  const popContent = popup.querySelector('.content')
   popContent.classList.add('bsa-zoom')
 
   const close = document.createElement('a')
@@ -11,8 +11,8 @@ for (const modal of document.getElementsByClassName('bss-modal')) {
   close.addEventListener('click', popup.classList.remove('pop'))
   popContent.insertAdjacentElement('afterbegin', close)
 
-  for (const preview of modal.getElementsByClassName('preview')) {
-    for (const overlay of preview.getElementsByClassName('overlay')) {
+  for (const preview of modal.querySelectorAll('.bss-modal-preview')) {
+    for (const overlay of preview.querySelectorAll('.overlay')) {
       const icon = document.createElement('i')
       icon.className = 'fas fa-plus'
       overlay.appendChild(icon)
@@ -23,7 +23,7 @@ for (const modal of document.getElementsByClassName('bss-modal')) {
     })
   }
 
-  for (const close of popup.getElementsByClassName('close')) {
+  for (const close of popup.querySelectorAll('.close')) {
     close.addEventListener('click', () => {
       popup.classList.remove('pop')
       document.body.style.overflow = 'unset'
