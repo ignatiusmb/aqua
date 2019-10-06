@@ -2,30 +2,28 @@
   const prism = document.createElement('script')
   prism.type = 'text/javascript'
   prism.src = 'https://cdn.imbagus.com/ajax/prism.js'
-  document.body.appendChild(prism)
+  document.head.appendChild(prism)
 })()
-const bshCreateToolbar = () => {
+const bssCreateToolbar = el => {
   const toolbar = document.createElement('div')
-  toolbar.className = 'cb-toolbar'
-
+  toolbar.className = 'bss-code-toolbar'
   const createTool = (iconClass, text) => {
-    let tool = document.createElement('a')
-    let icon = document.createElement('i')
-    let tooltip = document.createElement('span')
-    tool.className = `tb-item`
+    const tool = document.createElement('a')
+    const icon = document.createElement('i')
+    const tooltip = document.createElement('span')
+    tool.className = `bss-ctb-item`
     icon.className = iconClass
-    tooltip.className = 'tb-tooltip'
+    tooltip.className = 'bss-ctb-tooltip'
     tooltip.innerText = text
     tool.appendChild(icon)
     tool.appendChild(tooltip)
-    return { tool: tool, tooltip: tooltip }
+    return { tool, tooltip }
   }
 
-  const copyButton = createTool('far fa-copy', 'Copy')
-  copyButton.tool.addEventListener('click', e => {
-    const currentBox = e.currentTarget.parentElement.parentElement
-    const codeLines = currentBox.getElementsByTagName('code')
-
+  // Copy Code Button
+  const copy = createTool('far fa-copy', 'Copy')
+  copy.tool.addEventListener('click', () => {
+    const codeLines = el.querySelectorAll('code')
     const copyArea = document.createElement('textarea')
     copyArea.className = 'ghost-area'
     for (const code of codeLines) copyArea.value += code.innerText
@@ -34,14 +32,14 @@ const bshCreateToolbar = () => {
     copyArea.select()
     try {
       if (document.execCommand('copy')) {
-        copyButton.tooltip.innerText = 'Copied!'
+        copy.tooltip.innerText = 'Copied!'
         setTimeout(() => {
-          copyButton.tooltip.innerText = 'Copy'
+          copy.tooltip.innerText = 'Copy'
         }, 5000)
       } else {
-        copyButton.tooltip.innerText = 'Copy Failed'
+        copy.tooltip.innerText = 'Copy Failed'
         setTimeout(() => {
-          copyButton.tooltip.innerText = 'Copy'
+          copy.tooltip.innerText = 'Copy'
         }, 5000)
       }
     } catch (err) {
@@ -49,31 +47,28 @@ const bshCreateToolbar = () => {
     }
     document.body.removeChild(copyArea)
   })
-  toolbar.appendChild(copyButton.tool)
+  toolbar.appendChild(copy.tool)
 
-  const toggleNumbering = createTool('fas fa-list-ol', 'Toggle Numbering')
-  toggleNumbering.tool.addEventListener('click', e => {
-    const clickedTool = e.currentTarget
-    const currentBox = clickedTool.parentElement.parentElement
-    currentBox.classList.toggle('numbered')
+  // Toggle Numbering Button
+  const numbering = createTool('fas fa-list-ol', 'Toggle Numbering')
+  numbering.tool.addEventListener('click', () => {
+    el.classList.toggle('numbered')
   })
-  toolbar.appendChild(toggleNumbering.tool)
+  toolbar.appendChild(numbering.tool)
+
   return toolbar
 }
 
-for (const codeBox of document.getElementsByClassName('bsh-code-box')) {
-  const header = codeBox.getElementsByClassName('cb-header')
-  if (header.length > 0) {
+for (const codeBox of document.querySelectorAll('.bss-code-box')) {
+  const header = codeBox.querySelectorAll('.bss-code-header')
+  if (header.length) {
     for (const head of header) {
-      if (head.innerHTML.length === 0) head.classList.add('none')
+      if (!head.innerHTML.length) head.classList.add('none')
       const dataLang = head.dataset.language
       // pre tag boxes
-      const pres = head.parentElement.getElementsByTagName('pre')
-      if (dataLang !== undefined && dataLang !== '') {
-        for (const pre of pres) pre.classList.add(`language-${dataLang}`)
-      } else {
-        for (const pre of pres) pre.classList.add('language-none')
-      }
+      const pres = head.parentElement.querySelectorAll('pre')
+      if (dataLang) for (const pre of pres) pre.classList.add(`language-${dataLang}`)
+      else for (const pre of pres) pre.classList.add('language-none')
 
       const frag = document.createDocumentFragment()
       for (const pre of pres) {
@@ -88,12 +83,12 @@ for (const codeBox of document.getElementsByClassName('bsh-code-box')) {
 
         // data lines
         let dataLine = pre.dataset.line
-        for (const code of pre.getElementsByTagName('code')) {
-          if (dataLine === undefined) dataLine = 1
+        for (const code of pre.querySelectorAll('code')) {
+          if (!dataLine) dataLine = 1
           code.dataset.line = dataLine++
         }
 
-        pre.insertAdjacentElement('afterend', bshCreateToolbar())
+        head.appendChild(bssCreateToolbar(pre))
       }
     }
   }
