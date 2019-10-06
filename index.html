@@ -9,7 +9,10 @@
 
   <link rel="stylesheet" href="https://cdn.imbagus.com/css/fa.v5.css">
   <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap">
   <link rel="stylesheet" href="core.css">
   <link rel="stylesheet" href="code.css">
   <link rel="stylesheet" href="form.css">
@@ -21,30 +24,30 @@
   <script defer src="modal.js"></script>
 
   <script defer src="https://cdn.imbagus.com/complete/footer.js"></script>
+  <script defer src="src/index.js"></script>
 </head>
 
 <body>
-  <header class="bsh">
+  <header>
     <h1>BlueSheets</h1>
     <h3>Version 0.19.10</h3>
   </header>
   <section id="code">
     <main>
-      <h1>Code BlueSheet</h1>
-      <div class="bsh-code-box">
-        <div class="cb-header" data-language="html"></div>
-        <pre class="cb-format">
-&lt;link rel="stylesheet" href="https://imbagus.com/bluesheets/code.css" />
-
-&lt;!-- place before the closing body tag -->
-&lt;script src="https://imbagus.com/bluesheets/code.js">&lt;/script></pre>
-      </div>
-      <div class="bsh-code-box">
-        <div class="cb-header" data-language="html">Template</div>
-        <pre class="cb-format">
-&lt;div class="bsh-code-box">
-  &lt;div class="cb-header" data-language="html">&lt;/div>
-  &lt;pre class="cb-format">
+      <div class="card">
+        <h1>code.css</h1>
+        <div class="bss-code-box">
+          <div class="bss-code-header" data-language="html">&lt;head></div>
+          <pre class="bss-code-format">
+&lt;link rel="stylesheet" href="https://imbagus.com/bluesheets/code.css">
+&lt;script defer src="https://imbagus.com/bluesheets/code.js">&lt;/script></pre>
+        </div>
+        <div class="bss-code-box">
+          <div class="bss-code-header" data-language="html">&lt;template /></div>
+          <pre class="bss-code-format">
+&lt;div class="bss-code-box">
+  &lt;div class="bss-code-header" data-language="html">&lt;/div>
+  &lt;pre class="bss-code-format">
 &lt;!-- place your code here -->
 
 &lt;!-- specifically for html file with link and script tag -->
@@ -54,11 +57,13 @@
 
 &lt;!-- pre ends after your last code to avoid new line -->&lt;/pre>
 &lt;/div></pre>
+        </div>
       </div>
-      <h1>Code Demo</h1>
-      <div class="bsh-code-box">
-        <div class="cb-header" data-language="python">Example</div>
-        <pre class="cb-format">
+      <div class="card">
+        <h1>Code Demo</h1>
+        <div class="bss-code-box">
+          <div class="bss-code-header" data-language="python">Example</div>
+          <pre class="bss-code-format">
 import os
 import dj_database_url
 
@@ -66,7 +71,7 @@ import dj_database_url
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PRODUCTION = os.environ.get('DATABASE_URL') is not None
 
-ALLOWED_HOSTS = ['ignatiusmb', 'bluesheets']
+ALLOWED_HOSTS = ['ignatiusmb', 'bluesheets', 'imbagus']
 
 INSTALLED_APPS = [
     ...
@@ -75,7 +80,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     ...
-   'ignatiusmb.github.io.bluesheets',
+   'bluesheets.imbagus',
 ]
 
 TEMPLATES = [
@@ -93,70 +98,72 @@ TEMPLATES = [
         },
     },
 ]</pre>
+        </div>
       </div>
     </main>
   </section>
   <section id="form">
     <main>
-      <h1>Form BlueSheet</h1>
-      <div class="bsh-code-box">
-        <div class="cb-header" data-language="html"></div>
-        <pre class="cb-format">
-&lt;link rel="stylesheet" href="https://imbagus.com/bluesheets/form.css" />
-
-&lt;!-- place before the closing body tag -->
-&lt;script src="https://imbagus.com/bluesheets/form.js">&lt;/script></pre>
-      </div>
-      <div class="bsh-code-box">
-        <div class="cb-header" data-language="html">Template</div>
-        <pre class="cb-format">
-&lt;form class="bsh-form">
+      <div class="card">
+        <h1>form.css</h1>
+        <div class="bss-code-box">
+          <div class="bss-code-header" data-language="html">&lt;head></div>
+          <pre class="bss-code-format">
+&lt;link rel="stylesheet" href="https://imbagus.com/bluesheets/form.css">
+&lt;script defer src="https://imbagus.com/bluesheets/form.js">&lt;/script></pre>
+        </div>
+        <div class="bss-code-box">
+          <div class="bss-code-header" data-language="html">&lt;template /></div>
+          <pre class="bss-code-format">
+&lt;form class="bss-form">
   &lt;input type="email" placeholder="Email" />
   &lt;input type="password" placeholder="Password" />
   &lt;button type="submit">Login&lt;/button>
 &lt;/form></pre>
-      </div>
-      <div class="bsh-code-box">
-        <div class="cb-header" data-language="html">Wrapped Template</div>
-        <pre class="cb-format">
+        </div>
+        <div class="bss-code-box">
+          <div class="bss-code-header" data-language="html">Wrapped &lt;template /></div>
+          <pre class="bss-code-format">
 &lt;div class="form-wrapper">
   &lt;template />
 &lt;/div></pre>
+        </div>
       </div>
-      <h1>Form Demo</h1>
-      <div class="bsh-row demo">
-        <form action="#" class="bsh-form">
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <button type="submit">Login</button>
-        </form>
-        <div class="form-wrapper">
-          <form action="#" class="bsh-form">
+      <div class="card">
+        <h1>Form Demo</h1>
+        <div class="demo">
+          <form action="#" class="bss-form">
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
             <button type="submit">Login</button>
           </form>
+          <div class="form-wrapper">
+            <form action="#" class="bss-form">
+              <input type="email" placeholder="Email" />
+              <input type="password" placeholder="Password" />
+              <button type="submit">Login</button>
+            </form>
+          </div>
         </div>
       </div>
     </main>
   </section>
   <section id="modal">
     <main>
-      <h1>Modal BlueSheet</h1>
-      <div class="bsh-code-box">
-        <div class="cb-header" data-language="html"></div>
-        <pre class="cb-format">
-&lt;link rel="stylesheet" href="https://imbagus.com/bluesheets/modal.css" />
-
-&lt;!-- place before the closing body tag -->
-&lt;script src="https://imbagus.com/bluesheets/modal.js">&lt;/script></pre>
-      </div>
-      <div class="bsh-code-box">
-        <div class="cb-header" data-language="html">Template</div>
-        <pre class="cb-format">
-&lt;div class="bsh-modal">
+      <div class="card">
+        <h1>modal.css</h1>
+        <div class="bss-code-box">
+          <div class="bss-code-header" data-language="html">&lt;head></div>
+          <pre class="bss-code-format">
+&lt;link rel="stylesheet" href="https://imbagus.com/bluesheets/modal.css">
+&lt;script defer src="https://imbagus.com/bluesheets/modal.js">&lt;/script></pre>
+        </div>
+        <div class="bss-code-box">
+          <div class="bss-code-header" data-language="html">&lt;template /></div>
+          <pre class="bss-code-format">
+&lt;div class="bss-modal">
   &lt;div class="preview">
-    &lt;div class="bsh">
+    &lt;div >
       &lt;!-- your content preview here -->
     &lt;div>
     &lt;div class="overlay">
@@ -164,39 +171,42 @@ TEMPLATES = [
     &lt;div>
   &lt;div>
   &lt;div class="popup">
-    &lt;div class="content bsh">
+    &lt;div class="content bss">
       &lt;!-- your popup content here -->
     &lt;div>
   &lt;div>
 &lt;div></pre>
-      </div>
-      <h1>Modal Demo</h1>
-      <div class="bsh-row">
-        <div class="bsh-modal">
-          <div class="preview">
-            <div class="bsh" style="text-align: center">
-              <h3 style="margin-bottom: 1em">Modal Preview</h3>
-              <p>Lorem ipsum dolor sit, amet</p>
-            </div>
-            <div class="overlay"></div>
-          </div>
-          <div class="popup">
-            <div class="bsh content">
-              <h1>popup content</h1>
-            </div>
-          </div>
         </div>
-        <div class="bsh-modal">
-          <div class="preview">
-            <div class="bsh" style="text-align: center">
-              <h3 style="margin-bottom: 1em">Modal Preview</h3>
-              <p>Lorem ipsum dolor sit, amet</p>
+      </div>
+      <div class="card">
+        <h1>Modal Demo</h1>
+        <div>
+          <div class="bss-modal">
+            <div class="preview">
+              <div style="text-align: center">
+                <h3 style="margin-bottom: 1em">Modal Preview</h3>
+                <p>Lorem ipsum dolor sit, amet</p>
+              </div>
+              <div class="overlay"></div>
             </div>
-            <div class="overlay"></div>
+            <div class="popup">
+              <div class="bss content">
+                <h1>popup content</h1>
+              </div>
+            </div>
           </div>
-          <div class="popup">
-            <div class="bsh content">
-              <h1>popup content</h1>
+          <div class="bss-modal">
+            <div class="preview">
+              <div style="text-align: center">
+                <h3 style="margin-bottom: 1em">Modal Preview</h3>
+                <p>Lorem ipsum dolor sit, amet</p>
+              </div>
+              <div class="overlay"></div>
+            </div>
+            <div class="popup">
+              <div class="bss content">
+                <h1>popup content</h1>
+              </div>
             </div>
           </div>
         </div>
@@ -205,16 +215,6 @@ TEMPLATES = [
   </section>
 
   <footer class="gh-cdn"></footer>
-
-  <script>
-    const section = document.getElementsByTagName('section')
-    for (let i = 0; i < section.length; i++) {
-      section[i].className = i % 2 === 0 ? 'bsh-light' : 'bsh-dark'
-      for (const title of section[i].getElementsByTagName('h1')) {
-        title.className = 'bsh'
-      }
-    }
-  </script>
 </body>
 
 </html>
