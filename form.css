@@ -7,6 +7,7 @@
   position: relative;
   border-radius: 0.6em;
   box-shadow: 0 0.9em 1.75em rgba(0, 0, 0, 0.25), 0 0.6em 0.6em rgba(0, 0, 0, 0.22);
+  margin: 0 auto;
   background-color: white;
 }
 
@@ -22,10 +23,10 @@ form.bss-form h1 {
 form.bss-form button,
 .form-wrapper button {
   padding: 0.7em 3em;
-  border: 1px solid #0070BB;
+  border: 1px solid #0070bb;
   border-radius: 1.5em;
   margin-top: 1em;
-  background-color: #0070BB;
+  background-color: #0070bb;
   color: white;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -53,18 +54,18 @@ form.bss-form label span {
   pointer-events: none;
   position: absolute;
   left: 1em;
-  top: 1em;
+  top: -10%;
   transition: 200ms;
   transition-timing-function: ease;
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
   opacity: 0.5;
 }
 
-form.bss-form label input:focus+span,
-form.bss-form label input:not(:placeholder-shown)+span {
+form.bss-form label input:focus + span,
+form.bss-form label input:not(:placeholder-shown) + span {
   position: absolute;
-  top: 0.55em;
-  left: 0.35em;
+  top: -80%;
+  left: 0.5em;
   font-size: 0.77em;
   opacity: 0.8;
 }
