@@ -26,6 +26,9 @@ code {
   width: 100%;
   position: relative;
 }
+.bss-code-box {
+  margin-top: 1em;
+}
 
 /* Code Box Header */
 .bss-code-header {
@@ -113,17 +116,22 @@ code {
 
 /* Code Block */
 .bss-code {
+  overflow-x: auto;
+  overflow-y: hidden;
   padding: 4em 1.5em 1em;
   border-radius: var(--bss-border-curve);
   background: var(--bss-bg-dark);
-  overflow-x: auto;
-  overflow-y: hidden;
+  color: var(--bss-cl-light);
+  line-height: 1.4;
+  font-size: var(--bss-code-size);
 }
-
+:not(.bss-code-box) > .bss-code {
+  padding: 1em;
+  margin: 1em 0;
+}
 .bss-code.numbered {
   padding-left: 0.6em;
 }
-
 .bss-code.numbered code::before {
   content: attr(data-line);
   max-width: 2em;
