@@ -68,7 +68,7 @@ for (const bssCode of document.querySelectorAll('pre.bss-code')) {
   const pre = document.createElement('pre')
   wrapper.classList.add('bss-code-box')
   header.classList.add('bss-code-header')
-  header.dataset.language = language
+  header.dataset.language = language ? language : ''
   pre.className = bssCode.className
 
   if (title) header.textContent = title
