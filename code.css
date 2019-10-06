@@ -142,25 +142,28 @@ code {
   background: #363377;
   color: #a2a0d6;
 }
-
 .bss-code-header[data-language='html']::before,
 .bss-code-header[data-language='html']::after {
   background: #f26428;
   color: #feefe8;
 }
-
+.bss-code-header[data-language='javascript']::before,
+.bss-code-header[data-language='javascript']::after,
+.bss-code-header[data-language='js']::before,
+.bss-code-header[data-language='js']::after {
+  background: #f0db4f;
+  color: #323330;
+}
 .bss-code-header[data-language='python']::before,
 .bss-code-header[data-language='python']::after {
   background: #ddd;
   color: #2d2d2d;
 }
-
 .bss-code-header[data-language='shell']::before,
 .bss-code-header[data-language='shell']::after {
   background: #f3e2bb;
   color: #c09022;
 }
-
 .bss-code-header[data-language='terminal']::before,
 .bss-code-header[data-language='terminal']::after {
   background: #ddd;
