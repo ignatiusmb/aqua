@@ -81,13 +81,17 @@ main {
   margin-top: 1em;
 }
 
-.popup > .content > .header {
-  flex: 2;
-  display: flex;
-  border: none;
-  color: white;
+.bss-modal .bss-modal-preview {
+  height: 100%;
+  text-align: center;
 }
-
-.demo {
-  max-width: 90%;
+.bss-modal .bss-modal-preview div:first-child {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.bss-modal .bss-modal-preview h3 {
+  margin-bottom: 1em;
 }
