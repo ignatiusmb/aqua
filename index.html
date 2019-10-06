@@ -32,38 +32,30 @@
     <h1>BlueSheets</h1>
     <h3>Version 0.19.10</h3>
   </header>
+
   <section id="code">
     <main>
       <div class="card">
         <h1>code.css</h1>
-        <div class="bss-code-box">
-          <div class="bss-code-header" data-language="html">&lt;head></div>
-          <pre class="bss-code-format">
+
+        <pre class="bss-code" data-language="html" data-title="<head>">
 &lt;link rel="stylesheet" href="https://imbagus.com/bluesheets/code.css">
-&lt;script defer src="https://imbagus.com/bluesheets/code.js">&lt;/script></pre>
-        </div>
-        <div class="bss-code-box">
-          <div class="bss-code-header" data-language="html">&lt;template /></div>
-          <pre class="bss-code-format">
-&lt;div class="bss-code-box">
-  &lt;div class="bss-code-header" data-language="html">&lt;/div>
-  &lt;pre class="bss-code-format">
+&lt;script defer src="https://imbagus.com/bluesheets/code.js">&lt;/script>
+        </pre>
+
+        <pre class="bss-code" data-language="html" data-title="<template />">
+&lt;pre class="bss-code" data-language="html" data-title="">
 &lt;!-- place your code here -->
 
-&lt;!-- specifically for html file with link and script tag -->
-&lt;!-- escape the first opening tag with &amp;lt; -->
-&amp;lt;link href="style.css">&amp;lt;/link>
-&amp;lt;script src="index.js">&amp;lt;/script>
-
-&lt;!-- pre ends after your last code to avoid new line -->&lt;/pre>
-&lt;/div></pre>
-        </div>
+&lt;!-- escape html code with &amp;lt; -->
+&amp;lt;script>&amp;lt;/script>
+&lt;/pre>
+        </pre>
       </div>
+
       <div class="card">
         <h1>Code Demo</h1>
-        <div class="bss-code-box">
-          <div class="bss-code-header" data-language="python">Example</div>
-          <pre class="bss-code-format">
+        <pre class="bss-code" data-language="python" data-title="Example">
 import os
 import dj_database_url
 
@@ -75,12 +67,12 @@ ALLOWED_HOSTS = ['ignatiusmb', 'bluesheets', 'imbagus']
 
 INSTALLED_APPS = [
     ...
-   'django.app',
+    'django.app',
 ]
 
 MIDDLEWARE = [
     ...
-   'bluesheets.imbagus',
+    'bluesheets.imbagus',
 ]
 
 TEMPLATES = [
@@ -97,46 +89,47 @@ TEMPLATES = [
             ],
         },
     },
-]</pre>
-        </div>
+]
+        </pre>
       </div>
     </main>
   </section>
+
   <section id="form">
     <main>
       <div class="card">
         <h1>form.css</h1>
-        <div class="bss-code-box">
-          <div class="bss-code-header" data-language="html">&lt;head></div>
-          <pre class="bss-code-format">
+
+        <pre class="bss-code" data-language="html" data-title="<head>">
 &lt;link rel="stylesheet" href="https://imbagus.com/bluesheets/form.css">
-&lt;script defer src="https://imbagus.com/bluesheets/form.js">&lt;/script></pre>
-        </div>
-        <div class="bss-code-box">
-          <div class="bss-code-header" data-language="html">&lt;template /></div>
-          <pre class="bss-code-format">
+&lt;script defer src="https://imbagus.com/bluesheets/form.js">&lt;/script>
+        </pre>
+
+        <pre class="bss-code" data-language="html" data-title="<template />">
 &lt;form class="bss-form">
   &lt;input type="email" placeholder="Email" />
   &lt;input type="password" placeholder="Password" />
   &lt;button type="submit">Login&lt;/button>
-&lt;/form></pre>
-        </div>
-        <div class="bss-code-box">
-          <div class="bss-code-header" data-language="html">Wrapped &lt;template /></div>
-          <pre class="bss-code-format">
+&lt;/form>
+        </pre>
+
+        <pre class="bss-code" data-language="html" data-title="Wrapped <template />">
 &lt;div class="form-wrapper">
   &lt;template />
-&lt;/div></pre>
-        </div>
+&lt;/div>
+        </pre>
       </div>
+
       <div class="card">
         <h1>Form Demo</h1>
+
         <div class="demo">
           <form action="#" class="bss-form">
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
             <button type="submit">Login</button>
           </form>
+
           <div class="form-wrapper">
             <form action="#" class="bss-form">
               <input type="email" placeholder="Email" />
@@ -148,62 +141,62 @@ TEMPLATES = [
       </div>
     </main>
   </section>
+
   <section id="modal">
     <main>
       <div class="card">
         <h1>modal.css</h1>
-        <div class="bss-code-box">
-          <div class="bss-code-header" data-language="html">&lt;head></div>
-          <pre class="bss-code-format">
+
+        <pre class="bss-code" data-language="html" data-title="<head>">
 &lt;link rel="stylesheet" href="https://imbagus.com/bluesheets/modal.css">
-&lt;script defer src="https://imbagus.com/bluesheets/modal.js">&lt;/script></pre>
-        </div>
-        <div class="bss-code-box">
-          <div class="bss-code-header" data-language="html">&lt;template /></div>
-          <pre class="bss-code-format">
+&lt;script defer src="https://imbagus.com/bluesheets/modal.js">&lt;/script>
+        </pre>
+
+        <pre class="bss-code" data-language="html" data-title="<template />">
 &lt;div class="bss-modal">
-  &lt;div class="preview">
-    &lt;div >
+  &lt;div class="bss-modal-preview">
+    &lt;div>
       &lt;!-- your content preview here -->
     &lt;div>
     &lt;div class="overlay">
       &lt;!-- your overlay content here -->
     &lt;div>
   &lt;div>
-  &lt;div class="popup">
+  &lt;div class="bss-modal-popup">
     &lt;div class="content bss">
       &lt;!-- your popup content here -->
     &lt;div>
   &lt;div>
-&lt;div></pre>
-        </div>
+&lt;div>
+        </pre>
       </div>
+
       <div class="card">
         <h1>Modal Demo</h1>
         <div>
           <div class="bss-modal">
-            <div class="preview">
-              <div style="text-align: center">
-                <h3 style="margin-bottom: 1em">Modal Preview</h3>
+            <div class="bss-modal-preview">
+              <div>
+                <h3>Modal Preview</h3>
                 <p>Lorem ipsum dolor sit, amet</p>
               </div>
               <div class="overlay"></div>
             </div>
-            <div class="popup">
+            <div class="bss-modal-popup">
               <div class="bss content">
                 <h1>popup content</h1>
               </div>
             </div>
           </div>
           <div class="bss-modal">
-            <div class="preview">
-              <div style="text-align: center">
-                <h3 style="margin-bottom: 1em">Modal Preview</h3>
+            <div class="bss-modal-preview">
+              <div>
+                <h3>Modal Preview</h3>
                 <p>Lorem ipsum dolor sit, amet</p>
               </div>
               <div class="overlay"></div>
             </div>
-            <div class="popup">
+            <div class="bss-modal-popup">
               <div class="bss content">
                 <h1>popup content</h1>
               </div>
