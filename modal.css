@@ -1,8 +1,8 @@
 :root {
-  --bss-overlay-transition: 340ms;
+  --aqua-overlay-transition: 340ms;
 }
 
-.bss-modal {
+.aqua-modal {
   object-fit: contain;
   overflow: hidden;
   width: 15em;
@@ -13,12 +13,12 @@
   background: rgba(0, 0, 0, 0.3);
 }
 
-.bss-modal > .bss-modal-preview {
+.aqua-modal > .aqua-modal-preview {
   color: white;
 }
 
 /* overlay */
-.bss-modal > .bss-modal-preview > .overlay {
+.aqua-modal > .aqua-modal-preview > .overlay {
   cursor: pointer;
   opacity: 0;
   width: 100%;
@@ -27,15 +27,15 @@
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.7) repeat;
-  transition: var(--bss-overlay-transition);
+  transition: var(--aqua-overlay-transition);
 }
 
-.bss-modal:hover .bss-modal-preview > .overlay {
+.aqua-modal:hover .aqua-modal-preview > .overlay {
   opacity: 1;
-  transition: var(--bss-overlay-transition);
+  transition: var(--aqua-overlay-transition);
 }
 
-.bss-modal-preview > .overlay > i.fa-plus {
+.aqua-modal-preview > .overlay > i.fa-plus {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -45,11 +45,11 @@
 }
 
 /* popup */
-.bss-modal > .bss-modal-popup.pop {
+.aqua-modal > .aqua-modal-popup.pop {
   display: flex;
 }
 
-.bss-modal > .bss-modal-popup {
+.aqua-modal > .aqua-modal-popup {
   z-index: 9;
   width: 100%;
   height: 100%;
@@ -62,17 +62,17 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.bss-modal-popup > .content {
+.aqua-modal-popup > .content {
   max-width: 90%;
   position: relative;
   padding: 2em 1em;
   outline: 0;
   margin: auto;
   box-shadow: 3px 4px rgba(0, 0, 0, 0.3);
-  background-color: var(--bss-bg-dark);
+  background-color: var(--aqua-bg-dark);
 }
 
-.bss-modal-popup .close {
+.aqua-modal-popup .close {
   cursor: pointer;
   position: absolute;
   top: 0;

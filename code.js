@@ -4,16 +4,16 @@
   prism.src = 'https://cdn.imbagus.com/ajax/prism.js'
   document.head.appendChild(prism)
 })()
-const bssCreateToolbar = el => {
+const aquaCreateToolbar = el => {
   const toolbar = document.createElement('div')
-  toolbar.className = 'bss-code-toolbar'
+  toolbar.className = 'aqua-code-toolbar'
   const createTool = (iconClass, text) => {
     const tool = document.createElement('a')
     const icon = document.createElement('i')
     const tooltip = document.createElement('span')
-    tool.className = `bss-ctb-item`
+    tool.className = `aqua-ctb-item`
     icon.className = iconClass
-    tooltip.className = 'bss-ctb-tooltip'
+    tooltip.className = 'aqua-ctb-tooltip'
     tooltip.innerText = text
     tool.appendChild(icon)
     tool.appendChild(tooltip)
@@ -59,17 +59,17 @@ const bssCreateToolbar = el => {
   return toolbar
 }
 
-for (const bssCode of document.querySelectorAll('pre.bss-code')) {
-  const language = bssCode.dataset.language
-  const title = bssCode.dataset.title
-  let lineNumber = parseInt(bssCode.dataset.lineStart)
+for (const aquaCode of document.querySelectorAll('pre.aqua-code')) {
+  const language = aquaCode.dataset.language
+  const title = aquaCode.dataset.title
+  let lineNumber = parseInt(aquaCode.dataset.lineStart)
   const wrapper = document.createElement('div')
   const header = document.createElement('div')
   const pre = document.createElement('pre')
-  wrapper.classList.add('bss-code-box')
-  header.classList.add('bss-code-header')
+  wrapper.classList.add('aqua-code-box')
+  header.classList.add('aqua-code-header')
   header.dataset.language = language ? language : ''
-  pre.className = bssCode.className
+  pre.className = aquaCode.className
 
   if (title) header.textContent = title
   else header.classList.add('empty')
@@ -77,15 +77,15 @@ for (const bssCode of document.querySelectorAll('pre.bss-code')) {
   else pre.classList.add('language-none')
 
   if (!lineNumber) lineNumber = 1
-  for (const line of bssCode.textContent.split('\n')) {
+  for (const line of aquaCode.textContent.split('\n')) {
     const code = document.createElement('code')
     code.dataset.line = lineNumber++
     code.textContent = `${line}\n`
     pre.appendChild(code)
   }
   while (!pre.lastChild.textContent.trim().length) pre.removeChild(pre.lastChild)
-  header.appendChild(bssCreateToolbar(pre))
+  header.appendChild(aquaCreateToolbar(pre))
   wrapper.appendChild(header)
   wrapper.appendChild(pre)
-  bssCode.replaceWith(wrapper)
+  aquaCode.replaceWith(wrapper)
 }

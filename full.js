@@ -14,7 +14,7 @@ const cdnFetch = (type, name) => {
   }
   return tag
 }
-const addBlueSheet = (name, styling) => {
+const addAquaSheet = (name, styling) => {
   let tag
   if (styling) {
     tag = document.createElement('link')
@@ -29,12 +29,12 @@ const addBlueSheet = (name, styling) => {
   return tag
 }
 window.addEventListener('DOMContentLoaded', () => {
-  frag.appendChild(addBlueSheet('core', true))
-  for (const name of filenames) frag.appendChild(addBlueSheet(name, true))
+  frag.appendChild(addAquaSheet('core', true))
+  for (const name of filenames) frag.appendChild(addAquaSheet(name, true))
   document.head.appendChild(frag)
 })
 window.addEventListener('load', () => {
   frag.appendChild(cdnFetch('ajax', 'prism'))
-  for (const name of filenames) frag.appendChild(addBlueSheet(name, false))
+  for (const name of filenames) frag.appendChild(addAquaSheet(name, false))
   document.body.appendChild(frag)
 })

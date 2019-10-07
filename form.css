@@ -11,16 +11,16 @@
   background-color: white;
 }
 
-.bss-form {
+.aqua-form {
   width: 100%;
   padding: 1em 3em;
 }
 
-form.bss-form h1 {
+form.aqua-form h1 {
   font-weight: 600;
 }
 
-form.bss-form button,
+form.aqua-form button,
 .form-wrapper button {
   padding: 0.7em 3em;
   border: 1px solid #0070bb;
@@ -34,23 +34,23 @@ form.bss-form button,
   transition: 80ms ease;
 }
 
-form.bss-form button:active {
+form.aqua-form button:active {
   transform: scale(0.95);
 }
 
-form.bss-form label {
+form.aqua-form label {
   position: relative;
 }
 
-.form-wrapper form.bss-form label {
+.form-wrapper form.aqua-form label {
   width: 100%;
 }
 
-form.bss-form label input {
+form.aqua-form label input {
   padding: 1.25em 1em 0.75em;
 }
 
-form.bss-form label span {
+form.aqua-form label span {
   pointer-events: none;
   position: absolute;
   left: 1em;
@@ -61,8 +61,8 @@ form.bss-form label span {
   opacity: 0.5;
 }
 
-form.bss-form label input:focus + span,
-form.bss-form label input:not(:placeholder-shown) + span {
+form.aqua-form label input:focus + span,
+form.aqua-form label input:not(:placeholder-shown) + span {
   position: absolute;
   top: -80%;
   left: 0.5em;

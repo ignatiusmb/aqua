@@ -1,4 +1,4 @@
-for (const form of document.querySelectorAll('form.bss-form')) {
+for (const form of document.querySelectorAll('form.aqua-form')) {
   for (const input of form.querySelectorAll('input')) {
     const label = document.createElement('label')
     const inputChange = document.createElement('input')

@@ -1,5 +1,5 @@
-for (const modal of document.querySelectorAll('.bss-modal')) {
-  const popup = modal.querySelector('.bss-modal-popup')
+for (const modal of document.querySelectorAll('.aqua-modal')) {
+  const popup = modal.querySelector('.aqua-modal-popup')
   const popContent = popup.querySelector('.content')
   popContent.classList.add('bsa-zoom')
 
@@ -11,7 +11,7 @@ for (const modal of document.querySelectorAll('.bss-modal')) {
   close.addEventListener('click', popup.classList.remove('pop'))
   popContent.insertAdjacentElement('afterbegin', close)
 
-  for (const preview of modal.querySelectorAll('.bss-modal-preview')) {
+  for (const preview of modal.querySelectorAll('.aqua-modal-preview')) {
     for (const overlay of preview.querySelectorAll('.overlay')) {
       const icon = document.createElement('i')
       icon.className = 'fas fa-plus'
