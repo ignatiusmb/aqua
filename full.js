@@ -20,11 +20,11 @@ const addBlueSheet = (name, styling) => {
     tag = document.createElement('link')
     tag.rel = 'stylesheet'
     tag.type = 'text/css'
-    tag.href = `https://imbagus.com/bluesheets/${name}.css`
+    tag.href = `https://aqua.imbagus.com/${name}.css`
   } else {
     tag = document.createElement('script')
     tag.type = 'text/javascript'
-    tag.src = `https://imbagus.com/bluesheets/${name}.js`
+    tag.src = `https://aqua.imbagus.com/${name}.js`
   }
   return tag
 }

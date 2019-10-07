@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>BlueSheets &rarr; JavaScript UI Toolkit & Templates</title>
+  <title>Aqua &rarr; JavaScript UI Toolkit & Templates</title>
 
   <link rel="stylesheet" href="https://cdn.imbagus.com/css/fa.v5.css">
   <!-- Fonts -->
@@ -29,7 +29,7 @@
 
 <body>
   <header>
-    <h1>BlueSheets</h1>
+    <h1>Aqua</h1>
     <h3>Version 0.19.10</h3>
   </header>
 
@@ -39,8 +39,8 @@
         <h1>code.css</h1>
 
         <pre class="bss-code" data-language="html" data-title="<head>">
-&lt;link rel="stylesheet" href="https://imbagus.com/bluesheets/code.css">
-&lt;script defer src="https://imbagus.com/bluesheets/code.js">&lt;/script>
+&lt;link rel="stylesheet" href="https://aqua.imbagus.com/code.css">
+&lt;script defer src="https://aqua.imbagus.com/code.js">&lt;/script>
         </pre>
 
         <pre class="bss-code" data-language="html" data-title="<template />">
@@ -63,7 +63,7 @@ import dj_database_url
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PRODUCTION = os.environ.get('DATABASE_URL') is not None
 
-ALLOWED_HOSTS = ['ignatiusmb', 'bluesheets', 'imbagus']
+ALLOWED_HOSTS = ['ignatiusmb', 'aqua', 'imbagus']
 
 INSTALLED_APPS = [
     ...
@@ -72,13 +72,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     ...
-    'bluesheets.imbagus',
+    'aqua.imbagus',
 ]
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'bluesheets')],
+        'DIRS': [os.path.join(BASE_DIR, 'aqua')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -101,8 +101,8 @@ TEMPLATES = [
         <h1>form.css</h1>
 
         <pre class="bss-code" data-language="html" data-title="<head>">
-&lt;link rel="stylesheet" href="https://imbagus.com/bluesheets/form.css">
-&lt;script defer src="https://imbagus.com/bluesheets/form.js">&lt;/script>
+&lt;link rel="stylesheet" href="https://aqua.imbagus.com/form.css">
+&lt;script defer src="https://aqua.imbagus.com/form.js">&lt;/script>
         </pre>
 
         <pre class="bss-code" data-language="html" data-title="<template />">
@@ -148,8 +148,8 @@ TEMPLATES = [
         <h1>modal.css</h1>
 
         <pre class="bss-code" data-language="html" data-title="<head>">
-&lt;link rel="stylesheet" href="https://imbagus.com/bluesheets/modal.css">
-&lt;script defer src="https://imbagus.com/bluesheets/modal.js">&lt;/script>
+&lt;link rel="stylesheet" href="https://aqua.imbagus.com/modal.css">
+&lt;script defer src="https://aqua.imbagus.com/modal.js">&lt;/script>
         </pre>
 
         <pre class="bss-code" data-language="html" data-title="<template />">

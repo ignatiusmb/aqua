@@ -1,25 +1,28 @@
-# [BlueSheets](https://ignatiusmb.github.io/bluesheets/)&nbsp;&middot;&nbsp;[![](https://img.shields.io/github/release/ignatiusmb/bluesheets.svg?style=popout)](https://github.com/ignatiusmb/bluesheets/releases/latest)&nbsp;[![](https://data.jsdelivr.com/v1/package/gh/ignatiusmb/bluesheets/badge?style=rounded)](https://www.jsdelivr.com/package/gh/ignatiusmb/bluesheets)
+# [Aqua](https://aqua.imbagus.com)&nbsp;&middot;&nbsp;
 
-### Core File - always use and import this first
+### Core Sheet - base file for other sheets
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/core.min.css" />
+<link rel="stylesheet" href="https://aqua.imbagus.com/core.css">
 ```
 
-### [Code Style](https://ignatiusmb.github.io/bluesheets/#code)
+### [Code Bundle](https://aqua.imbagus.com/#code)
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/code.min.css" />
-
-<!-- place before the closing body tag -->
-<script src="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/code.min.js"></script>
+<link rel="stylesheet" href="https://aqua.imbagus.com/code.css">
+<script defer src="https://aqua.imbagus.com/code.js"></script>
 ```
 
-### [Modal Style](https://ignatiusmb.github.io/bluesheets/#modal)
+### [Form Bundle](https://aqua.imbagus.com/#form)
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/modal.min.css" />
+<link rel="stylesheet" href="https://aqua.imbagus.com/form.css">
+<script defer src="https://aqua.imbagus.com/form.js"></script>
+```
 
-<!-- place before the closing body tag -->
-<script src="https://cdn.jsdelivr.net/gh/ignatiusmb/bluesheets/modal.min.js"></script>
+### [Modal Bundle](https://aqua.imbagus.com/#modal)
+
+```html
+<link rel="stylesheet" href="https://aqua.imbagus.com/modal.css">
+<script defer src="https://aqua.imbagus.com/modal.js"></script>
 ```
