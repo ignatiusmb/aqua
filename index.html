@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Aqua &rarr; JavaScript UI Toolkit & Templates</title>
+  <title>Aqua &rarr; CSS &plus; JavaScript UI Components & Templates</title>
 
   <link rel="stylesheet" href="https://cdn.imbagus.com/css/fa.v5.css">
   <!-- Fonts -->
@@ -23,8 +23,9 @@
   <script defer src="form.js"></script>
   <script defer src="modal.js"></script>
 
-  <script defer src="https://cdn.imbagus.com/complete/footer.js"></script>
   <script defer src="src/index.js"></script>
+
+  <script src="https://cdn.imbagus.com/complete/footer.js"></script>
 </head>
 
 <body>
@@ -107,14 +108,14 @@ TEMPLATES = [
 
         <pre class="aqua-code" data-language="html" data-title="<template />">
 &lt;form class="aqua-form">
-  &lt;input type="email" placeholder="Email" />
-  &lt;input type="password" placeholder="Password" />
+  &lt;input type="email" placeholder="Email">
+  &lt;input type="password" placeholder="Password">
   &lt;button type="submit">Login&lt;/button>
 &lt;/form>
         </pre>
 
         <pre class="aqua-code" data-language="html" data-title="Wrapped <template />">
-&lt;div class="form-wrapper">
+&lt;div class="aqua-form-wrapper">
   &lt;template />
 &lt;/div>
         </pre>
@@ -125,15 +126,15 @@ TEMPLATES = [
 
         <div class="demo">
           <form action="#" class="aqua-form">
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
             <button type="submit">Login</button>
           </form>
 
-          <div class="form-wrapper">
+          <div class="aqua-form-wrapper">
             <form action="#" class="aqua-form">
-              <input type="email" placeholder="Email" />
-              <input type="password" placeholder="Password" />
+              <input type="email" placeholder="Email">
+              <input type="password" placeholder="Password">
               <button type="submit">Login</button>
             </form>
           </div>
