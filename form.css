@@ -1,4 +1,4 @@
-.form-wrapper {
+.aqua-form-wrapper {
   backface-visibility: hidden;
   overflow: hidden;
   max-width: 36em;
@@ -21,7 +21,7 @@ form.aqua-form h1 {
 }
 
 form.aqua-form button,
-.form-wrapper button {
+.aqua-form-wrapper button {
   padding: 0.7em 3em;
   border: 1px solid #0070bb;
   border-radius: 1.5em;
@@ -42,7 +42,7 @@ form.aqua-form label {
   position: relative;
 }
 
-.form-wrapper form.aqua-form label {
+.aqua-form-wrapper form.aqua-form label {
   width: 100%;
 }
 

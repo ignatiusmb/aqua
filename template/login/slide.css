@@ -1,53 +1,53 @@
-.form-wrapper {
+.aqua-form-wrapper {
   overflow: hidden;
   min-width: 48em;
   min-height: 32em;
   background-color: white;
 }
 
-.form-wrapper p {
+.aqua-form-wrapper p {
   margin: 1em 0 1.5em;
   letter-spacing: 0.025em;
   font-weight: 100;
 }
 
-.form-wrapper a {
+.aqua-form-wrapper a {
   color: #333;
   font-size: 0.9em;
   text-decoration: none;
   margin: 1em 0;
 }
 
-.form-wrapper>.form-container {
+.aqua-form-wrapper > .form-container {
   height: 100%;
   position: absolute;
   top: 0;
   transition: all 0.6s ease-in-out;
 }
 
-.form-wrapper>.form-container.sign-in {
+.aqua-form-wrapper > .form-container.sign-in {
   z-index: 2;
   width: 50%;
 }
 
-.form-wrapper.toggled>.form-container.sign-in {
+.aqua-form-wrapper.toggled > .form-container.sign-in {
   transform: translateX(100%);
 }
 
-.form-wrapper>.form-container.sign-up {
+.aqua-form-wrapper > .form-container.sign-up {
   z-index: 1;
   width: 50%;
   opacity: 0;
 }
 
-.form-wrapper.toggled>.form-container.sign-up {
+.aqua-form-wrapper.toggled > .form-container.sign-up {
   z-index: 5;
   opacity: 1;
   transform: translateX(100%);
-  animation: bsa-show 0.6s;
+  animation: aqua-show 0.6s;
 }
 
-.form-wrapper>.form-container>form {
+.aqua-form-wrapper > .form-container > form {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -58,8 +58,7 @@
   text-align: center;
 }
 
-@keyframes bsa-show {
-
+@keyframes aqua-show {
   0%,
   49.99% {
     opacity: 0;
@@ -73,7 +72,7 @@
   }
 }
 
-.form-wrapper>.form-overlay {
+.aqua-form-wrapper > .form-overlay {
   z-index: 100;
   overflow: hidden;
   position: absolute;
@@ -84,18 +83,18 @@
   transition: transform 0.6s ease-in-out;
 }
 
-.form-wrapper.toggled>.form-overlay {
+.aqua-form-wrapper.toggled > .form-overlay {
   transform: translateX(-100%);
 }
 
-.form-wrapper .overlay {
+.aqua-form-wrapper .overlay {
   width: 200%;
   height: 100%;
   position: relative;
   left: -100%;
-  background: #0070BB;
-  background: -webkit-linear-gradient(to right, #66D6FF, #0070BB);
-  background: linear-gradient(to right, #66D6FF, #0070BB);
+  background: #0070bb;
+  background: -webkit-linear-gradient(to right, #66d6ff, #0070bb);
+  background: linear-gradient(to right, #66d6ff, #0070bb);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
@@ -104,11 +103,11 @@
   transition: transform 0.6s ease-in-out;
 }
 
-.form-wrapper.toggled .overlay {
+.aqua-form-wrapper.toggled .overlay {
   transform: translateX(50%);
 }
 
-.form-wrapper .overlay>.overlay-panel {
+.aqua-form-wrapper .overlay > .overlay-panel {
   width: 50%;
   height: 100%;
   position: absolute;
@@ -123,21 +122,22 @@
   transition: transform 0.6s ease-in-out;
 }
 
-.form-wrapper .overlay>.overlay-panel.left {
+.aqua-form-wrapper .overlay > .overlay-panel.left {
   transform: translateX(-20%);
 }
 
-.form-wrapper.toggled .overlay>.overlay-panel.left {
+.aqua-form-wrapper.toggled .overlay > .overlay-panel.left {
   transform: translateX(0);
 }
 
-.form-wrapper .overlay>.overlay-panel.right {
+.aqua-form-wrapper .overlay > .overlay-panel.right {
   right: 0;
   transform: translateX(0);
 }
 
-.form-wrapper.toggled .overlay>.overlay-panel.right {
+.aqua-form-wrapper.toggled .overlay > .overlay-panel.right {
   transform: translateX(20%);
 }
 
-@media only screen and (max-width: 800px) {}
+@media only screen and (max-width: 800px) {
+}

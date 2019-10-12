@@ -1,4 +1,4 @@
-const formWrapper = document.getElementById('form-wrapper')
+const formWrapper = document.getElementById('aqua-form-wrapper')
 document.getElementById('sign-up').addEventListener('click', () => {
   formWrapper.classList.add('toggled')
 })
