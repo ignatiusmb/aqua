@@ -150,7 +150,6 @@ button:-moz-focusring,
 input {
   width: 100%;
   padding: 0.8em 0.9em;
-  margin: 0.5em 0;
   border: none;
   border-radius: 0.3em;
   background-color: var(--aqua-bg-light);
