@@ -150,9 +150,19 @@ code {
   background: #363377;
   color: #a2a0d6;
 }
+.aqua-code-header[data-language='css']::before,
+.aqua-code-header[data-language='css']::after {
+  background: #264de4;
+  color: #feefe8;
+}
 .aqua-code-header[data-language='html']::before,
 .aqua-code-header[data-language='html']::after {
-  background: #f26428;
+  background: #e34f26;
+  color: #feefe8;
+}
+.aqua-code-header[data-language='java']::before,
+.aqua-code-header[data-language='java']::after {
+  background: #f89820;
   color: #feefe8;
 }
 .aqua-code-header[data-language='javascript']::before,
