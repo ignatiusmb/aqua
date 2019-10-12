@@ -159,6 +159,10 @@ section main {
   margin-bottom: 1em;
 }
 
+footer .link {
+  font-size: 2em;
+}
+
 @media only screen and (min-width: 480px) {
 }
 @media only screen and (min-width: 600px) {
