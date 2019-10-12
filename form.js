@@ -3,6 +3,9 @@ for (const form of document.querySelectorAll('form.aqua-form')) {
     const label = document.createElement('label')
     const inputChange = document.createElement('input')
     const placeholder = document.createElement('span')
+    for (const attr of input.attributes) {
+      inputChange.setAttribute(attr.name, attr.value)
+    }
 
     label.htmlFor = inputChange.type = input.type
     inputChange.placeholder = ' '
