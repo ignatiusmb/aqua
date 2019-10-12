@@ -1,4 +1,4 @@
-.aqua-form-wrapper form.aqua-form {
+.aqua-form-wave form.aqua-form {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -14,35 +14,35 @@
   transition: transform 300ms, box-shadow 300ms;
 }
 
-.aqua-form-wrapper form.aqua-form::before,
-.aqua-form-wrapper form.aqua-form::after {
+.aqua-form-wave form.aqua-form::before,
+.aqua-form-wave form.aqua-form::after {
   content: '';
   z-index: -1;
-  width: 37.5em;
-  height: 37.5em;
+  width: 37em;
+  height: 37em;
   position: absolute;
   border-radius: 40% 45% 40% 35%;
 }
 
-.aqua-form-wrapper form.aqua-form::before {
-  right: -20em;
-  bottom: -25.5em;
+.aqua-form-wave form.aqua-form::before {
+  right: -80%;
+  bottom: -85%;
   background-color: rgba(69, 105, 144, 0.15);
-  -webkit-animation: bsa-wave 6s infinite linear;
-  -moz-animation: bsa-wave 6s infinite linear;
-  animation: bsa-wave 6s infinite linear;
+  -webkit-animation: aqua-wave 6s infinite linear;
+  -moz-animation: aqua-wave 6s infinite linear;
+  animation: aqua-wave 6s infinite linear;
 }
 
-.aqua-form-wrapper form.aqua-form::after {
-  right: -16em;
-  bottom: -20em;
+.aqua-form-wave form.aqua-form::after {
+  right: -60%;
+  bottom: -65%;
   background-color: rgba(2, 128, 144, 0.2);
-  -webkit-animation: bsa-wave 7s infinite;
-  -moz-animation: bsa-wave 7s infinite;
-  animation: bsa-wave 7s infinite;
+  -webkit-animation: aqua-wave 7s infinite;
+  -moz-animation: aqua-wave 7s infinite;
+  animation: aqua-wave 7s infinite;
 }
 
-@-webkit-keyframes bsa-wave {
+@-webkit-keyframes aqua-wave {
   from {
     -webkit-transform: rotate(0);
   }
@@ -52,7 +52,7 @@
   }
 }
 
-@-moz-keyframes bsa-wave {
+@-moz-keyframes aqua-wave {
   from {
     -moz-transform: rotate(0);
   }
@@ -62,7 +62,7 @@
   }
 }
 
-@keyframes bsa-wave {
+@keyframes aqua-wave {
   from {
     -webkit-transform: rotate(0);
     -moz-transform: rotate(0);
