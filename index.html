@@ -19,13 +19,11 @@
   <link rel="stylesheet" href="modal.css">
   <link rel="stylesheet" href="src/style.css">
 
+  <script src="https://cdn.imbagus.com/complete/footer.js"></script>
   <script defer src="code.js"></script>
   <script defer src="form.js"></script>
   <script defer src="modal.js"></script>
-
   <script defer src="src/index.js"></script>
-
-  <script src="https://cdn.imbagus.com/complete/footer.js"></script>
 </head>
 
 <body>
@@ -34,20 +32,41 @@
     <h3>Version 0.19.10</h3>
   </header>
 
-  <section id="core">
+  <article>
+    <aside>
+      <nav>
+        <div class="tab-item active">
+          <div class="icon">
+            <i class="fas fa-bars"></i>
+          </div>
+          <span>Component</span>
+        </div>
+        <div class="tab-item">
+          <div class="icon">
+            <i class="far fa-folder"></i>
+            <i class="far fa-folder-open hidden"></i>
+          </div>
+          <span>Template</span>
+        </div>
+        <div class="tab-overlay"></div>
+      </nav>
+    </aside>
+
     <main>
-      <div class="card">
-        <h1>core.css</h1>
+      <section id="core">
+        <main>
+          <div class="card">
+            <h1>core.css</h1>
 
-        <pre class="aqua-code" data-language="html" data-title="Mandatory Foundation Sheet">
+            <pre class="aqua-code" data-language="html" data-title="Mandatory Foundation Sheet">
 &lt;link rel="stylesheet" href="https://aqua.imbagus.com/core.css">
-        </pre>
-      </div>
+            </pre>
+          </div>
 
-      <div class="card">
-        <h1>Font Links</h1>
+          <div class="card">
+            <h1>Font Links</h1>
 
-        <pre class="aqua-code" data-language="html" data-title="<head>">
+            <pre class="aqua-code" data-language="html" data-title="<head>">
 &lt;!-- Font Awesome v5 Icons -->
 &lt;link rel="stylesheet" href="https://cdn.imbagus.com/css/fa.v5.css">
 &lt;!-- Font Families -->
@@ -59,9 +78,9 @@
 &lt;!-- Optional Fonts -->
 &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin&display=swap">
 &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap">
-        </pre>
+            </pre>
 
-        <pre class="aqua-code" data-language="css" data-title="CSS Rules">
+            <pre class="aqua-code" data-language="css" data-title="CSS Rules">
 /* font: 'Fira Code' */
 font-family: var(--aqua-font-code);
 /* font: 'Inconsolata' */
@@ -77,34 +96,34 @@ font-family: var(--aqua-font-default-alt-1);
 font-family: var(--aqua-font-default-alt-2);
 /* font: 'Space Mono' */
 font-family: var(--aqua-font-mono-alt);
-        </pre>
-      </div>
-    </main>
-  </section>
+            </pre>
+          </div>
+        </main>
+      </section>
 
-  <section id="code">
-    <main>
-      <div class="card">
-        <h1>code.css</h1>
+      <section id="code">
+        <main>
+          <div class="card">
+            <h1>code.css</h1>
 
-        <pre class="aqua-code" data-language="html" data-title="<head>">
+            <pre class="aqua-code" data-language="html" data-title="<head>">
 &lt;link rel="stylesheet" href="https://aqua.imbagus.com/code.css">
 &lt;script defer src="https://aqua.imbagus.com/code.js">&lt;/script>
-        </pre>
+            </pre>
 
-        <pre class="aqua-code" data-language="html" data-title="<template />">
+            <pre class="aqua-code" data-language="html" data-title="<template />">
 &lt;pre class="aqua-code" data-language="html" data-title="">
 &lt;!-- place your code here -->
 
 &lt;!-- escape html code with &amp;lt; -->
 &amp;lt;script>&amp;lt;/script>
 &lt;/pre>
-        </pre>
-      </div>
+            </pre>
+          </div>
 
-      <div class="card">
-        <h1>Code Demo</h1>
-        <pre class="aqua-code" data-language="python" data-title="Example">
+          <div class="card">
+            <h1>Code Demo</h1>
+            <pre class="aqua-code" data-language="python" data-title="Example">
 import os
 import dj_database_url
 
@@ -139,69 +158,69 @@ TEMPLATES = [
         },
     },
 ]
-        </pre>
-      </div>
-    </main>
-  </section>
+            </pre>
+          </div>
+        </main>
+      </section>
 
-  <section id="form">
-    <main>
-      <div class="card">
-        <h1>form.css</h1>
+      <section id="form">
+        <main>
+          <div class="card">
+            <h1>form.css</h1>
 
-        <pre class="aqua-code" data-language="html" data-title="<head>">
+            <pre class="aqua-code" data-language="html" data-title="<head>">
 &lt;link rel="stylesheet" href="https://aqua.imbagus.com/form.css">
 &lt;script defer src="https://aqua.imbagus.com/form.js">&lt;/script>
-        </pre>
+            </pre>
 
-        <pre class="aqua-code" data-language="html" data-title="<template />">
+            <pre class="aqua-code" data-language="html" data-title="<template />">
 &lt;form class="aqua-form">
   &lt;input type="email" placeholder="Email">
   &lt;input type="password" placeholder="Password">
   &lt;button type="submit">Login&lt;/button>
 &lt;/form>
-        </pre>
+            </pre>
 
-        <pre class="aqua-code" data-language="html" data-title="Wrapped <template />">
+            <pre class="aqua-code" data-language="html" data-title="Wrapped <template />">
 &lt;div class="aqua-form-wrapper">
   &lt;template />
 &lt;/div>
-        </pre>
-      </div>
-
-      <div class="card">
-        <h1>Form Demo</h1>
-
-        <div class="demo">
-          <form action="#" class="aqua-form">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <button type="submit">Login</button>
-          </form>
-
-          <div class="aqua-form-wrapper">
-            <form action="#" class="aqua-form">
-              <input type="email" placeholder="Email">
-              <input type="password" placeholder="Password">
-              <button type="submit">Login</button>
-            </form>
+            </pre>
           </div>
-        </div>
-      </div>
-    </main>
-  </section>
 
-  <section id="modal">
-    <main>
-      <div class="card">
-        <h1>modal.css</h1>
+          <div class="card">
+            <h1>Form Demo</h1>
 
-        <pre class="aqua-code" data-language="html" data-title="<head>">
+            <div class="demo">
+              <form action="#" class="aqua-form">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button type="submit">Login</button>
+              </form>
+
+              <div class="aqua-form-wrapper">
+                <form action="#" class="aqua-form">
+                  <input type="email" placeholder="Email">
+                  <input type="password" placeholder="Password">
+                  <button type="submit">Login</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </main>
+      </section>
+
+      <section id="modal">
+        <main>
+          <div class="card">
+            <h1>modal.css</h1>
+
+            <pre class="aqua-code" data-language="html" data-title="<head>">
 &lt;link rel="stylesheet" href="https://aqua.imbagus.com/modal.css">
 &lt;script defer src="https://aqua.imbagus.com/modal.js">&lt;/script>
-        </pre>
+            </pre>
 
-        <pre class="aqua-code" data-language="html" data-title="<template />">
+            <pre class="aqua-code" data-language="html" data-title="<template />">
 &lt;div class="aqua-modal">
   &lt;div class="aqua-modal-preview">
     &lt;div>
@@ -217,46 +236,51 @@ TEMPLATES = [
     &lt;div>
   &lt;div>
 &lt;div>
-        </pre>
-      </div>
+            </pre>
+          </div>
 
-      <div class="card">
-        <h1>Modal Demo</h1>
-        <div>
-          <div class="aqua-modal">
-            <div class="aqua-modal-preview">
-              <div>
-                <h3>Modal Preview</h3>
-                <p>Lorem ipsum dolor sit, amet</p>
+          <div class="card">
+            <h1>Modal Demo</h1>
+            <div>
+              <div class="aqua-modal">
+                <div class="aqua-modal-preview">
+                  <div>
+                    <h3>Modal Preview</h3>
+                    <p>Lorem ipsum dolor sit, amet</p>
+                  </div>
+                  <div class="overlay"></div>
+                </div>
+                <div class="aqua-modal-popup">
+                  <div class="aqua content">
+                    <h1>popup content</h1>
+                  </div>
+                </div>
               </div>
-              <div class="overlay"></div>
-            </div>
-            <div class="aqua-modal-popup">
-              <div class="aqua content">
-                <h1>popup content</h1>
+              <div class="aqua-modal">
+                <div class="aqua-modal-preview">
+                  <div>
+                    <h3>Modal Preview</h3>
+                    <p>Lorem ipsum dolor sit, amet</p>
+                  </div>
+                  <div class="overlay"></div>
+                </div>
+                <div class="aqua-modal-popup">
+                  <div class="aqua content">
+                    <h1>popup content</h1>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="aqua-modal">
-            <div class="aqua-modal-preview">
-              <div>
-                <h3>Modal Preview</h3>
-                <p>Lorem ipsum dolor sit, amet</p>
-              </div>
-              <div class="overlay"></div>
-            </div>
-            <div class="aqua-modal-popup">
-              <div class="aqua content">
-                <h1>popup content</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        </main>
+      </section>
+
+      <footer class="gh-cdn">
+        <a href="https://github.com/ignatiusmb/aqua">@ignatiusmb/aqua</a>
+      </footer>
     </main>
-  </section>
 
-  <footer class="gh-cdn"></footer>
+  </article>
 </body>
 
 </html>
