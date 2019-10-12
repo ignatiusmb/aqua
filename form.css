@@ -1,4 +1,4 @@
-.aqua-form-wrapper {
+.aqua-form-card {
   backface-visibility: hidden;
   overflow: hidden;
   max-width: 36em;
@@ -10,62 +10,58 @@
   margin: 0 auto;
   background-color: white;
 }
+.aqua-form-card label {
+  width: 100%;
+}
 
 .aqua-form {
   width: 100%;
   padding: 1em 3em;
+  font-size: 1em;
 }
-
-form.aqua-form h1 {
-  font-weight: 600;
+.aqua-form label {
+  position: relative;
+  display: inline-flex;
+  margin: 0.5em 0;
 }
-
-form.aqua-form button,
-.aqua-form-wrapper button {
+.aqua-form label input {
+  padding: 1.25em 1em 0.75em;
+}
+.aqua-form label span {
+  pointer-events: none;
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  opacity: 0.5;
+  transition: 200ms;
+  transition-timing-function: ease;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  transform: translate(-10%, -50%);
+}
+.aqua-form label input:focus + span,
+.aqua-form label input:not(:placeholder-shown) + span {
+  position: absolute;
+  top: 0.25em;
+  left: 0.5em;
+  font-size: 0.77em;
+  opacity: 0.8;
+  transform: translate(0%, 0%);
+}
+.aqua-form-card button,
+.aqua-form button {
+  width: 100%;
   padding: 0.7em 3em;
-  border: 1px solid #0070bb;
-  border-radius: 1.5em;
+  border: 1px solid;
+  border-color: var(--aqua-primary);
+  border-radius: 0.5em;
   margin-top: 1em;
-  background-color: #0070bb;
+  background-color: var(--aqua-primary);
   color: white;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: bold;
   transition: 80ms ease;
 }
-
-form.aqua-form button:active {
+.aqua-form button:active {
   transform: scale(0.95);
-}
-
-form.aqua-form label {
-  position: relative;
-}
-
-.aqua-form-wrapper form.aqua-form label {
-  width: 100%;
-}
-
-form.aqua-form label input {
-  padding: 1.25em 1em 0.75em;
-}
-
-form.aqua-form label span {
-  pointer-events: none;
-  position: absolute;
-  left: 1em;
-  top: -10%;
-  transition: 200ms;
-  transition-timing-function: ease;
-  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-  opacity: 0.5;
-}
-
-form.aqua-form label input:focus + span,
-form.aqua-form label input:not(:placeholder-shown) + span {
-  position: absolute;
-  top: -80%;
-  left: 0.5em;
-  font-size: 0.77em;
-  opacity: 0.8;
 }
