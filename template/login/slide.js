@@ -1,7 +1,8 @@
-const formWrapper = document.getElementById('aqua-form-wrapper')
-document.getElementById('sign-up').addEventListener('click', () => {
-  formWrapper.classList.add('toggled')
-})
-document.getElementById('sign-in').addEventListener('click', () => {
-  formWrapper.classList.remove('toggled')
-})
+for (const formWrapper of document.querySelectorAll('.aqua-form-wrapper')) {
+  formWrapper.querySelector('#sign-up').addEventListener('click', () => {
+    formWrapper.classList.add('toggled')
+  })
+  formWrapper.querySelector('#sign-in').addEventListener('click', () => {
+    formWrapper.classList.remove('toggled')
+  })
+}

@@ -8,10 +8,15 @@
   <title>Aqua &bull; Template &rarr; Form Login</title>
 
   <link rel="stylesheet" href="https://cdn.imbagus.com/css/fa.v5.css">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap">
   <link rel="stylesheet" href="/core.css">
   <link rel="stylesheet" href="/code.css">
   <link rel="stylesheet" href="/form.css">
-  <link rel="stylesheet" href="/animation/form.css">
+  <link rel="stylesheet" href="/animation/form/wave.css">
   <link rel="stylesheet" href="slide.css">
   <link rel="stylesheet" href="/src/style.css">
 
@@ -22,8 +27,8 @@
 
 <body>
   <header>
-    <div class="aqua-form-wrapper" id="aqua-form-wrapper">
-      <div class="form-container sign-up">
+    <div class="aqua-form-card aqua-form-wave aqua-form-slide">
+      <div class="slide-container sign-up">
         <form class="aqua-form" action="#">
           <h1>Create Account</h1>
           <input type="text" placeholder="Full Name">
@@ -35,7 +40,7 @@
           <button>Sign Up</button>
         </form>
       </div>
-      <div class="form-container sign-in">
+      <div class="slide-container sign-in">
         <form class="aqua-form" action="#">
           <h1>Sign In</h1>
           <input type="email" placeholder="Email">
@@ -75,8 +80,8 @@
 &lt;script defer src="https://aqua.imbagus.com/template/login/slide.js">&lt;/script>
         </pre>
         <pre class="aqua-code" data-language="html" data-title="Template">
-&lt;div class="aqua-form-wrapper" id="aqua-form-wrapper">
-  &lt;div class="form-container sign-up">
+&lt;div class="aqua-form-card aqua-form-wave aqua-form-slide">
+  &lt;div class="slide-container sign-up">
     &lt;form class="aqua-form" action="#">
       &lt;h1>Create Account&lt;/h1>
       &lt;input type="text" placeholder="Full Name">
@@ -88,7 +93,7 @@
       &lt;button>Sign Up&lt;/button>
     &lt;/form>
   &lt;/div>
-  &lt;div class="form-container sign-in">
+  &lt;div class="slide-container sign-in">
     &lt;form class="aqua-form" action="#">
       &lt;h1>Sign In&lt;/h1>
       &lt;input type="email" placeholder="Email">
