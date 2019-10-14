@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Aqua &rarr; CSS &plus; JavaScript UI Components & Templates</title>
+  <title>Aqua &bull; Component</title>
 
   <link rel="stylesheet" href="https://cdn.imbagus.com/css/fa.v5.css">
   <!-- Fonts -->
@@ -13,17 +13,17 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap">
-  <link rel="stylesheet" href="core.css">
-  <link rel="stylesheet" href="code.css">
-  <link rel="stylesheet" href="form.css">
-  <link rel="stylesheet" href="modal.css">
-  <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="/core.css">
+  <link rel="stylesheet" href="/code.css">
+  <link rel="stylesheet" href="/form.css">
+  <link rel="stylesheet" href="/modal.css">
+  <link rel="stylesheet" href="/src/style.css">
 
   <script src="https://cdn.imbagus.com/complete/footer.js"></script>
-  <script defer src="code.js"></script>
-  <script defer src="form.js"></script>
-  <script defer src="modal.js"></script>
-  <script defer src="src/index.js"></script>
+  <script src="/code.js"></script>
+  <script src="/form.js"></script>
+  <script src="/modal.js"></script>
+  <script defer src="/src/index.js"></script>
 </head>
 
 <body>
@@ -44,7 +44,7 @@
         <div class="tab-item">
           <div class="icon">
             <i class="far fa-folder"></i>
-            <i class="far fa-folder-open hidden"></i>
+            <i class="far fa-folder-open icon-active"></i>
           </div>
           <span>Template</span>
         </div>
@@ -52,7 +52,7 @@
       </nav>
     </aside>
 
-    <main>
+    <main id="component">
       <section id="core">
         <main>
           <div class="card">
@@ -108,7 +108,7 @@ font-family: var(--aqua-font-mono-alt);
 
             <pre class="aqua-code" data-language="html" data-title="<head>">
 &lt;link rel="stylesheet" href="https://aqua.imbagus.com/code.css">
-&lt;script defer src="https://aqua.imbagus.com/code.js">&lt;/script>
+&lt;script src="https://aqua.imbagus.com/code.js">&lt;/script>
             </pre>
 
             <pre class="aqua-code" data-language="html" data-title="<template />">
@@ -170,7 +170,7 @@ TEMPLATES = [
 
             <pre class="aqua-code" data-language="html" data-title="<head>">
 &lt;link rel="stylesheet" href="https://aqua.imbagus.com/form.css">
-&lt;script defer src="https://aqua.imbagus.com/form.js">&lt;/script>
+&lt;script src="https://aqua.imbagus.com/form.js">&lt;/script>
             </pre>
 
             <pre class="aqua-code" data-language="html" data-title="<template />">
@@ -217,7 +217,7 @@ TEMPLATES = [
 
             <pre class="aqua-code" data-language="html" data-title="<head>">
 &lt;link rel="stylesheet" href="https://aqua.imbagus.com/modal.css">
-&lt;script defer src="https://aqua.imbagus.com/modal.js">&lt;/script>
+&lt;script src="https://aqua.imbagus.com/modal.js">&lt;/script>
             </pre>
 
             <pre class="aqua-code" data-language="html" data-title="<template />">
@@ -274,14 +274,13 @@ TEMPLATES = [
           </div>
         </main>
       </section>
-
-      <footer class="gh-cdn">
-        <div class="link">
-          <a href="https://github.com/ignatiusmb/aqua">@ignatiusmb/aqua</a>
-        </div>
-      </footer>
     </main>
 
+    <footer class="gh-cdn">
+      <div class="link">
+        <a href="https://github.com/ignatiusmb/aqua">@ignatiusmb/aqua</a>
+      </div>
+    </footer>
   </article>
 </body>
 
