@@ -57,7 +57,7 @@ code {
 .aqua-code-header::before,
 .aqua-code-header::after {
   font-family: var(--aqua-font-default-alt-1);
-  font-size: var(--code-font-size);
+  font-size: var(--aqua-code-size);
 }
 
 /* Language Colored Line */
