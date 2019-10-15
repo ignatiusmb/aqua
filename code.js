@@ -20,6 +20,11 @@ aqua.code = {
       return { tool, tooltip }
     }
 
+    // Toggle Numbering Button
+    const numbering = createTool('fas fa-list-ol', 'Toggle Numbering')
+    numbering.tool.addEventListener('click', () => pre.classList.toggle('numbered'))
+    toolbar.appendChild(numbering.tool)
+
     // Copy Code Button
     const copy = createTool('far fa-copy', 'Copy')
     copy.tool.addEventListener('click', () => {
@@ -33,14 +38,10 @@ aqua.code = {
       try {
         if (document.execCommand('copy')) {
           copy.tooltip.innerText = 'Copied!'
-          setTimeout(() => {
-            copy.tooltip.innerText = 'Copy'
-          }, 5000)
+          setTimeout(() => (copy.tooltip.innerText = 'Copy'), 5000)
         } else {
           copy.tooltip.innerText = 'Copy Failed'
-          setTimeout(() => {
-            copy.tooltip.innerText = 'Copy'
-          }, 5000)
+          setTimeout(() => (copy.tooltip.innerText = 'Copy'), 5000)
         }
       } catch (err) {
         alert('An error occurred while copying, copy failed')
@@ -48,13 +49,6 @@ aqua.code = {
       document.body.removeChild(copyArea)
     })
     toolbar.appendChild(copy.tool)
-
-    // Toggle Numbering Button
-    const numbering = createTool('fas fa-list-ol', 'Toggle Numbering')
-    numbering.tool.addEventListener('click', () => {
-      pre.classList.toggle('numbered')
-    })
-    toolbar.appendChild(numbering.tool)
 
     return toolbar
   },
