@@ -35,13 +35,13 @@
 .aqua-form label span {
   pointer-events: none;
   position: absolute;
-  left: 1.5em;
+  left: 1em;
   top: 50%;
   opacity: 0.5;
   transition: 200ms;
   transition-timing-function: ease;
   transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
-  transform: translate(-10%, -50%);
+  transform: translate(0%, -50%);
 }
 .aqua-form label input:focus + span,
 .aqua-form label input:not(:placeholder-shown) + span {
