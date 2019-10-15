@@ -1,13 +1,3 @@
-const aquaInit = () => {
-  aquaCode.init()
-  aquaForm.init()
-  aquaModal.init()
-}
-window.addEventListener('DOMContentLoaded', () => aquaInit())
-window.addEventListener('load', () => {
-  aquaCode.highlight()
-})
-
 const parser = new DOMParser()
 const getArticle = async tab => {
   let response
@@ -35,8 +25,8 @@ for (const item of navItems) {
     } else {
       articles[tabName] = await getArticle(tabName)
       current.replaceWith(articles[tabName])
-      aquaInit()
-      aquaCode.highlight()
+      aqua.init()
+      aqua.code.highlight()
     }
     window.history.replaceState({}, title, url)
   })
