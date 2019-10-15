@@ -2,8 +2,9 @@
  * Aqua v0.19.10 by @ignatiusmb - https://imbagus.com
  * MIT Licensed --> https://aqua.imbagus.com
  */
-const aquaCode = () => {
-  const createToolbar = el => {
+window.aqua = window.aqua || {}
+aqua.code = {
+  createToolbar: pre => {
     const toolbar = document.createElement('div')
     toolbar.className = 'aqua-code-toolbar'
     const createTool = (iconClass, text) => {
@@ -22,7 +23,7 @@ const aquaCode = () => {
     // Copy Code Button
     const copy = createTool('far fa-copy', 'Copy')
     copy.tool.addEventListener('click', () => {
-      const codeLines = el.querySelectorAll('code')
+      const codeLines = pre.querySelectorAll('code')
       const copyArea = document.createElement('textarea')
       copyArea.className = 'ghost-area'
       for (const code of codeLines) copyArea.value += code.innerText
@@ -51,56 +52,51 @@ const aquaCode = () => {
     // Toggle Numbering Button
     const numbering = createTool('fas fa-list-ol', 'Toggle Numbering')
     numbering.tool.addEventListener('click', () => {
-      el.classList.toggle('numbered')
+      pre.classList.toggle('numbered')
     })
     toolbar.appendChild(numbering.tool)
 
     return toolbar
-  }
+  },
+  init: () => {
+    if (document.querySelectorAll('div.aqua-code-toolbar').length) return
+    for (const codeFormat of document.querySelectorAll('pre.aqua-code')) {
+      const language = codeFormat.dataset.language
+      const title = codeFormat.dataset.title
+      let lineNumber = parseInt(codeFormat.dataset.lineStart)
+      const wrapper = document.createElement('div')
+      const header = document.createElement('div')
+      const pre = document.createElement('pre')
+      wrapper.classList.add('aqua-code-box')
+      header.classList.add('aqua-code-header')
+      header.dataset.language = language ? language : ''
+      pre.className = codeFormat.className
 
-  for (const aquaCode of document.querySelectorAll('pre.aqua-code')) {
-    const language = aquaCode.dataset.language
-    const title = aquaCode.dataset.title
-    let lineNumber = parseInt(aquaCode.dataset.lineStart)
-    const wrapper = document.createElement('div')
-    const header = document.createElement('div')
-    const pre = document.createElement('pre')
-    wrapper.classList.add('aqua-code-box')
-    header.classList.add('aqua-code-header')
-    header.dataset.language = language ? language : ''
-    pre.className = aquaCode.className
+      if (title) header.textContent = title
+      else header.classList.add('empty')
+      if (language) pre.classList.add(`language-${language}`)
+      else pre.classList.add('language-none')
 
-    if (title) header.textContent = title
-    else header.classList.add('empty')
-    if (language) pre.classList.add(`language-${language}`)
-    else pre.classList.add('language-none')
-
-    if (!lineNumber) lineNumber = 1
-    for (const line of aquaCode.textContent.split('\n')) {
-      const code = document.createElement('code')
-      code.dataset.line = lineNumber++
-      code.textContent = `${line}\n`
-      pre.appendChild(code)
+      if (!lineNumber) lineNumber = 1
+      for (const line of codeFormat.textContent.split('\n')) {
+        const code = document.createElement('code')
+        code.dataset.line = lineNumber++
+        code.textContent = `${line}\n`
+        pre.appendChild(code)
+      }
+      while (!pre.lastChild.textContent.trim().length) pre.removeChild(pre.lastChild)
+      header.appendChild(aqua.code.createToolbar(pre))
+      wrapper.appendChild(header)
+      wrapper.appendChild(pre)
+      codeFormat.replaceWith(wrapper)
     }
-    while (!pre.lastChild.textContent.trim().length) pre.removeChild(pre.lastChild)
-    header.appendChild(createToolbar(pre))
-    wrapper.appendChild(header)
-    wrapper.appendChild(pre)
-    aquaCode.replaceWith(wrapper)
   }
 }
-
 ;(() => {
   const prism = document.createElement('script')
-  prism.async = false
   prism.type = 'text/javascript'
   prism.src = 'https://cdn.imbagus.com/ajax/prism.js'
   prism.dataset.manual = true
-  prism.onload = () => (aquaCode.highlight = () => Prism.highlightAll())
+  prism.onload = () => (aqua.code.highlight = () => Prism.highlightAll())
   document.head.appendChild(prism)
 })()
-
-aquaCode.init = () => {
-  if (document.querySelectorAll('div.aqua-code-toolbar').length) return
-  else aquaCode()
-}
