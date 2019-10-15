@@ -1,3 +1,6 @@
+/*! Aqua v0.19.10 by @ignatiusmb - https://imbagus.com
+ *  MIT Licensed --> https://aqua.imbagus.com
+ */
 aqua.init = () => {
   if (aqua.code) aqua.code.init()
   if (aqua.form) aqua.form.init()
