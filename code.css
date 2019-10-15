@@ -3,7 +3,12 @@
  */
 @import url('https://cdn.imbagus.com/css/prism.css');
 
-:root {
+.aqua-code-box,
+.aqua-code-header,
+.aqua-code {
+  width: 100%;
+  position: relative;
+
   --aqua-bounce-distance: 10em;
   --aqua-code-size: 0.9em;
   --aqua-transition-time: 87.5ms;
@@ -14,7 +19,6 @@ code {
   font-size: var(--aqua-code-size);
   font-weight: 300;
 }
-
 /* Inline code */
 :not(pre) > code {
   padding: 0.1em 0.3em;
@@ -23,17 +27,10 @@ code {
   color: var(--aqua-cl-light);
 }
 
-.aqua-code-box,
-.aqua-code-header,
-.aqua-code {
-  width: 100%;
-  position: relative;
-}
 .aqua-code-box {
   margin-top: 1em;
 }
 
-/* Code Box Header */
 .aqua-code-header {
   z-index: 1;
   position: absolute;
@@ -62,7 +59,6 @@ code {
   font-family: var(--aqua-font-default-alt-1);
   font-size: var(--aqua-code-size);
 }
-
 /* Language Colored Line */
 .aqua-code-header::before {
   content: '';
@@ -76,18 +72,15 @@ code {
   transition: var(--aqua-transition-time);
   transition-timing-function: var(--aqua-transition-func);
 }
-
 .aqua-code-header.empty::before {
   top: -0.06em;
   border-top-left-radius: var(--aqua-border-curve);
   border-top-right-radius: var(--aqua-border-curve);
 }
-
 .aqua-code-box:hover > .aqua-code-header::before {
   right: var(--aqua-bounce-distance);
   transition: var(--aqua-transition-time);
 }
-
 /* Language Title */
 .aqua-code-header::after {
   z-index: 1;
@@ -104,11 +97,9 @@ code {
   transition: var(--aqua-transition-time);
   transition-timing-function: var(--aqua-transition-func);
 }
-
 .aqua-code-header[data-language]::after {
   content: attr(data-language);
 }
-
 .aqua-code-box:hover > .aqua-code-header::after {
   right: var(--aqua-bounce-distance);
   border-bottom-right-radius: var(--aqua-border-curve);
@@ -208,7 +199,6 @@ code {
 .aqua-code-box:hover .aqua-code-toolbar {
   opacity: 1;
 }
-
 .aqua-code-toolbar > .aqua-ctb-item {
   cursor: pointer;
   width: 1.75em;
@@ -223,7 +213,6 @@ code {
   text-align: center;
   font-size: small;
 }
-
 .aqua-ctb-item > .aqua-ctb-tooltip {
   position: absolute;
   bottom: 2.5em;
@@ -234,7 +223,6 @@ code {
   color: white;
   transition: var(--aqua-transition-time);
 }
-
 .aqua-ctb-item > .aqua-ctb-tooltip::after {
   content: '';
   position: absolute;
@@ -245,7 +233,6 @@ code {
   border-style: solid;
   border-color: #555 transparent transparent transparent;
 }
-
 .aqua-ctb-item:hover > .aqua-ctb-tooltip,
 .aqua-ctb-item:focus > .aqua-ctb-tooltip {
   display: block;
