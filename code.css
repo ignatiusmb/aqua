@@ -226,7 +226,7 @@ code {
 .aqua-ctb-item > .aqua-ctb-tooltip::after {
   content: '';
   position: absolute;
-  top: 95%;
+  bottom: -9px;
   left: 50%;
   margin-left: -5px;
   border-width: 5px;
