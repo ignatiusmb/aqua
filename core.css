@@ -25,23 +25,19 @@
 *::after {
   box-sizing: border-box;
 }
-
 html {
   font-family: var(--aqua-font-default-main);
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
 }
-
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
 }
-
 main {
   display: block;
 }
-
 body,
 h1,
 h2,
@@ -61,7 +57,6 @@ dd {
   margin: 0;
   font-weight: normal;
 }
-
 pre,
 code,
 kbd,
@@ -71,39 +66,32 @@ samp {
   font-weight: lighter;
   font-size: 1em;
 }
-
 hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
-
 ul[class],
 ol[class] {
   padding: 0;
 }
-
 a,
 a:visited {
   text-decoration: none;
   background-color: transparent;
 }
-
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
   text-decoration: underline dotted;
 }
-
 b,
 strong {
   font-weight: bolder;
 }
-
 small {
   font-size: 80%;
 }
-
 button,
 input,
 optgroup,
@@ -156,17 +144,14 @@ input {
 textarea {
   overflow: auto;
 }
-
 img {
   max-width: 100%;
   display: block;
   border-style: none;
 }
-
 fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
-
 legend {
   box-sizing: border-box;
   color: inherit;
@@ -175,11 +160,9 @@ legend {
   padding: 0;
   white-space: normal;
 }
-
 progress {
   vertical-align: baseline;
 }
-
 [type='checkbox'],
 [type='radio'] {
   box-sizing: border-box;
@@ -200,19 +183,29 @@ progress {
   -webkit-appearance: button;
   font: inherit;
 }
-
 details {
   display: block;
 }
-
 summary {
   display: list-item;
 }
-
 template {
   display: none;
 }
-
 [hidden] {
   display: none;
+}
+
+/* Custom Aqua Classes */
+.aqua-snackbar {
+  z-index: 99;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.8em 1em;
+  background-color: var(--aqua-bg-dark);
+  color: hsla(0, 0%, 100%, 0.87);
+  letter-spacing: 0.25px;
+  font-size: 90%;
 }
