@@ -203,6 +203,9 @@ template {
   bottom: 0;
   left: 0;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 0.8em 1em;
   background-color: var(--aqua-bg-dark);
   color: hsla(0, 0%, 100%, 0.87);
@@ -213,4 +216,7 @@ template {
 }
 .aqua-snackbar.show {
   transform: translateY(0%);
+}
+.aqua-snackbar .material-icons {
+  cursor: pointer;
 }
