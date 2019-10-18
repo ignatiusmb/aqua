@@ -208,4 +208,9 @@ template {
   color: hsla(0, 0%, 100%, 0.87);
   letter-spacing: 0.25px;
   font-size: 90%;
+  transform: translateY(100%);
+  transition: 0.2s cubic-bezier(0.4, 0, 1, 1), -webkit-transform 0.2s cubic-bezier(0.4, 0, 1, 1);
+}
+.aqua-snackbar.show {
+  transform: translateY(0%);
 }
