@@ -16,17 +16,19 @@ aqua.code = {
       tooltip.innerText = text
       tool.appendChild(icon)
       tool.appendChild(tooltip)
-      return { tool, tooltip }
+      return tool
     }
+    const snackbar = document.querySelector('.aqua-snackbar.code')
 
     // Toggle Numbering Button
     const numbering = createTool('fas fa-list-ol', 'Toggle Numbering')
-    numbering.tool.addEventListener('click', () => pre.classList.toggle('numbered'))
-    toolbar.appendChild(numbering.tool)
+    numbering.addEventListener('click', () => pre.classList.toggle('numbered'))
+    toolbar.appendChild(numbering)
 
     // Copy Code Button
     const copy = createTool('far fa-copy', 'Copy')
-    copy.tool.addEventListener('click', () => {
+    const copyTimeout = {}
+    copy.addEventListener('click', () => {
       const codeLines = pre.querySelectorAll('code')
       const copyArea = document.createElement('textarea')
       copyArea.className = 'ghost-area'
@@ -35,24 +37,36 @@ aqua.code = {
       copyArea.focus()
       copyArea.select()
       try {
-        if (document.execCommand('copy')) {
-          copy.tooltip.innerText = 'Copied!'
-          setTimeout(() => (copy.tooltip.innerText = 'Copy'), 5000)
-        } else {
-          copy.tooltip.innerText = 'Copy Failed'
-          setTimeout(() => (copy.tooltip.innerText = 'Copy'), 5000)
-        }
+        if (document.execCommand('copy')) snackbar.textContent = 'Copied to clipboard!'
+        else snackbar.textContent = 'Copy failed'
       } catch (err) {
-        alert('An error occurred while copying, copy failed')
+        snackbar.textContent = `An error occurred --> ${err}`
+      }
+      if (!snackbar.classList.contains('show')) {
+        if (copyTimeout.add) clearTimeout(copyTimeout.add)
+        if (copyTimeout.remove) clearTimeout(copyTimeout.remove)
+        copyTimeout.add = setTimeout(() => snackbar.classList.add('show'), 200)
+        copyTimeout.remove = setTimeout(() => snackbar.classList.remove('show'), 5000)
+      } else {
+        if (copyTimeout.add) clearTimeout(copyTimeout.add)
+        if (copyTimeout.remove) clearTimeout(copyTimeout.remove)
+        snackbar.classList.remove('show')
+        copyTimeout.add = setTimeout(() => snackbar.classList.add('show'), 600)
+        copyTimeout.remove = setTimeout(() => snackbar.classList.remove('show'), 5000)
       }
       document.body.removeChild(copyArea)
     })
-    toolbar.appendChild(copy.tool)
+    toolbar.appendChild(copy)
 
     return toolbar
   },
   init: () => {
     if (document.querySelectorAll('div.aqua-code-toolbar').length) return
+    if (!document.querySelector('.aqua-snackbar.code')) {
+      const snackbar = document.createElement('div')
+      snackbar.className = 'aqua-snackbar code'
+      document.body.appendChild(snackbar)
+    }
     for (const codeFormat of document.querySelectorAll('pre.aqua-code')) {
       const language = codeFormat.dataset.language
       const title = codeFormat.dataset.title
