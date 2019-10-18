@@ -6,14 +6,14 @@ aqua.code = {
   createToolbar: pre => {
     const toolbar = document.createElement('div')
     toolbar.className = 'aqua-code-toolbar'
-    const createTool = (iconClass, text) => {
+    const createTool = (iconClass, description) => {
       const tool = document.createElement('a')
       const icon = document.createElement('i')
       const tooltip = document.createElement('span')
       tool.className = `aqua-ctb-item`
       icon.className = iconClass
       tooltip.className = 'aqua-ctb-tooltip'
-      tooltip.innerText = text
+      tooltip.innerText = description
       tool.appendChild(icon)
       tool.appendChild(tooltip)
       return tool
@@ -69,8 +69,7 @@ aqua.code = {
       const snackbar = document.createElement('div')
       snackbar.className = 'aqua-snackbar code'
       const icon = document.createElement('i')
-      icon.className = 'material-icons'
-      icon.textContent = 'close'
+      icon.className = 'fas fa-times'
       icon.addEventListener('click', () => snackbar.classList.remove('show'))
       snackbar.appendChild(icon)
       document.body.appendChild(snackbar)
