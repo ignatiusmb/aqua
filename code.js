@@ -31,17 +31,20 @@ aqua.code = {
     copy.addEventListener('click', () => {
       const codeLines = pre.querySelectorAll('code')
       const copyArea = document.createElement('textarea')
+      const description = document.createElement('span')
       copyArea.className = 'ghost-area'
       for (const code of codeLines) copyArea.value += code.innerText
       document.body.appendChild(copyArea)
       copyArea.focus()
       copyArea.select()
       try {
-        if (document.execCommand('copy')) snackbar.textContent = 'Copied to clipboard!'
-        else snackbar.textContent = 'Copy failed'
+        if (document.execCommand('copy')) description.textContent = 'Copied to clipboard!'
+        else description.textContent = 'Copy failed'
       } catch (err) {
-        snackbar.textContent = `An error occurred --> ${err}`
+        description.textContent = `An error occurred --> ${err}`
       }
+      if (snackbar.firstChild.tagName !== 'I') snackbar.removeChild(snackbar.firstChild)
+      snackbar.insertAdjacentElement('afterbegin', description)
       if (!snackbar.classList.contains('show')) {
         if (copyTimeout.add) clearTimeout(copyTimeout.add)
         if (copyTimeout.remove) clearTimeout(copyTimeout.remove)
@@ -65,6 +68,11 @@ aqua.code = {
     if (!document.querySelector('.aqua-snackbar.code')) {
       const snackbar = document.createElement('div')
       snackbar.className = 'aqua-snackbar code'
+      const icon = document.createElement('i')
+      icon.className = 'material-icons'
+      icon.textContent = 'close'
+      icon.addEventListener('click', () => snackbar.classList.remove('show'))
+      snackbar.appendChild(icon)
       document.body.appendChild(snackbar)
     }
     for (const codeFormat of document.querySelectorAll('pre.aqua-code')) {
