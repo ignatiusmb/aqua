@@ -49,7 +49,7 @@ code {
 }
 .aqua-code-header.empty::after {
   top: 0;
-  border-top-right-radius: 2px;
+  border-top-right-radius: var(--aqua-border-curve);
 }
 .aqua-code-header.empty ~ .aqua-code {
   padding-top: 2em;
@@ -118,6 +118,9 @@ code {
   color: var(--aqua-cl-light);
   line-height: 1.4;
   font-size: var(--aqua-code-size);
+}
+.aqua-code.language-none {
+  padding-top: 3em;
 }
 :not(.aqua-code-box) > .aqua-code {
   padding: 1em;
