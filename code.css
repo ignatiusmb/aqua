@@ -10,7 +10,7 @@
   position: relative;
 
   --aqua-bounce-distance: 10em;
-  --aqua-code-size: 0.9em;
+  --aqua-code-size: 0.9rem;
   --aqua-transition-time: 87.5ms;
   --aqua-transition-func: cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
@@ -40,7 +40,7 @@ code {
   border-top-left-radius: var(--aqua-border-curve);
   background: #757575;
   color: #fff;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   font-weight: lighter;
   font-family: var(--aqua-font-code);
 }

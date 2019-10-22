@@ -44,7 +44,7 @@
   left: 50%;
   margin-top: -0.5em;
   margin-left: -0.5em;
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 /* popup */
@@ -86,7 +86,7 @@
   color: #0070bb;
   text-align: center;
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
 .bsa-zoom {

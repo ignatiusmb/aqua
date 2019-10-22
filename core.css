@@ -64,7 +64,7 @@ samp {
   margin: 0;
   font-family: var(--aqua-font-code);
   font-weight: lighter;
-  font-size: 1em;
+  font-size: 1rem;
 }
 hr {
   box-sizing: content-box;
@@ -219,5 +219,5 @@ template {
 }
 .aqua-snackbar i {
   cursor: pointer;
-  font-size: 1.25em;
+  font-size: 1.25rem;
 }

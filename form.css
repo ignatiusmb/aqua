@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: column;
   padding: 1em 3em;
-  font-size: 1em;
+  font-size: 1rem;
 }
 .aqua-form label {
   position: relative;
@@ -48,7 +48,7 @@
   position: absolute;
   top: 0.25em;
   left: 0.5em;
-  font-size: 0.77em;
+  font-size: 0.77rem;
   opacity: 0.8;
   transform: translate(0%, 0%);
 }

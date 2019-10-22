@@ -35,7 +35,7 @@ nav .tab-item {
   transition: 0.3s;
 }
 nav .tab-item .icon {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   transition: 300ms;
   transform: translateY(25%);
 }
@@ -44,7 +44,7 @@ nav .tab-item .icon .icon-active {
 }
 nav .tab-item span {
   opacity: 0;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   transition: 300ms;
 }
 nav .tab-item.active {
@@ -84,16 +84,16 @@ header {
   color: white;
 }
 header h1 {
-  font-size: 4em;
+  font-size: 4rem;
 }
 h1 {
   margin-bottom: 0.2em;
   text-align: center;
-  font-size: 2.5em;
+  font-size: 2.5rem;
   font-family: var(--aqua-font-heading-main);
 }
 h3 {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-family: var(--aqua-font-mono-main);
 }
 a {
@@ -169,7 +169,7 @@ section main {
 }
 
 footer .link {
-  font-size: 2em;
+  font-size: 2rem;
 }
 
 @media only screen and (min-width: 480px) {
