@@ -1,8 +1,9 @@
 /*! Aqua v0.19.10 by @ignatiusmb - https://imbagus.com
  *  MIT Licensed --> https://github.com/ignatiusmb/aqua
  */
-window.aqua = window.aqua || {}
-aqua.code = {
+window.Aqua = window.Aqua || {}
+
+Aqua.code = {
   createToolbar: pre => {
     const toolbar = document.createElement('div')
     toolbar.className = 'aqua-code-toolbar'
@@ -99,7 +100,7 @@ aqua.code = {
         pre.appendChild(code)
       }
       while (!pre.lastChild.textContent.trim().length) pre.removeChild(pre.lastChild)
-      header.appendChild(aqua.code.createToolbar(pre))
+      header.appendChild(Aqua.code.createToolbar(pre))
       wrapper.appendChild(header)
       wrapper.appendChild(pre)
       codeFormat.replaceWith(wrapper)
@@ -111,6 +112,6 @@ aqua.code = {
   prism.type = 'text/javascript'
   prism.src = 'https://cdn.imbagus.com/ajax/prism.js'
   prism.dataset.manual = true
-  prism.onload = () => (aqua.code.highlight = () => Prism.highlightAll())
+  prism.onload = () => (Aqua.code.highlight = () => Prism.highlightAll())
   document.head.appendChild(prism)
 })()

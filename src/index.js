@@ -25,8 +25,8 @@ for (const item of navItems) {
     } else {
       articles[tabName] = await getArticle(tabName)
       current.replaceWith(articles[tabName])
-      aqua.init()
-      aqua.code.highlight()
+      Aqua.init()
+      Aqua.code.highlight()
     }
     window.history.replaceState({}, title, url)
   })

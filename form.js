@@ -1,8 +1,8 @@
 /*! Aqua v0.19.10 by @ignatiusmb - https://imbagus.com
  *  MIT Licensed --> https://github.com/ignatiusmb/aqua
  */
-window.aqua = window.aqua || {}
-aqua.form = {
+window.Aqua = window.Aqua || {}
+Aqua.form = {
   init: () => {
     for (const form of document.querySelectorAll('form.aqua-form')) {
       for (const input of form.querySelectorAll('input')) {

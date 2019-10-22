@@ -1,8 +1,8 @@
 /*! Aqua v0.19.10 by @ignatiusmb - https://imbagus.com
  *  MIT Licensed --> https://github.com/ignatiusmb/aqua
  */
-window.aqua = window.aqua || {}
-aqua.modal = {
+window.Aqua = window.Aqua || {}
+Aqua.modal = {
   init: () => {
     for (const modal of document.querySelectorAll('.aqua-modal')) {
       const popup = modal.querySelector('.aqua-modal-popup')
