@@ -10,13 +10,11 @@
   position: relative;
 
   --aqua-bounce-distance: 10em;
-  --aqua-code-size: 0.9rem;
   --aqua-transition-time: 87.5ms;
   --aqua-transition-func: cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
 code {
-  font-size: var(--aqua-code-size);
   font-weight: 300;
 }
 /* Inline code */
@@ -57,7 +55,7 @@ code {
 .aqua-code-header::before,
 .aqua-code-header::after {
   font-family: var(--aqua-font-default-alt-1);
-  font-size: var(--aqua-code-size);
+  font-size: 0.75rem;
 }
 /* Language Colored Line */
 .aqua-code-header::before {
@@ -117,7 +115,7 @@ code {
   background: var(--aqua-bg-dark);
   color: var(--aqua-cl-light);
   line-height: 1.4;
-  font-size: var(--aqua-code-size);
+  font-size: 0.8rem;
 }
 .aqua-code.language-none {
   padding-top: 3em;
