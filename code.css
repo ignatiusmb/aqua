@@ -9,14 +9,12 @@
   width: 100%;
   position: relative;
 
+  --aqua-code-default-bg: #757575;
   --aqua-bounce-distance: 10em;
   --aqua-transition-time: 87.5ms;
   --aqua-transition-func: cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
-code {
-  font-weight: 300;
-}
 /* Inline code */
 :not(pre) > code {
   padding: 0.1em 0.3em;
@@ -36,7 +34,7 @@ code {
   margin: 0;
   border-top-right-radius: var(--aqua-border-curve);
   border-top-left-radius: var(--aqua-border-curve);
-  background: #757575;
+  background: var(--aqua-code-default-bg);
   color: #fff;
   font-size: 0.8rem;
   font-weight: lighter;
@@ -48,9 +46,6 @@ code {
 .aqua-code-header.empty::after {
   top: 0;
   border-top-right-radius: var(--aqua-border-curve);
-}
-.aqua-code-header.empty ~ .aqua-code {
-  padding-top: 2em;
 }
 .aqua-code-header::before,
 .aqua-code-header::after {
@@ -71,13 +66,17 @@ code {
   transition-timing-function: var(--aqua-transition-func);
 }
 .aqua-code-header.empty::before {
-  top: -0.06em;
+  height: 0.6em;
+  top: 0;
   border-top-left-radius: var(--aqua-border-curve);
   border-top-right-radius: var(--aqua-border-curve);
 }
 .aqua-code-box:hover > .aqua-code-header::before {
   right: var(--aqua-bounce-distance);
   transition: var(--aqua-transition-time);
+}
+.aqua-code-box:hover > .aqua-code-header.empty::before {
+  right: 0;
 }
 /* Language Title */
 .aqua-code-header::after {
@@ -106,39 +105,13 @@ code {
   transition: var(--aqua-transition-time);
 }
 
-/* Code Block */
-.aqua-code {
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding: 4em 1.5em 1em;
-  border-radius: var(--aqua-border-curve);
-  background: var(--aqua-bg-dark);
-  color: var(--aqua-cl-light);
-  line-height: 1.4;
-  font-size: 0.8rem;
+.aqua-code-header[data-language='']:not(.empty)::before,
+.aqua-code-header[data-language='']:not(.empty)::after {
+  content: none;
 }
-.aqua-code.language-none {
-  padding-top: 3em;
+.aqua-code-header[data-language='']::before {
+  background: var(--aqua-code-default-bg);
 }
-:not(.aqua-code-box) > .aqua-code {
-  padding: 1em;
-  margin: 1em 0;
-}
-.aqua-code.numbered {
-  padding-left: 0.6em;
-}
-.aqua-code.numbered code::before {
-  content: attr(data-line);
-  max-width: 2em;
-  width: 100%;
-  display: inline-block;
-  padding-right: 0.4em;
-  margin-right: 0.8em;
-  color: gray;
-  letter-spacing: normal;
-  text-align: right;
-}
-
 /* Language Styles */
 .aqua-code-header[data-language='bash']::before,
 .aqua-code-header[data-language='bash']::after {
@@ -183,34 +156,71 @@ code {
   color: #444;
 }
 
+/* Code Block */
+.aqua-code {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4em 1.5em 1em;
+  border-radius: var(--aqua-border-curve);
+  background: var(--aqua-bg-dark);
+  color: var(--aqua-cl-light);
+  line-height: 1.4;
+  font-size: 0.8rem;
+}
+.aqua-code-header.empty + .aqua-code {
+  padding-top: 2em;
+}
+:not(.aqua-code-box) > .aqua-code {
+  padding: 1em;
+  margin: 1em 0;
+}
+.aqua-code.numbered {
+  padding-left: 0.6em;
+}
+.aqua-code.numbered code::before {
+  content: attr(data-line);
+  max-width: 2em;
+  width: 100%;
+  display: inline-block;
+  padding-right: 0.4em;
+  margin-right: 0.8em;
+  color: gray;
+  letter-spacing: normal;
+  text-align: right;
+}
+
 /* Code Toolbar */
 .aqua-code-toolbar {
   z-index: 2;
   position: absolute;
-  top: 110%;
+  top: 50%;
   right: 0.2em;
   display: flex;
 
   opacity: 0;
   transition: var(--aqua-transition-time);
+  transform: translateY(75%);
 }
 .aqua-code-header.empty .aqua-code-toolbar {
-  top: 25%;
+  transform: translateY(-20%);
 }
 .aqua-code-box:hover .aqua-code-toolbar {
   opacity: 1;
 }
+.aqua-code-header[data-language='']:not(.empty) .aqua-code-toolbar {
+  transform: translateY(-50%);
+}
 .aqua-code-toolbar > .aqua-ctb-item {
   cursor: pointer;
-  width: 1.75em;
-  height: 1.75em;
+  width: 1.7em;
+  height: 1.7em;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   margin-left: 0.2em;
-  background: white;
-  color: #0070bb;
+  background: var(--aqua-bg-light);
+  color: var(--aqua-primary);
   text-align: center;
   font-size: small;
 }
