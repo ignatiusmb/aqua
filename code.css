@@ -167,9 +167,11 @@
   line-height: 1.4;
   font-size: 0.8rem;
 }
-.aqua-code-header.empty + .aqua-code,
-.aqua-code-header[data-language=''] + .aqua-code {
+.aqua-code-header.empty + .aqua-code {
   padding-top: 2em;
+}
+.aqua-code-header[data-language=''] + .aqua-code {
+  padding-top: 3em;
 }
 :not(.aqua-code-box) > .aqua-code {
   padding: 1em;
