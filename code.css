@@ -170,7 +170,7 @@
 .aqua-code-header.empty + .aqua-code {
   padding-top: 2em;
 }
-.aqua-code-header[data-language=''] + .aqua-code {
+.aqua-code-header[data-language='']:not(.empty) + .aqua-code {
   padding-top: 3em;
 }
 :not(.aqua-code-box) > .aqua-code {
