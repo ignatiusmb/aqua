@@ -75,7 +75,7 @@
   right: var(--aqua-bounce-distance);
   transition: var(--aqua-transition-time);
 }
-.aqua-code-box:hover > .aqua-code-header.empty::before {
+.aqua-code-box:hover > .aqua-code-header.empty[data-language='']::before {
   right: 0;
 }
 /* Language Title */
@@ -167,7 +167,8 @@
   line-height: 1.4;
   font-size: 0.8rem;
 }
-.aqua-code-header.empty + .aqua-code {
+.aqua-code-header.empty + .aqua-code,
+.aqua-code-header[data-language=''] + .aqua-code {
   padding-top: 2em;
 }
 :not(.aqua-code-box) > .aqua-code {
