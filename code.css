@@ -160,7 +160,7 @@
 .aqua-code {
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 4em 1.5em 1em;
+  padding: 4.2em 1.5em 1em;
   border-radius: var(--aqua-border-curve);
   background: var(--aqua-bg-dark);
   color: var(--aqua-cl-light);
