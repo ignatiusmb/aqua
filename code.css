@@ -155,7 +155,7 @@
 }
 .aqua-code-header[data-language='svelte']::before,
 .aqua-code-header[data-language='svelte']::after {
-  background: #40b3ff;
+  background: #ff3e00;
   color: var(--aqua-code-header-cl-light);
 }
 .aqua-code-header[data-language='terminal']::before,
