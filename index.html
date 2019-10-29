@@ -124,16 +124,16 @@ font-family: var(--aqua-font-mono-alt);
             </pre>
           </div>
           <div class="card">
-            <h1>Use Case</h1>
+            <h1>Initialization</h1>
 
             <pre class="aqua-code" data-language="javascript" data-title="index.js --> Initialize">
 window.addEventListener('DOMContentLoaded', () => {
-  Aqua.code.init()
+  if (Aqua.code) Aqua.code.init()
 })
             </pre>
             <pre class="aqua-code" data-language="javascript" data-title="index.js --> Syntax Highlighting">
 window.addEventListener('load', () => {
-  Aqua.code.highlight()
+  if (Aqua.code) Aqua.code.highlight()
 })
             </pre>
           </div>
@@ -199,11 +199,11 @@ TEMPLATES = [
           </div>
 
           <div class="card">
-            <h1>Use Case</h1>
+            <h1>Initialization</h1>
 
-            <pre class="aqua-code" data-language="javascript" data-title="index.js --> Initialize">
+            <pre class="aqua-code" data-language="javascript" data-title="index.js">
 window.addEventListener('DOMContentLoaded', () => {
-  Aqua.form.init()
+  if (Aqua.form) Aqua.form.init()
 })
             </pre>
           </div>
@@ -252,11 +252,11 @@ window.addEventListener('DOMContentLoaded', () => {
           </div>
 
           <div class="card">
-            <h1>Use Case</h1>
+            <h1>Initialization</h1>
 
             <pre class="aqua-code" data-language="javascript" data-title="index.js --> Initialize">
 window.addEventListener('DOMContentLoaded', () => {
-  Aqua.modal.init()
+  if (Aqua.modal) Aqua.modal.init()
 })
             </pre>
           </div>
