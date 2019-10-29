@@ -111,7 +111,7 @@ font-family: var(--aqua-font-mono-alt);
 
             <pre class="aqua-code" data-language="html" data-title="<head>">
 &lt;link rel="stylesheet" href="https://aqua.imbagus.com/code.css">
-&lt;script src="https://aqua.imbagus.com/code.js">&lt;/script>
+&lt;script defer src="https://aqua.imbagus.com/code.js">&lt;/script>
             </pre>
 
             <pre class="aqua-code" data-language="html" data-title="<template />">
@@ -122,15 +122,18 @@ font-family: var(--aqua-font-mono-alt);
 &amp;lt;script>&amp;lt;/script>
 &lt;/pre>
             </pre>
+          </div>
+          <div class="card">
+            <h1>Use Case</h1>
 
             <pre class="aqua-code" data-language="javascript" data-title="index.js --> Initialize">
 window.addEventListener('DOMContentLoaded', () => {
-  aqua.code.init()
+  Aqua.code.init()
 })
             </pre>
             <pre class="aqua-code" data-language="javascript" data-title="index.js --> Syntax Highlighting">
 window.addEventListener('load', () => {
-  aqua.code.highlight()
+  Aqua.code.highlight()
 })
             </pre>
           </div>
@@ -139,7 +142,6 @@ window.addEventListener('load', () => {
             <h1>Code Demo</h1>
             <pre class="aqua-code" data-language="python" data-title="Example">
 import os
-import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -184,7 +186,7 @@ TEMPLATES = [
 
             <pre class="aqua-code" data-language="html" data-title="<head>">
 &lt;link rel="stylesheet" href="https://aqua.imbagus.com/form.css">
-&lt;script src="https://aqua.imbagus.com/form.js">&lt;/script>
+&lt;script defer src="https://aqua.imbagus.com/form.js">&lt;/script>
             </pre>
 
             <pre class="aqua-code" data-language="html" data-title="<template />">
@@ -194,10 +196,14 @@ TEMPLATES = [
   &lt;button type="submit">Login&lt;/button>
 &lt;/form>
             </pre>
+          </div>
+
+          <div class="card">
+            <h1>Use Case</h1>
 
             <pre class="aqua-code" data-language="javascript" data-title="index.js --> Initialize">
 window.addEventListener('DOMContentLoaded', () => {
-  aqua.form.init()
+  Aqua.form.init()
 })
             </pre>
           </div>
@@ -223,7 +229,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
             <pre class="aqua-code" data-language="html" data-title="<head>">
 &lt;link rel="stylesheet" href="https://aqua.imbagus.com/modal.css">
-&lt;script src="https://aqua.imbagus.com/modal.js">&lt;/script>
+&lt;script defer src="https://aqua.imbagus.com/modal.js">&lt;/script>
             </pre>
 
             <pre class="aqua-code" data-language="html" data-title="<template />">
@@ -243,10 +249,14 @@ window.addEventListener('DOMContentLoaded', () => {
   &lt;div>
 &lt;div>
             </pre>
+          </div>
+
+          <div class="card">
+            <h1>Use Case</h1>
 
             <pre class="aqua-code" data-language="javascript" data-title="index.js --> Initialize">
 window.addEventListener('DOMContentLoaded', () => {
-  aqua.modal.init()
+  Aqua.modal.init()
 })
             </pre>
           </div>
