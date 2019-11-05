@@ -1,6 +1,3 @@
-/*! Aqua v0.19.10 by @ignatiusmb - https://imbagus.com
- *  MIT Licensed -> https://github.com/ignatiusmb/aqua
- */
 window.Aqua = window.Aqua || {}
 ;(async () => {
   const prism = document.createElement('script')

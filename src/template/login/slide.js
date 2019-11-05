@@ -1,6 +1,3 @@
-/*! Aqua v0.19.10 by @ignatiusmb - https://imbagus.com
- *  MIT Licensed -> https://github.com/ignatiusmb/aqua
- */
 for (const formWrapper of document.querySelectorAll('.aqua-form-slide')) {
   formWrapper.querySelector('#sign-up').addEventListener('click', () => {
     formWrapper.classList.add('toggled')
