@@ -1,0 +1,26 @@
+{
+  "name": "aquacss",
+  "version": "1.0.0",
+  "description": "UI Toolkit & Templates",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ignatiusmb/aqua.git"
+  },
+  "keywords": [
+    "aqua",
+    "css",
+    "UI",
+    "toolkit",
+    "template"
+  ],
+  "author": "Ignatius Bagus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ignatiusmb/aqua/issues"
+  },
+  "homepage": "https://aqua.imbagus.com"
+}
