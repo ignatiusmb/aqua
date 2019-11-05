@@ -1,9 +1,23 @@
 /*! Aqua v0.19.10 by @ignatiusmb - https://imbagus.com
- *  MIT Licensed --> https://github.com/ignatiusmb/aqua
+ *  MIT Licensed -> https://github.com/ignatiusmb/aqua
  */
 window.Aqua = window.Aqua || {}
-
+;(async () => {
+  const prism = document.createElement('script')
+  prism.type = 'text/javascript'
+  prism.src = 'https://cdn.imbagus.com/ajax/prism.js'
+  prism.dataset.manual = true
+  prism.onload = () => (Aqua.code.highlight = () => Prism.highlightAll())
+  document.head.appendChild(prism)
+})()
 Aqua.code = {
+  highlight: () => {
+    const check = setInterval(() => {
+      if (!Prism) return
+      Prism.highlightAll()
+      clearInterval(check)
+    }, 1000)
+  },
   createToolbar: pre => {
     const toolbar = document.createElement('div')
     toolbar.className = 'aqua-code-toolbar'
@@ -107,11 +121,3 @@ Aqua.code = {
     }
   }
 }
-;(() => {
-  const prism = document.createElement('script')
-  prism.type = 'text/javascript'
-  prism.src = 'https://cdn.imbagus.com/ajax/prism.js'
-  prism.dataset.manual = true
-  prism.onload = () => (Aqua.code.highlight = () => Prism.highlightAll())
-  document.head.appendChild(prism)
-})()
