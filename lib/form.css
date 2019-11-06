@@ -1,0 +1,6 @@
+/*! Aqua v0.19.11 by @ignatiusmb - imbagus.com
+ *  Copyright (c) 2019 Ignatius Bagus
+ *  MIT Licensed -> github.com/ignatiusmb/aqua
+ *  aqua.imbagus.com
+ */
+.aqua-form-card{backface-visibility:hidden;overflow:hidden;max-width:36em;width:100%;min-height:12em;position:relative;border-radius:.6em;box-shadow:0 .9em 1.75em rgba(0,0,0,.25),0 .6em .6em rgba(0,0,0,.22);margin:0 auto;background-color:#fff}.aqua-form-card label{width:100%}.aqua-form{width:100%;display:flex;flex-direction:column;padding:1em 3em;font-size:1rem}.aqua-form label{position:relative;display:inline-flex;margin:.5em 0}.aqua-form label input{padding:1.25em 1em .75em}.aqua-form label span{pointer-events:none;position:absolute;left:1em;top:50%;opacity:.5;transition:.2s;transition-timing-function:ease;transition-timing-function:cubic-bezier(.25,.1,.25,1);transform:translate(0,-50%)}.aqua-form label input:focus+span,.aqua-form label input:not(:placeholder-shown)+span{position:absolute;top:.25em;left:.5em;font-size:.77rem;opacity:.8;transform:translate(0,0)}.aqua-form button,.aqua-form-card button{width:100%;padding:.7em 3em;border:1px solid;border-color:var(--aqua-primary);border-radius:.5em;margin-top:1em;background-color:var(--aqua-primary);color:#fff;letter-spacing:.1em;text-transform:uppercase;font-weight:700;transition:80ms ease}.aqua-form button:active{transform:scale(.95)}
