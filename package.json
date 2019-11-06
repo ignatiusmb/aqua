@@ -1,10 +1,10 @@
 {
   "name": "aquacss",
-  "version": "1.0.0",
+  "version": "0.19.11",
   "description": "UI Toolkit & Templates",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,12 @@
   "bugs": {
     "url": "https://github.com/ignatiusmb/aqua/issues"
   },
-  "homepage": "https://aqua.imbagus.com"
+  "homepage": "https://aqua.imbagus.com",
+  "devDependencies": {
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-header": "^2.0.9",
+    "gulp-uglify-es": "^2.0.0"
+  }
 }
