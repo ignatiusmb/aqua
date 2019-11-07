@@ -1,6 +1,13 @@
 module.exports = {
-  code: { style: require('./lib/code.css'), script: require('./lib/code') },
-  form: { style: require('./lib/form'), script: require('./lib/form') },
-  code: { style: require('./lib/code.css'), script: require('./lib/code') },
-  modal: { style: require('./lib/modal.css'), script: require('./lib/modal') }
+  style: {
+    core: require('./lib/code.css'),
+    code: require('./lib/code.css'),
+    form: require('./lib/form.css'),
+    modal: require('./lib/modal.css')
+  },
+  script: {
+    code: require('./lib/code.js'),
+    form: require('./lib/form.js'),
+    modal: require('./lib/modal.js')
+  }
 }
