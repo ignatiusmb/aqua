@@ -1,6 +1,6 @@
 {
   "name": "@ignatiusmb/aqua",
-  "version": "0.19.11",
+  "version": "0.19.11-1",
   "description": "UI Toolkit & Templates",
   "main": "index.js",
   "scripts": {
