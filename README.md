@@ -1,28 +1,14 @@
-# [Aqua](https://aqua.imbagus.com)&nbsp;&middot;&nbsp;
+# [Aqua](https://aqua.imbagus.com)&nbsp;&middot;&nbsp;![npm (scoped)](https://img.shields.io/npm/v/@ignatiusmb/aqua)&nbsp;![npm](https://img.shields.io/npm/dm/@ignatiusmb/aqua)&nbsp;![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/@ignatiusmb/aqua?label=minzip)
 
 ### Core Sheet - base file for other sheets
-
 ```html
-<link rel="stylesheet" href="https://aqua.imbagus.com/core.css">
+<link rel="stylesheet" href="https://aqua.imbagus.com/lib/core.css">
 ```
 
-### [Code Bundle](https://aqua.imbagus.com/#code)
-
-```html
-<link rel="stylesheet" href="https://aqua.imbagus.com/code.css">
-<script defer src="https://aqua.imbagus.com/code.js"></script>
+### [Main Modules](https://aqua.imbagus.com/#code)
 ```
-
-### [Form Bundle](https://aqua.imbagus.com/#form)
-
-```html
-<link rel="stylesheet" href="https://aqua.imbagus.com/form.css">
-<script defer src="https://aqua.imbagus.com/form.js"></script>
+npm i -D @ignatiusmb/aqua
 ```
-
-### [Modal Bundle](https://aqua.imbagus.com/#modal)
-
 ```html
-<link rel="stylesheet" href="https://aqua.imbagus.com/modal.css">
-<script defer src="https://aqua.imbagus.com/modal.js"></script>
+<link rel="stylesheet" href="https://aqua.imbagus.com/lib/main.css">
 ```
