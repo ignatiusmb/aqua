@@ -67,6 +67,7 @@
   @media only screen and (min-width: 769px) {
     nav {
       justify-content: center;
+      box-shadow: 0 4px 3px rgba(0, 0, 0, 0.5);
     }
     nav a {
       margin: 0 1em;
@@ -75,14 +76,14 @@
 </style>
 
 <nav>
-  <a class:active={segment === undefined} href="/">
+  <a class:active={segment === undefined} href="/" sapper-noscroll>
     <div class="icon">
       <i class="fas fa-bars" />
       <i class="fas fa-bars icon-active" />
     </div>
     <span>Component</span>
   </a>
-  <a class:active={segment === 'template'} href="template">
+  <a class:active={segment === 'template'} href="template" sapper-noscroll>
     <div class="icon">
       <i class="far fa-folder" />
       <i class="far fa-folder-open icon-active" />
