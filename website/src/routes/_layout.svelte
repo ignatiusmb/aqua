@@ -2,8 +2,8 @@
   import Nav from "../components/Nav.svelte";
   import Footer from "../components/Footer.svelte";
 
-  import "../../../lib/core.css";
-  import "../../../lib/main.css";
+  import "@ignatiusmb/aqua/lib/core.css";
+  import "@ignatiusmb/aqua/lib/main.css";
 
   export let segment;
 </script>
