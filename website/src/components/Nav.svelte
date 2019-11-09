@@ -67,7 +67,6 @@
   @media only screen and (min-width: 769px) {
     nav {
       justify-content: center;
-      box-shadow: 0 4px 3px rgba(0, 0, 0, 0.5);
     }
     nav a {
       margin: 0 1em;
