@@ -24,7 +24,7 @@
 </style>
 
 <svelte:head>
-  <title>{status}</title>
+  <title>Error {status}</title>
 </svelte:head>
 
 <main>
