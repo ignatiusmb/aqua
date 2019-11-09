@@ -1,8 +1,8 @@
 {
   "name": "@ignatiusmb/aqua",
-  "version": "0.19.11-1",
+  "version": "19.11.0",
   "description": "UI Toolkit & Templates",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "gulp"
   },
@@ -27,6 +27,8 @@
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssimport": "^7.0.0",
     "gulp-header": "^2.0.9",
     "gulp-uglify-es": "^2.0.0"
   }
