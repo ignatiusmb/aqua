@@ -59,6 +59,7 @@ const styles = done => {
 const scripts = done => {
   gulp
     .src(paths.scripts.main)
+    .pipe(uglify())
     .pipe(header(banner))
     .pipe(gulp.dest(paths.dst))
 
