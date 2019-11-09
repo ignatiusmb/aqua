@@ -1,6 +1,5 @@
 <script context="module">
   export async function preload(page, session) {
-    console.log(page.params);
     const res = await this.fetch(`index.json`);
     const components = await res.json();
 
@@ -11,7 +10,7 @@
 
 <script>
   import { onMount } from "svelte";
-  import Aqua from "../../../lib/index";
+  import Aqua from "@ignatiusmb/aqua";
 
   export let components;
 
