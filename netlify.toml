@@ -1,4 +1,3 @@
 [build]
   command = "cd website && npm run export"
-  functions = "functions"
   publish = "__sapper__/export"
