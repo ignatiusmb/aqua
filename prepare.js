@@ -1,7 +1,10 @@
 const fs = require('fs')
 
-let pkg = JSON.parse(fs.readFileSync('./package.json'))
+const filename = 'package.json'
+console.log(`Preparing ${filename}...`)
+let pkg = JSON.parse(fs.readFileSync(filename))
 let [MAJOR, MINOR, PATCH] = pkg.version.split('.')
+const before = pkg.version
 
 const date = new Date()
 const currentYear = date.getFullYear() % 100
@@ -16,4 +19,5 @@ if (MINOR - 1 !== currentMonth) {
 } else ++PATCH
 pkg.version = `${MAJOR}.${MINOR}.${PATCH}`
 
-fs.writeFileSync('./package.json', JSON.stringify(pkg, null, 2))
+console.log(`Updating version from ${before} -> ${pkg.version}`)
+fs.writeFileSync(filename, JSON.stringify(pkg, null, 2))
