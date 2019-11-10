@@ -135,4 +135,4 @@ const init = () => {
   }
 }
 
-export { init as default, syntaxHighlighter, highlight, createToolbar }
+export { init, syntaxHighlighter, highlight, createToolbar }

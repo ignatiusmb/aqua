@@ -20,4 +20,4 @@ const init = () => {
   }
 }
 
-export { init as default }
+export { init }
