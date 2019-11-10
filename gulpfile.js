@@ -12,10 +12,10 @@ const pkg = require('./package')
 const banner = `/*! Aqua v${pkg.version} by @ignatiusmb - imbagus.com
  *  Copyright (c) ${new Date().getFullYear()} Ignatius Bagus
  *  MIT Licensed -> github.com/ignatiusmb/aqua
- *  aqua.imbagus.com
+ *  https://aqua.imbagus.com
  */
 `
-console.log(pkg.version)
+console.log(`Compiling ${pkg.name} -> v${pkg.version}`)
 const paths = {
   styles: {
     core: './src/core.css',
