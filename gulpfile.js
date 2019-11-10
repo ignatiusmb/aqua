@@ -24,7 +24,7 @@ const paths = {
   },
   scripts: {
     main: './src/index.js',
-    extra: ['./src/**/*.js', '!./src/helper/*']
+    extra: ['./src/**/*.js', '!./src/index.js']
   },
   dst: './lib/'
 }
