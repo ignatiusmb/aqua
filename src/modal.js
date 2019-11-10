@@ -33,4 +33,4 @@ const init = () => {
   }
 }
 
-export { init }
+export { init as default }

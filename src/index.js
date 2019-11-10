@@ -1,5 +1,5 @@
-import code from './code'
-import form from './form'
-import modal from './modal'
+import * as code from './code'
+import * as form from './form'
+import * as modal from './modal'
 
 export { code, form, modal }
