@@ -3,3 +3,4 @@ netlify.toml
 
 website/
 src/
+test/
