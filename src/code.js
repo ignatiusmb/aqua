@@ -1,5 +1,5 @@
 import STATIC from './helper/static'
-import is from './helper/is'
+import { code as is } from './helper/is'
 
 const syntaxHighlighter = (manual = false) => {
   if (is.highlighter.added || is.highlighter.loaded) return
