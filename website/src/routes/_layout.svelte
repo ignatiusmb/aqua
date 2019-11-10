@@ -33,7 +33,7 @@
     flex-direction: column;
   }
   article > aside {
-    z-index: 2;
+    z-index: 101;
     position: sticky;
     bottom: 0;
     order: 3;
