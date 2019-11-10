@@ -1,5 +1,6 @@
 <script>
   import Nav from "../components/Nav.svelte";
+  import Header from "../components/Header.svelte";
   import Footer from "../components/Footer.svelte";
 
   import "@ignatiusmb/aqua/lib/core.css";
@@ -13,20 +14,6 @@
     background-color: var(--aqua-bg-light);
   }
 
-  header {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #0082c8;
-    background: -webkit-linear-gradient(to right, #000046, #1cb5e0);
-    background: linear-gradient(to right, #000046, #1cb5e0);
-    color: white;
-  }
-  header :global(h1) {
-    font-size: 4rem;
-  }
   :global(h1) {
     margin-bottom: 0.2em;
     text-align: center;
@@ -127,12 +114,7 @@
   }
 </style>
 
-<header>
-  <slot name="header">
-    <h1>Aqua</h1>
-    <h3>Version 0.19.10</h3>
-  </slot>
-</header>
+<Header />
 
 <article>
   <aside>
