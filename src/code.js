@@ -128,7 +128,7 @@ const init = () => {
     }
     while (!pre.firstChild.textContent.trim().length) pre.removeChild(pre.firstChild)
     while (!pre.lastChild.textContent.trim().length) pre.removeChild(pre.lastChild)
-    header.appendChild(Aqua.code.createToolbar(pre))
+    header.appendChild(createToolbar(pre))
     wrapper.appendChild(header)
     wrapper.appendChild(pre)
     codeFormat.replaceWith(wrapper)
