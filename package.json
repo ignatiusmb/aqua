@@ -4,6 +4,7 @@
   "description": "UI Toolkit & Templates",
   "main": "lib/index.js",
   "scripts": {
+    "prepare": "node prepare && npm run build",
     "build": "gulp"
   },
   "repository": {
