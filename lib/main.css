@@ -1,4 +1,4 @@
-/*! Aqua v19.11.5 by @ignatiusmb - imbagus.com
+/*! Aqua v19.11.6 by @ignatiusmb - imbagus.com
  *  Copyright (c) 2019 Ignatius Bagus
  *  MIT Licensed -> github.com/ignatiusmb/aqua
  *  https://aqua.imbagus.com
