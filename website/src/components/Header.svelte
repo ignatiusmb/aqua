@@ -1,5 +1,5 @@
 <script>
-  // your script goes here
+  import { version } from "@ignatiusmb/aqua/package.json";
 </script>
 
 <style>
@@ -23,6 +23,6 @@
 <header>
   <slot>
     <h1>Aqua</h1>
-    <h3>Version 0.19.10</h3>
+    <h3>Version {version}</h3>
   </slot>
 </header>
