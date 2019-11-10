@@ -10,7 +10,7 @@
 
 <script>
   import { onMount } from "svelte";
-  import Aqua from "@ignatiusmb/aqua";
+  import * as Aqua from "@ignatiusmb/aqua";
 
   export let components;
 

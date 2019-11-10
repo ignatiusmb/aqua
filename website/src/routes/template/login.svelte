@@ -12,16 +12,31 @@
   import "@ignatiusmb/aqua/lib/animation/form/wave.css";
   import "@ignatiusmb/aqua/lib/template/login/slide.css";
 
+  import * as Aqua from "@ignatiusmb/aqua";
+  import { onMount } from "svelte";
   import { stores } from "@sapper/app";
   export let templates;
 
   const { page } = stores();
   const path = $page.path.split("/");
   const slug = path[path.length - 1];
+
+  onMount(() => {
+    Aqua.code.init();
+    Aqua.code.highlight();
+    Aqua.form.init();
+    Aqua.modal.init();
+  });
 </script>
 
 <style>
-  /* your styles go here */
+  .card {
+    padding: 2em 1em;
+  }
+
+  :global(.aqua-form-card) {
+    min-height: 36em !important;
+  }
 </style>
 
 <svelte:head>
@@ -75,28 +90,26 @@
               </div>
             </div>
           </div>
-          <div class="card">
-            {#each template.body.cards as card}
-              <div class="card">
-                <h1>{card.title}</h1>
-                <code>
-                  {#each card.require as req}
-                    {#if typeof req === 'object'}
-                      <a href={req.link}>{req.text}</a>
-                    {:else}{req}{/if}
-                  {/each}
-                </code>
-                {#each card.boxes as box}
-                  <pre
-                    class="aqua-code"
-                    data-language={box.language}
-                    data-title={box.title}>
-                    {box.body}
-                  </pre>
+          {#each template.body.cards as card}
+            <div class="card">
+              <h1>{card.title}</h1>
+              <code>
+                {#each card.require as req}
+                  {#if typeof req === 'object'}
+                    <a href={req.link}>{req.text}</a>
+                  {:else}{req}{/if}
                 {/each}
-              </div>
-            {/each}
-          </div>
+              </code>
+              {#each card.boxes as box}
+                <pre
+                  class="aqua-code"
+                  data-language={box.language}
+                  data-title={box.title}>
+                  {box.body}
+                </pre>
+              {/each}
+            </div>
+          {/each}
         </main>
       </section>
     {/if}
