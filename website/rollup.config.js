@@ -106,7 +106,6 @@ export default {
         'process.env.NODE_ENV': JSON.stringify(mode)
       }),
       commonjs(),
-      json(),
       !dev && terser()
     ],
 
