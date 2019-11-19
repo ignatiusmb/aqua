@@ -14,10 +14,12 @@
 
 /* Inline code */
 :not(pre) > code {
+  display: inline-flex;
   padding: 0.1em 0.3em;
   border-radius: var(--aqua-border-curve);
   background: var(--aqua-bg-dark);
   color: var(--aqua-cl-light);
+  transform: translateX(-5%);
 }
 
 .aqua-code-box {
