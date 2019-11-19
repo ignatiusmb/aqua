@@ -4,8 +4,7 @@
   "description": "UI Toolkit & Templates",
   "main": "lib/index.js",
   "scripts": {
-    "prepare": "node prepare && npm run build",
-    "build": "gulp"
+    "prepare": "node version && gulp"
   },
   "repository": {
     "type": "git",
@@ -32,5 +31,9 @@
     "gulp-cssimport": "^7.0.0",
     "gulp-header": "^2.0.9",
     "gulp-uglify-es": "^2.0.0"
+  },
+  "dependencies": {
+    "marked": "^0.7.0",
+    "prismjs": "^1.17.1"
   }
 }
