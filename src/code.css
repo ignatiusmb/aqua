@@ -19,7 +19,7 @@
   border-radius: var(--aqua-border-curve);
   background: var(--aqua-bg-dark);
   color: var(--aqua-cl-light);
-  transform: translateX(-5%);
+  transform: translateY(-5%);
 }
 
 .aqua-code-box {
