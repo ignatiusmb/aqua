@@ -1,16 +1,20 @@
-import { highlightAll } from 'prismjs';
+/*! Aqua v20.0.0 by @ignatiusmb - imbagus.com
+ *  Copyright (c) 2020 Ignatius Bagus
+ *  MIT Licensed -> github.com/ignatiusmb/aqua
+ *  https://aqua.imbagus.com
+ */
 
-const Aqua = (function(glob) {
+const Aqua = (function() {
+  const cache = { toolbar: { add: null, remove: null } };
   const util = {
     checkTimeout: 240,
-    highlight: () => highlightAll(),
     create: {
       snackbar: type => {
-        const barContainer = document.querySelector('.aqua-bars');
+        let barContainer = document.querySelector('.aqua-bars');
         if (!barContainer) {
           const container = document.createElement('div');
           container.className = 'aqua-bars';
-          document.body.appendChild(container);
+          barContainer = document.body.appendChild(container);
         }
         const snackbar = document.createElement('div');
         const main = document.createElement('main');
@@ -48,39 +52,34 @@ const Aqua = (function(glob) {
         );
 
         // Copy Code Button
-        const copyTimeout = {};
-        const copy = createTool('far fa-copy', 'Copy', () => {
-          const codeLines = pre.querySelectorAll('code');
-          const copyArea = document.createElement('textarea');
-          const description = document.createElement('span');
-          copyArea.className = 'ghost-area';
-          for (const code of codeLines) copyArea.value += code.innerText;
-          document.body.appendChild(copyArea);
-          copyArea.focus();
-          copyArea.select();
-          try {
-            if (document.execCommand('copy')) description.textContent = 'Copied to clipboard!';
-            else description.textContent = 'Copy failed';
-          } catch (err) {
-            description.textContent = `An error occurred --> ${err}`;
-          }
-          if (snackbar.firstChild.tagName !== 'I') snackbar.removeChild(snackbar.firstChild);
-          snackbar.insertAdjacentElement('afterbegin', description);
-          if (!snackbar.classList.contains('show')) {
-            if (copyTimeout.add) clearTimeout(copyTimeout.add);
-            if (copyTimeout.remove) clearTimeout(copyTimeout.remove);
-            copyTimeout.add = setTimeout(() => snackbar.classList.add('show'), 200);
-            copyTimeout.remove = setTimeout(() => snackbar.classList.remove('show'), 5000);
-          } else {
-            if (copyTimeout.add) clearTimeout(copyTimeout.add);
-            if (copyTimeout.remove) clearTimeout(copyTimeout.remove);
-            snackbar.classList.remove('show');
-            copyTimeout.add = setTimeout(() => snackbar.classList.add('show'), 600);
-            copyTimeout.remove = setTimeout(() => snackbar.classList.remove('show'), 5000);
-          }
-          document.body.removeChild(copyArea);
-        });
-        toolbar.appendChild(copy);
+        toolbar.appendChild(
+          createTool('aqua-ctb-item-copy', 'Copy', () => {
+            const codeLines = pre.querySelectorAll('code');
+            const copyArea = document.createElement('textarea');
+            const description = snackbar.querySelector('main');
+            copyArea.className = 'ghost-area';
+
+            for (const code of codeLines) copyArea.value += code.innerText;
+            document.body.appendChild(copyArea);
+            copyArea.focus();
+            copyArea.select();
+            try {
+              if (document.execCommand('copy')) description.textContent = 'Copied to clipboard!';
+              else description.textContent = 'Copy failed';
+            } catch (err) {
+              description.textContent = `An error occurred --> ${err}`;
+            }
+
+            clearTimeout(cache.toolbar.add);
+            clearTimeout(cache.toolbar.remove);
+            if (snackbar.classList.contains('show')) {
+              snackbar.classList.remove('show');
+              cache.toolbar.add = setTimeout(() => snackbar.classList.add('show'), 600);
+            } else cache.toolbar.add = setTimeout(() => snackbar.classList.add('show'), 200);
+            cache.toolbar.remove = setTimeout(() => snackbar.classList.remove('show'), 5000);
+            document.body.removeChild(copyArea);
+          })
+        );
 
         return toolbar;
       }
@@ -89,7 +88,10 @@ const Aqua = (function(glob) {
 
   return {
     code: {
-      createToolbar: pre => util.create.toolbar(pre),
+      highlight: () => {
+        if (Prism) Prism.highlightAll();
+      },
+      createToolbar: (pre, snackbar) => util.create.toolbar(pre, snackbar),
       wrapCodes: (code, start) => {
         const pre = document.createElement('pre');
         let lineNumber = !start ? 1 : start;
@@ -139,6 +141,7 @@ const Aqua = (function(glob) {
 
           node.replaceWith(wrapper);
         }
+        this.highlight();
         container.setAttribute('data-aqua', 'watered');
       }
     },
@@ -224,14 +227,6 @@ const Aqua = (function(glob) {
       this.form.init();
     }
   };
-})(typeof window === 'undefined' ? {} : window);
-
-if (typeof module !== 'undefined' && module.exports) module.exports = Aqua;
-if (typeof global !== 'undefined') global.Aqua = Aqua;
-
-(function() {
-  if (typeof self === 'undefined' || !self.Aqua || !self.document || !document.querySelector) {
-    return;
-  }
-  document.addEventListener('DOMContentLoaded', Aqua.tsunami);
 })();
+
+document.addEventListener('DOMContentLoaded', () => Aqua.tsunami());
