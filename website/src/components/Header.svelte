@@ -1,6 +1,7 @@
-<script>
-  import { version } from "@ignatiusmb/aqua/package.json";
-</script>
+<header>
+  <h1>Aqua</h1>
+  <h3>Version v20.0.0</h3>
+</header>
 
 <style>
   header {
@@ -18,11 +19,3 @@
     font-size: 4rem;
   }
 </style>
-
-<!-- markup (zero or more items) goes here -->
-<header>
-  <slot>
-    <h1>Aqua</h1>
-    <h3>Version {version}</h3>
-  </slot>
-</header>
