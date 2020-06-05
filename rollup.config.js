@@ -1,5 +1,6 @@
 import babel from '@rollup/plugin-babel';
 import cleanup from 'rollup-plugin-cleanup';
+import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
@@ -16,7 +17,19 @@ export default [
 	/* UMD Builds */
 	{
 		input,
-		plugins: [babel(), cleanup({ sourcemap: true }), json(), resolve()],
+		plugins: [
+			babel({
+				babelHelpers: 'bundled',
+			}),
+			cleanup({
+				sourcemap: true,
+			}),
+			commonjs(),
+			json(),
+			resolve({
+				browser: true,
+			}),
+		],
 		output: {
 			name: 'Aqua',
 			file: 'lib/aqua.js',
@@ -27,7 +40,21 @@ export default [
 	},
 	{
 		input,
-		plugins: [babel(), json(), resolve(), terser({ output: { preamble: banner } })],
+		plugins: [
+			babel({
+				babelHelpers: 'bundled',
+			}),
+			commonjs(),
+			json(),
+			resolve({
+				browser: true,
+			}),
+			terser({
+				output: {
+					preamble: banner,
+				},
+			}),
+		],
 		output: {
 			name: 'Aqua',
 			file: 'lib/aqua.min.js',
@@ -38,7 +65,14 @@ export default [
 	/* ES6 Builds - esm + min */
 	{
 		input,
-		plugins: [cleanup({ sourcemap: true }), json(), resolve()],
+		plugins: [
+			cleanup({
+				sourcemap: true,
+			}),
+			commonjs(),
+			json(),
+			resolve(),
+		],
 		output: {
 			name: 'Aqua',
 			file: 'lib/aqua.esm.js',
@@ -49,7 +83,16 @@ export default [
 	},
 	{
 		input,
-		plugins: [json(), resolve(), terser({ output: { preamble: banner } })],
+		plugins: [
+			commonjs(),
+			json(),
+			resolve(),
+			terser({
+				output: {
+					preamble: banner,
+				},
+			}),
+		],
 		output: {
 			name: 'Aqua',
 			file: 'lib/aqua.esm.min.js',
