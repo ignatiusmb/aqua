@@ -1,0 +1,30 @@
+.aqua-snackbar {
+	z-index: 999;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.8em 1em;
+	background-color: var(--aqua-bg-dark);
+	color: hsla(0, 0%, 100%, 0.87);
+	letter-spacing: 0.25px;
+	font-size: 90%;
+	transform: translateY(100%);
+	transition: 0.2s cubic-bezier(0.4, 0, 1, 1), -webkit-transform 0.2s cubic-bezier(0.4, 0, 1, 1);
+}
+.aqua-snackbar.show {
+	transform: translateY(0);
+}
+.aqua-snackbar span {
+	cursor: pointer;
+	filter: invert(1);
+	width: 1.5em;
+	height: 1.5em;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-origin: content-box;
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-x'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
+}
