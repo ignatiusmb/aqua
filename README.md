@@ -48,7 +48,7 @@ npm run bundle
 ---
 
 <h3><pre align="center">
-@ignatiusmb/aqua is <a href=LICENSE>MIT licensed</a>
+@ignatiusmb/aqua | <a href=LICENSE>MIT licensed</a>
 </pre></h3>
 
 ---
