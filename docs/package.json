@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^12.0.0",
+    "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
     "gh-pages": "^3.0.0",
     "rollup": "^2.13.1",
@@ -17,6 +18,7 @@
     "svelte": "^3.23.0"
   },
   "dependencies": {
+    "@ignatiusmb/aqua": "file:..",
     "sirv-cli": "^0.4.6"
   }
 }
