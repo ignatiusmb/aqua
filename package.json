@@ -35,14 +35,30 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "bundle": "rollup -c"
+    "bundle": "run-p bundle:*",
+    "bundle:js": "rollup -c",
+    "bundle:css": "run-p bundle:css:**",
+    "bundle:css:compact": "postcss src/aqua.css -o lib/aqua.compact.css --env compact",
+    "bundle:css:production": "postcss src/aqua.css -o lib/aqua.min.css --env production",
+    "docs": "run-p docs:*",
+    "docs:js": "rollup -c -w",
+    "docs:css": "postcss src/aqua.css -o docs/public/aqua.compact.css --env compact -w"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^5.0.2",
     "@rollup/plugin-commonjs": "^13.0.0",
     "@rollup/plugin-json": "^4.0.3",
     "@rollup/plugin-node-resolve": "^8.0.0",
+    "autoprefixer": "^9.8.0",
+    "cssnano": "^4.1.10",
     "jest": "^26.0.1",
+    "npm-run-all": "^4.1.5",
+    "only": "0.0.2",
+    "postcss-cli": "^7.1.1",
+    "postcss-header": "^2.0.0",
+    "postcss-import": "^12.0.1",
+    "postcss-prefixer": "^2.1.2",
+    "postcss-preset-env": "^6.7.0",
     "rollup": "^2.13.1",
     "rollup-plugin-cleanup": "^3.1.1",
     "rollup-plugin-terser": "^6.1.0"

@@ -4,13 +4,13 @@ import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
-import pkg from './package.json';
+import { homepage, version } from './package.json';
 
-const input = 'src/index.js';
-const banner = `/*! Aqua v${pkg.version} by @ignatiusmb - https://mauss.dev
+const input = 'src/aqua.js';
+const banner = `/*! Aqua v${version} by @ignatiusmb - https://mauss.dev
  *  Copyright (c) ${new Date().getFullYear()} Ignatius Bagus
  *  MIT Licensed -> github.com/ignatiusmb/aqua
- *  ${pkg.homepage}
+ *  ${homepage}
  */`;
 
 export default [
