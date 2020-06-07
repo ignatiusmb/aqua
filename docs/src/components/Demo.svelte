@@ -36,6 +36,6 @@
     margin-bottom: 0.2em;
     text-align: center;
     font-size: 2.2rem;
-    font-family: var(--aqua-font-heading-main);
+    font-family: var(--aqua-font-mono-alt);
   }
 </style>

@@ -1,6 +1,10 @@
+<script>
+  import { version } from '../../../package.json';
+</script>
+
 <header>
   <h1>Aqua</h1>
-  <h3>Version v20.0.0</h3>
+  <h3>Version v{version}</h3>
 </header>
 
 <style>
@@ -15,7 +19,12 @@
     background: linear-gradient(to right, #000046, #1cb5e0);
     color: white;
   }
-  header h1 {
+  h1 {
     font-size: 4rem;
+    font-family: var(--aqua-font-heading-main);
+  }
+  h3 {
+    font-size: 1.5rem;
+    font-family: var(--aqua-font-mono-main);
   }
 </style>

@@ -1,15 +1,17 @@
 <script>
   import LinkExt from './LinkExt.svelte';
-  const size = 30;
 </script>
 
 <footer>
   <slot />
 
   <section>
-    <p>Ignatius Bagussuputra &copy; 2019 &ndash; {new Date().getFullYear()}</p>
     <p>
-      Made with ❤️ using
+      <LinkExt href="https://mauss.dev/">Ignatius Bagussuputra</LinkExt>
+      &copy; 2019 &ndash; {new Date().getFullYear()}
+    </p>
+    <p>
+      Documentation made with ❤️ using
       <LinkExt href="https://svelte.dev/">Svelte</LinkExt>
     </p>
   </section>
