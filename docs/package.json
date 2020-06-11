@@ -18,7 +18,6 @@
     "svelte": "^3.23.0"
   },
   "dependencies": {
-    "@ignatiusmb/aqua": "file:..",
     "sirv-cli": "^0.4.6"
   }
 }
