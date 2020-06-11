@@ -1,39 +1,70 @@
 {
   "name": "@ignatiusmb/aqua",
-  "version": "19.11.7",
-  "description": "UI Toolkit & Templates",
-  "main": "lib/index.js",
-  "scripts": {
-    "prepare": "node version && gulp"
-  },
+  "author": "Ignatius Bagus",
+  "homepage": "https://aqua.mauss.dev",
+  "description": "Native DOM enhancements to UI using pure JS and CSS",
+  "version": "20.0.0",
+  "license": "MIT",
+  "main": "lib/aqua.min.js",
+  "module": "lib/aqua.esm.js",
+  "unpkg": "lib/aqua.min.js",
+  "jsdelivr": "lib/aqua.min.js",
+  "keywords": [
+    "aqua",
+    "DOM",
+    "enhancements",
+    "UI",
+    "pure",
+    "JS",
+    "CSS"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ignatiusmb/aqua.git"
   },
-  "keywords": [
-    "aqua",
-    "css",
-    "UI",
-    "toolkit",
-    "template"
-  ],
-  "author": "Ignatius Bagus",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ignatiusmb/aqua/issues"
   },
-  "homepage": "https://aqua.imbagus.com",
+  "files": [
+    "lib/*.css",
+    "lib/*.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "bundle": "run-p bundle:*",
+    "bundle:js": "rollup -c",
+    "bundle:css": "run-p bundle:css:**",
+    "bundle:css:compact": "postcss src/aqua.css -o lib/aqua.compact.css --env compact",
+    "bundle:css:production": "postcss src/aqua.css -o lib/aqua.min.css --env production",
+    "docs": "run-p docs:*",
+    "docs:js": "rollup -c -w",
+    "docs:css": "postcss src/aqua.css -o docs/public/aqua.compact.css --env compact -w"
+  },
   "devDependencies": {
-    "del": "^5.1.0",
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.2.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-cssimport": "^7.0.0",
-    "gulp-header": "^2.0.9",
-    "gulp-uglify-es": "^2.0.0"
+    "@rollup/plugin-babel": "^5.0.2",
+    "@rollup/plugin-commonjs": "^13.0.0",
+    "@rollup/plugin-json": "^4.0.3",
+    "@rollup/plugin-node-resolve": "^8.0.0",
+    "autoprefixer": "^9.8.0",
+    "cssnano": "^4.1.10",
+    "jest": "^26.0.1",
+    "npm-run-all": "^4.1.5",
+    "only": "0.0.2",
+    "postcss-cli": "^7.1.1",
+    "postcss-header": "^2.0.0",
+    "postcss-import": "^12.0.1",
+    "postcss-prefixer": "^2.1.2",
+    "postcss-preset-env": "^6.7.0",
+    "rollup": "^2.13.1",
+    "rollup-plugin-cleanup": "^3.1.1",
+    "rollup-plugin-terser": "^6.1.0"
   },
   "dependencies": {
-    "marked": "^0.7.0",
-    "prismjs": "^1.17.1"
+    "prism-svelte": "^0.4.6",
+    "prismjs": "^1.20.0"
   }
 }

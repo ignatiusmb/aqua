@@ -1,5 +1,2 @@
 package-lock.json
-
-**/node_modules/
-**/__sapper__/
-**/cypress/screenshots/
+node_modules

@@ -1,138 +1,60 @@
-import STATIC from './helper/static'
-import { code as is } from './helper/is'
+import callbacks from './utils/callbacks';
+import check from './utils/check';
+import create from './utils/create';
+import highlight from './utils/highlight';
 
-const syntaxHighlighter = (manual = false) => {
-  if (is.highlighter.added || is.highlighter.loaded) return
-  is.highlighter.added = true
-
-  const url = 'https://cdn.imbagus.com/ajax/prism.js'
-  if (manual) return url
-
-  const prism = document.createElement('script')
-  prism.type = 'text/javascript'
-  prism.src = url
-  prism.dataset.manual = true
-  return document.body.appendChild(prism)
+function createToolbar() {
+	const toggle = create.icon('list', 'Toggle Numbering');
+	const copy = create.icon('clipboard', 'Copy');
+	return `<div class="aqua-code-toolbar">${toggle}${copy}</div>`;
 }
 
-const highlight = () => {
-  if (is.highlighter.running) return
-  if (!is.highlighter.loaded) {
-    syntaxHighlighter().onload = () => (is.highlighter.loaded = true)
-    is.highlighter.running = true
-    const check = setTimeout(() => {
-      if (is.highlighter.loaded) {
-        Prism.highlightAll()
-        is.highlighter.running = false
-        clearTimeout(check)
-      } else setTimeout(check, STATIC.checkTimeout)
-    }, STATIC.checkTimeout)
-  } else Prism.highlightAll()
+function wrapSource(source, dataset) {
+	const { language, lineStart } = dataset;
+	const classes = `class="aqua-code language-${language ? language : 'none'}"`;
+	const data = `data-language="${language ? language : ''}" data-aqua="watered"`;
+
+	let highlighted = '';
+	let whitespacePrefix = 0;
+	let lineNumber = lineStart ? parseInt(lineStart) : 1;
+	for (const line of highlight(source, language).split('\n')) {
+		if (!line && lineNumber === 1) continue;
+		if (lineNumber === 1) whitespacePrefix = line.search(/\S/);
+		highlighted += `<code data-line="${lineNumber++}">${line.slice(whitespacePrefix)}</code>\n`;
+	}
+	while (/^$|"><\/code>/.test(highlighted.split('\n').slice(-1)[0])) {
+		highlighted = highlighted.split('\n').slice(0, -1).join('\n');
+	}
+	return `<pre ${classes} ${data}>${highlighted}</pre>`;
 }
 
-const createToolbar = pre => {
-  const toolbar = document.createElement('div')
-  toolbar.className = 'aqua-code-toolbar'
-  const createTool = (iconClass, description) => {
-    const tool = document.createElement('a')
-    const icon = document.createElement('i')
-    const tooltip = document.createElement('span')
-    tool.className = `aqua-ctb-item`
-    icon.className = iconClass
-    tooltip.className = 'aqua-ctb-tooltip'
-    tooltip.innerText = description
-    tool.appendChild(icon)
-    tool.appendChild(tooltip)
-    return tool
-  }
-  const snackbar = document.querySelector('.aqua-snackbar.code')
+function createCodeBlock(source, dataset) {
+	const { language, title } = dataset;
+	const classes = `class="aqua-code-header ${title ? '' : 'empty'}"`;
+	const data = `data-language="${language ? language : ''}"`;
+	const toolbar = createToolbar();
+	const content = title ? `${title} ${toolbar}` : toolbar;
+	const header = `<div ${classes} ${data}>${content}</div>`;
 
-  // Toggle Numbering Button
-  const numbering = createTool('fas fa-list-ol', 'Toggle Numbering')
-  numbering.addEventListener('click', () => pre.classList.toggle('numbered'))
-  toolbar.appendChild(numbering)
-
-  // Copy Code Button
-  const copy = createTool('far fa-copy', 'Copy')
-  const copyTimeout = {}
-  copy.addEventListener('click', () => {
-    const codeLines = pre.querySelectorAll('code')
-    const copyArea = document.createElement('textarea')
-    const description = document.createElement('span')
-    copyArea.className = 'ghost-area'
-    for (const code of codeLines) copyArea.value += code.innerText
-    document.body.appendChild(copyArea)
-    copyArea.focus()
-    copyArea.select()
-    try {
-      if (document.execCommand('copy')) description.textContent = 'Copied to clipboard!'
-      else description.textContent = 'Copy failed'
-    } catch (err) {
-      description.textContent = `An error occurred --> ${err}`
-    }
-    if (snackbar.firstChild.tagName !== 'I') snackbar.removeChild(snackbar.firstChild)
-    snackbar.insertAdjacentElement('afterbegin', description)
-    if (!snackbar.classList.contains('show')) {
-      if (copyTimeout.add) clearTimeout(copyTimeout.add)
-      if (copyTimeout.remove) clearTimeout(copyTimeout.remove)
-      copyTimeout.add = setTimeout(() => snackbar.classList.add('show'), 200)
-      copyTimeout.remove = setTimeout(() => snackbar.classList.remove('show'), 5000)
-    } else {
-      if (copyTimeout.add) clearTimeout(copyTimeout.add)
-      if (copyTimeout.remove) clearTimeout(copyTimeout.remove)
-      snackbar.classList.remove('show')
-      copyTimeout.add = setTimeout(() => snackbar.classList.add('show'), 600)
-      copyTimeout.remove = setTimeout(() => snackbar.classList.remove('show'), 5000)
-    }
-    document.body.removeChild(copyArea)
-  })
-  toolbar.appendChild(copy)
-
-  return toolbar
+	const codeBlock = wrapSource(source, dataset);
+	return `<div class="aqua-code-box">${header}${codeBlock}</div>`;
 }
 
-const init = () => {
-  if (document.querySelectorAll('div.aqua-code-toolbar').length) return
-  if (!document.querySelector('.aqua-snackbar.code')) {
-    const snackbar = document.createElement('div')
-    snackbar.className = 'aqua-snackbar code'
-    const icon = document.createElement('i')
-    icon.className = 'fas fa-times'
-    icon.addEventListener('click', () => snackbar.classList.remove('show'))
-    snackbar.appendChild(icon)
-    document.body.appendChild(snackbar)
-  }
-  for (const codeFormat of document.querySelectorAll('pre.aqua-code')) {
-    const language = codeFormat.dataset.language
-    const title = codeFormat.dataset.title
-    let lineNumber = parseInt(codeFormat.dataset.lineStart)
-    const wrapper = document.createElement('div')
-    const header = document.createElement('div')
-    const pre = document.createElement('pre')
-    wrapper.classList.add('aqua-code-box')
-    header.classList.add('aqua-code-header')
-    header.dataset.language = language ? language : ''
-    pre.className = codeFormat.className
+export default {
+	callbacks: callbacks.code,
+	highlightAll: highlight.all,
 
-    if (title) header.textContent = title
-    else header.classList.add('empty')
-    if (language) pre.classList.add(`language-${language}`)
-    else pre.classList.add('language-none')
-
-    if (!lineNumber) lineNumber = 1
-    for (const line of codeFormat.textContent.split('\n')) {
-      const code = document.createElement('code')
-      code.dataset.line = lineNumber++
-      code.textContent = `${line}\n`
-      pre.appendChild(code)
-    }
-    while (!pre.firstChild.textContent.trim().length) pre.removeChild(pre.firstChild)
-    while (!pre.lastChild.textContent.trim().length) pre.removeChild(pre.lastChild)
-    header.appendChild(createToolbar(pre))
-    wrapper.appendChild(header)
-    wrapper.appendChild(pre)
-    codeFormat.replaceWith(wrapper)
-  }
-}
-
-export { init, syntaxHighlighter, highlight, createToolbar }
+	highlight: function (source, dataset) {
+		return createCodeBlock(source, dataset);
+	},
+	init: function (container) {
+		container = container || document.body;
+		if (check.isElement(container) || check.isNode(container)) {
+			for (const node of container.querySelectorAll('pre.aqua-code')) {
+				if (node.getAttribute('data-aqua') === 'watered') continue;
+				const { textContent, dataset } = node;
+				node.outerHTML = createCodeBlock(textContent, dataset);
+			}
+		}
+	},
+};

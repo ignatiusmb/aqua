@@ -86,12 +86,12 @@
   font-size: 1.5rem;
 }
 
-.bsa-zoom {
-  animation: bsa-zoom 240ms;
-  -webkit-animation: bsa-zoom 240ms;
+.aqua-modal-zoom {
+  animation: aqua-modal-zoom 240ms;
+  -webkit-animation: aqua-modal-zoom 240ms;
 }
 
-@keyframes bsa-zoom {
+@keyframes aqua-modal-zoom {
   from {
     transform: scale(0);
   }
