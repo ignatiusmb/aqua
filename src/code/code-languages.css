@@ -1,0 +1,83 @@
+.aqua.code-header {
+	--aqua-code-header-cl-light: #feefe8;
+}
+
+.aqua.code-header::after {
+	z-index: 1;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	padding: 0.5em 1em;
+	font-weight: 600;
+	text-indent: 0.2em;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	border-bottom-left-radius: 2px;
+	transition: var(--aqua-transition-time);
+	transition-timing-function: var(--aqua-transition-func);
+}
+.aqua.code-header[data-language]::after {
+	content: attr(data-language);
+}
+.aqua.code-box:hover > .aqua.code-header::after {
+	right: var(--aqua-bounce-distance);
+	border-bottom-right-radius: var(--aqua-border-curve);
+	border-bottom-left-radius: var(--aqua-border-curve);
+	transition: var(--aqua-transition-time);
+}
+.aqua.code-header[data-language='']:not(.empty)::after,
+.aqua.code-header[data-language='']:not(.empty)::before {
+	content: none;
+}
+.aqua.code-header[data-language='']::before {
+	background: var(--aqua-code-default-bg);
+}
+
+/* Language Styles */
+.aqua.code-header[data-language='bash']::after,
+.aqua.code-header[data-language='bash']::before {
+	background: #363377;
+	color: #a2a0d6;
+}
+.aqua.code-header[data-language='css']::after,
+.aqua.code-header[data-language='css']::before {
+	background: #264de4;
+	color: var(--aqua-code-header-cl-light);
+}
+.aqua.code-header[data-language='html']::after,
+.aqua.code-header[data-language='html']::before {
+	background: #e34f26;
+	color: var(--aqua-code-header-cl-light);
+}
+.aqua.code-header[data-language='java']::after,
+.aqua.code-header[data-language='java']::before {
+	background: #f89820;
+	color: var(--aqua-code-header-cl-light);
+}
+.aqua.code-header[data-language='javascript']::after,
+.aqua.code-header[data-language='javascript']::before,
+.aqua.code-header[data-language='js']::after,
+.aqua.code-header[data-language='js']::before {
+	background: #f0db4f;
+	color: #323330;
+}
+.aqua.code-header[data-language='python']::after,
+.aqua.code-header[data-language='python']::before {
+	background: #ddd;
+	color: #2d2d2d;
+}
+.aqua.code-header[data-language='shell']::after,
+.aqua.code-header[data-language='shell']::before {
+	background: #f3e2bb;
+	color: #c09022;
+}
+.aqua.code-header[data-language='svelte']::after,
+.aqua.code-header[data-language='svelte']::before {
+	background: #ff3e00;
+	color: var(--aqua-code-header-cl-light);
+}
+.aqua.code-header[data-language='terminal']::after,
+.aqua.code-header[data-language='terminal']::before {
+	background: #ddd;
+	color: #444;
+}

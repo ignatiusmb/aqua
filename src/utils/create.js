@@ -1,11 +1,9 @@
+import callbacks from './callbacks';
 export default {
 	icon: (name, tooltip) => {
-		let cbName = 'Aqua.code.callbacks';
-		if (name === 'clipboard') cbName += '.copy';
-		else if (name === 'list') cbName += '.toggle';
-		const callback = `onclick="${cbName}()"`;
-		const span = `<span class="aqua-ctb-tooltip">${tooltip}</span>`;
-		return `<a class="aqua-ctb-item ${name}" ${callback}>${span}</a>`;
+		const callback = `onclick="Aqua.code.callbacks('${name}')"`;
+		const span = `<span class="aqua tooltip-hover">${tooltip}</span>`;
+		return `<a class="aqua tooltip-item ${name}" ${callback}>${span}</a>`;
 	},
 
 	snackbar: (type, id) => {

@@ -1,4 +1,4 @@
-.aqua-snackbar {
+.aqua.snackbar {
 	z-index: 999;
 	position: fixed;
 	bottom: 0;
@@ -15,10 +15,10 @@
 	transform: translateY(100%);
 	transition: 0.2s cubic-bezier(0.4, 0, 1, 1), -webkit-transform 0.2s cubic-bezier(0.4, 0, 1, 1);
 }
-.aqua-snackbar.show {
+.aqua.snackbar.show {
 	transform: translateY(0);
 }
-.aqua-snackbar span {
+.aqua.snackbar span {
 	cursor: pointer;
 	filter: invert(1);
 	width: 1.5em;

@@ -1,0 +1,26 @@
+.aqua.code-block {
+	overflow-x: auto;
+	overflow-y: hidden;
+	padding: 2em 1em 1em;
+	border-bottom-left-radius: var(--aqua-border-curve);
+	border-bottom-right-radius: var(--aqua-border-curve);
+	background: var(--aqua-bg-dark);
+	color: var(--aqua-cl-light);
+}
+
+.aqua.code-header.empty + .aqua.code-block {
+	padding-top: 2em;
+}
+.aqua.code-block.numbered {
+	padding-left: 0.6em;
+}
+.aqua.code-block.numbered code::before {
+	content: attr(data-line);
+	max-width: 1.5em;
+	width: 100%;
+	display: inline-flex;
+	justify-content: flex-end;
+	margin-right: 0.8em;
+	color: gray;
+	letter-spacing: normal;
+}

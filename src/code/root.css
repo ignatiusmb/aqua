@@ -1,0 +1,35 @@
+.aqua.code-block,
+.aqua.code-header,
+.aqua.code-box {
+	width: 100%;
+	position: relative;
+
+	--aqua-code-default-bg: #757575;
+	--aqua-bounce-distance: 10em;
+	--aqua-transition-time: 87.5ms;
+	--aqua-transition-func: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+.aqua.code-box {
+	margin-top: 1em;
+}
+
+/* Inline code */
+:not(pre) > code {
+	padding: 0em 0.3em;
+	border-radius: var(--aqua-border-curve);
+	background: var(--aqua-bg-dark);
+	color: var(--aqua-cl-light);
+}
+
+.ghost-area {
+	width: 2em;
+	height: 2em;
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	background: transparent;
+}

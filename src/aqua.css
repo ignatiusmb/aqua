@@ -4,8 +4,12 @@
 @import 'utils.css';
 
 /* Code imports */
-@import 'prism.css';
-@import 'code.css';
+@import 'code/prism.css';
+@import 'code/root.css';
+@import 'code/code-block.css';
+@import 'code/code-header.css';
+@import 'code/code-languages.css';
+@import 'code/code-toolbar.css';
 
 /* Form imports */
 @import 'form.css';

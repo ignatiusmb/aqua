@@ -29,7 +29,7 @@
   :global(a) {
     color: var(--aqua-primary);
   }
-  :global(.aqua-code-box:first-of-type) {
+  :global(.aqua.code-box:first-of-type) {
     margin-top: 2em;
   }
 

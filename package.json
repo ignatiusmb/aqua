@@ -31,9 +31,6 @@
     "LICENSE",
     "README.md"
   ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "scripts": {
     "bundle": "run-p bundle:*",
     "bundle:js": "rollup -c",

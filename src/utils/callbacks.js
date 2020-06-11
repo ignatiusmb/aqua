@@ -1,10 +1,10 @@
 import create from './create';
 
 const cache = { toolbar: { add: null, remove: null } };
-const codeCallback = {
-	copy: () => {
+const codeCallback = (name) => {
+	if (name === 'clipboard') {
 		let codeBlock = window.event.target;
-		while (!codeBlock.classList.contains('aqua-code-box')) {
+		while (!codeBlock.classList.contains('code-box')) {
 			codeBlock = codeBlock.parentNode;
 		}
 		const source = codeBlock.childNodes[1].textContent;
@@ -16,7 +16,7 @@ const codeCallback = {
 		copyArea.focus();
 		copyArea.select();
 
-		let snackbar = document.querySelector('.aqua-snackbar.code#aqua-code-copy');
+		let snackbar = document.querySelector('.aqua.snackbar.code#aqua-code-copy');
 		if (!snackbar) snackbar = create.snackbar('code', 'copy');
 		const [textField] = snackbar.childNodes;
 		try {
@@ -35,16 +35,15 @@ const codeCallback = {
 		cache.toolbar.remove = setTimeout(() => snackbar.classList.remove('show'), 5000);
 
 		document.body.removeChild(copyArea);
-	},
-	toggle: () => {
+	} else if (name === 'list') {
 		let codeBlock = window.event.target;
-		while (!codeBlock.classList.contains('aqua-code-box')) {
+		while (!codeBlock.classList.contains('code-box')) {
 			codeBlock = codeBlock.parentNode;
 		}
 		codeBlock.childNodes[1].classList.toggle('numbered');
-	},
+	}
 };
 
 export default {
-	code: codeCallback,
+	code: (name) => codeCallback(name),
 };

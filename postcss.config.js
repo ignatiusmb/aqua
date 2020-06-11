@@ -7,6 +7,7 @@ const banner = `/*! Aqua v${version} by @ignatiusmb - https://mauss.dev
  */`;
 
 module.exports = (context) => {
+	console.info(`Compiling CSS - ${new Date().toUTCString()}`);
 	const { env, options, file } = context;
 	const prefix = env === 'compact' ? '' : 'aqua__';
 	return {
