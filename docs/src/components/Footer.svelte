@@ -7,8 +7,9 @@
 
   <section>
     <p>
+      Copyright &copy;
       <LinkExt href="https://mauss.dev/">Ignatius Bagussuputra</LinkExt>
-      &copy; 2019 &ndash; {new Date().getFullYear()}
+      2019 &ndash; {new Date().getFullYear()}
     </p>
     <p>
       Documentation made with ❤️ using
