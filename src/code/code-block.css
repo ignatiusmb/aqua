@@ -6,6 +6,9 @@
 	border-bottom-right-radius: var(--aqua-border-curve);
 	background: var(--aqua-bg-dark);
 	color: var(--aqua-cl-light);
+	line-height: 1.5;
+	font-size: 0.8rem;
+	font-family: 'Fira Code', 'Inconsolata', 'Consolas', 'Ubuntu Mono', monospace;
 }
 
 .aqua.code-header.empty + .aqua.code-block {

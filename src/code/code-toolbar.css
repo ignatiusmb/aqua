@@ -32,7 +32,7 @@
 	background-origin: content-box;
 }
 html.dark .aqua.tooltip-item {
-	filter: invert(1);
+	filter: invert(0.95);
 }
 
 /* Tooltip Hover */

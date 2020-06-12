@@ -16,12 +16,12 @@ or use with CDN via [UNPKG](https://unpkg.com/browse/@ignatiusmb/aqua@latest/) o
 
 ```html
 <!-- via UNPKG -->
-<link rel="stylesheet" href="https://unpkg.com/@ignatiusmb/aqua@20.0.0/lib/aqua.compact.css" />
-<script defer src="https://unpkg.com/@ignatiusmb/aqua@20.0.0/lib/aqua.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@ignatiusmb/aqua@20.1.0/lib/aqua.compact.css" />
+<script defer src="https://unpkg.com/@ignatiusmb/aqua@20.1.0/lib/aqua.min.js"></script>
 
 <!-- via jsDelivr -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.0.0/lib/aqua.compact.css" />
-<script src="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.0.0/lib/aqua.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.1.0/lib/aqua.compact.css" />
+<script src="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.1.0/lib/aqua.min.js"></script>
 ```
 
 ### Contributing
@@ -54,5 +54,5 @@ npm run bundle
 ---
 
 <pre align="center">
-<a href="https://mauss.dev">Ignatius Bagussuputra</a> &copy; 2019 - 2020
+Copyright &copy; <a href="https://mauss.dev">Ignatius Bagussuputra</a> 2019 - 2020
 </pre>
