@@ -11,7 +11,7 @@ import 'prismjs/components/prism-python';
 import 'prismjs/components/prism-sql';
 import 'prismjs/components/prism-typescript';
 import 'prismjs/components/prism-yaml';
-import 'prism-svelte';
+import './prism-svelte';
 
 const langMap = {
 	bash: 'bash',
@@ -22,6 +22,7 @@ const langMap = {
 	javascript: 'javascript',
 	js: 'javascript',
 	sv: 'svelte',
+	svelte: 'svelte',
 	yaml: 'yaml',
 };
 
