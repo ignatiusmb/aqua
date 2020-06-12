@@ -14,11 +14,17 @@
 }
 
 /* Inline code */
-:not(pre) > code {
+code {
 	padding: 0em 0.3em;
 	border-radius: var(--aqua-border-curve);
 	background: var(--aqua-bg-dark);
 	color: var(--aqua-cl-light);
+}
+
+/* Not Inline Code */
+pre.aqua code {
+	padding: 0;
+	border-radius: 0;
 }
 
 .ghost-area {

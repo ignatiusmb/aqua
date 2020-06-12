@@ -11,16 +11,17 @@ function createToolbar() {
 
 function wrapSource(source, dataset) {
 	const { language, lineStart } = dataset;
-	const classes = `class="aqua code-block language-${language ? language : 'none'}"`;
-	const data = `data-language="${language ? language : ''}" data-aqua="watered"`;
+	const langClass = `language-${language ? language : 'none'}`;
+	const classes = `class="aqua code-block ${langClass}"`;
+	const data = `data-language="${language ? language : ''}" `;
 
 	let highlighted = '';
-	let whitespacePrefix = 0;
+	let wsPrefixCount = 0;
 	let lineNumber = lineStart ? parseInt(lineStart) : 1;
 	for (const line of highlight(source, language).split('\n')) {
 		if (!line && lineNumber === 1) continue;
-		if (lineNumber === 1) whitespacePrefix = line.search(/\S/);
-		highlighted += `<code data-line="${lineNumber++}">${line.slice(whitespacePrefix)}</code>\n`;
+		if (lineNumber === 1) wsPrefixCount = line.search(/\S/);
+		highlighted += `<code data-line="${lineNumber++}">${line.slice(wsPrefixCount)}</code>\n`;
 	}
 	while (/^$|"><\/code>/.test(highlighted.split('\n').slice(-1)[0])) {
 		highlighted = highlighted.split('\n').slice(0, -1).join('\n');
