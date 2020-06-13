@@ -4,6 +4,7 @@
   import Footer from './components/Footer.svelte';
   import Demo from './components/Demo.svelte';
   import documents from './documents';
+  import Aqua from '../../lib/aqua.esm.js';
 </script>
 
 <Header />
@@ -12,8 +13,8 @@
     <article>
       {#each documents as { id, title, blocks }}
         <Demo {id} {title}>
-          {#each blocks as data}
-            {@html data}
+          {#each blocks as { source, dataset }}
+            {@html Aqua.code.highlight(source, dataset)}
           {/each}
         </Demo>
       {/each}
