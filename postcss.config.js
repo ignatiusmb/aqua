@@ -9,13 +9,11 @@ const banner = `/*! Aqua v${version} by @ignatiusmb - https://mauss.dev
 module.exports = (context) => {
 	console.info(`Compiling CSS - ${new Date().toUTCString()}`);
 	const { env, options, file } = context;
-	const prefix = env === 'compact' ? '' : 'aqua__';
 	return {
 		map: false,
 		parser: options.parser,
 		plugins: {
 			'postcss-import': { root: file.dirname },
-			'postcss-prefixer': { prefix, ignore: [/\[class\*=.*\]/] },
 			'postcss-preset-env': {
 				autoprefixer: { cascade: false },
 				features: { 'custom-properties': true },
