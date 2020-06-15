@@ -21,8 +21,8 @@
 }
 .aqua.code-box:hover > .aqua.code-header::after {
 	right: var(--aqua-bounce-distance);
-	border-bottom-right-radius: var(--aqua-border-curve);
-	border-bottom-left-radius: var(--aqua-border-curve);
+	border-bottom-right-radius: var(--aqua-border-radius);
+	border-bottom-left-radius: var(--aqua-border-radius);
 	transition: var(--aqua-transition-time);
 }
 .aqua.code-header[data-language='']:not(.empty)::after,
