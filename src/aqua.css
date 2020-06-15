@@ -1,18 +1,14 @@
 /* Aqua core */
 @import 'vars.css';
 @import 'core.css';
-@import 'utils.css';
+
+/* Aqua utils */
+@import 'utils/create.css';
 
 /* Code imports */
 @import 'code/prism.css';
-@import 'code/root.css';
-@import 'code/code-block.css';
-@import 'code/code-header.css';
-@import 'code/code-languages.css';
-@import 'code/code-toolbar.css';
-
-/* Form imports */
-@import 'form.css';
-
-/* Animation imports -> form */
-@import 'animation/form/wave.css';
+@import 'code/root.code.css';
+@import 'code/code.block.css';
+@import 'code/code.header.css';
+@import 'code/code.languages.css';
+@import 'code/code.toolbar.css';
