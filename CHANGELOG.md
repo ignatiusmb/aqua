@@ -1,9 +1,10 @@
 # Aqua Changelog
 
-## Unreleased
+## 20.2.2
 
 - Fix default fonts not rendering
 - Adjust space on the left side of code block for triple digit numbers
+- Handle capitalized language inputs
 
 ## 20.2.1
 

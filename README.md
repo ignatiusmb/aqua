@@ -1,4 +1,4 @@
-# [Aqua](https://aqua.mauss.dev)&nbsp;&middot;&nbsp;![npm (scoped)](https://img.shields.io/npm/v/@ignatiusmb/aqua)&nbsp;![npm](https://img.shields.io/npm/dm/@ignatiusmb/aqua)&nbsp;![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/@ignatiusmb/aqua?label=minzip)
+# [Aqua](https://aqua.mauss.dev)&nbsp;&middot;&nbsp;![npm (scoped)](https://img.shields.io/npm/v/@ignatiusmb/aqua)&nbsp;![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/@ignatiusmb/aqua?label=minzip)&nbsp;![npm](https://img.shields.io/npm/dm/@ignatiusmb/aqua?label=npm%20installs)&nbsp;[![jsdelivr](https://data.jsdelivr.com/v1/package/npm/@ignatiusmb/aqua/badge?style=rounded)](https://www.jsdelivr.com/package/npm/@ignatiusmb/aqua)&nbsp;[![Website](https://img.shields.io/website?down_color=lightgrey&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Faqua.mauss.dev)](https://aqua.mauss.dev)
 
 > Native DOM enhancements
 
@@ -16,16 +16,16 @@ or use with CDN via [UNPKG](https://unpkg.com/browse/@ignatiusmb/aqua@latest/) o
 
 ```html
 <!-- Full Package via jsDelivr -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.2.1/lib/aqua.min.css" />
-<script defer src="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.2.1/lib/aqua.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.2.2/lib/aqua.min.css" />
+<script defer src="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.2.2/lib/aqua.min.js"></script>
 
 <!-- Full Package via UNPKG -->
-<link rel="stylesheet" href="https://unpkg.com/@ignatiusmb/aqua@20.2.1/lib/aqua.min.css" />
-<script defer src="https://unpkg.com/@ignatiusmb/aqua@20.2.1/lib/aqua.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@ignatiusmb/aqua@20.2.2/lib/aqua.min.css" />
+<script defer src="https://unpkg.com/@ignatiusmb/aqua@20.2.2/lib/aqua.min.js"></script>
 
 <!-- Callback Only via jsDelivr/UNPKG (choose either one) -->
-<script defer src="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.2.1/lib/aqua.cbs.js"></script>
-<script defer src="https://unpkg.com/@ignatiusmb/aqua@20.2.1/lib/aqua.cbs.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.2.2/lib/aqua.cbs.js"></script>
+<script defer src="https://unpkg.com/@ignatiusmb/aqua@20.2.2/lib/aqua.cbs.js"></script>
 ```
 
 ### Usage
@@ -37,9 +37,9 @@ import '@ignatiusmb/aqua/lib/aqua.min.css';
 ```
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.2.1/lib/aqua.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.2.2/lib/aqua.min.css" />
 <!-- or -->
-<link rel="stylesheet" href="https://unpkg.com/@ignatiusmb/aqua@20.2.1/lib/aqua.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/@ignatiusmb/aqua@20.2.2/lib/aqua.min.css" />
 ```
 
 ## Contributing
