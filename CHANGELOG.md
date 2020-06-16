@@ -1,5 +1,9 @@
 # Aqua Changelog
 
+## 20.2.3
+
+- Add prepublish routine
+
 ## 20.2.2
 
 - Fix default fonts not rendering

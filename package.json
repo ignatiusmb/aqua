@@ -3,7 +3,7 @@
   "author": "Ignatius Bagus",
   "homepage": "https://aqua.mauss.dev",
   "description": "Native DOM enhancements to UI using pure JS and CSS",
-  "version": "20.2.2",
+  "version": "20.2.3",
   "license": "MIT",
   "main": "lib/aqua.min.js",
   "module": "lib/aqua.esm.js",
@@ -37,7 +37,8 @@
     "bundle:css": "postcss src/aqua.css -o lib/aqua.min.css",
     "docs": "run-p docs:*",
     "docs:js": "rollup -c -w",
-    "docs:css": "postcss src/aqua.css -o docs/public/aqua.min.css -w"
+    "docs:css": "postcss src/aqua.css -o docs/public/aqua.min.css -w",
+    "prepublishOnly": "npm run bundle"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^5.0.2",
