@@ -22,6 +22,7 @@ const langMap = {
 	css: 'css',
 	dart: 'dart',
 	docker: 'docker',
+	dockerfile: 'docker',
 	html: 'markup',
 	java: 'java',
 	javascript: 'javascript',
@@ -38,7 +39,7 @@ const langMap = {
 };
 
 function highlight(source, langInput) {
-	const lang = langMap[langInput] || '';
+	const lang = langInput ? langMap[langInput.toLowerCase()] || '' : '';
 	return lang
 		? Prism.highlight(source, Prism.languages[lang], langInput)
 		: source.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));

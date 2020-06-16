@@ -6,7 +6,7 @@
 	background-color: var(--aqua-code-default-bg);
 	color: #fff;
 	font-weight: lighter;
-	font-family: var(--aqua-font-code);
+	font-family: var(--aqua-monospace);
 }
 .aqua.code-header.empty {
 	padding: 0;
@@ -34,7 +34,7 @@
 }
 .aqua.code-header::after,
 .aqua.code-header::before {
-	font-family: var(--aqua-font-default-alt-1);
+	font-family: var(--aqua-default);
 	font-size: 0.75rem;
 }
 /* Language Colored Line */

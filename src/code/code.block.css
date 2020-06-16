@@ -1,7 +1,7 @@
 .aqua.code-block {
 	overflow-x: auto;
 	overflow-y: hidden;
-	padding: 2em 1em 1em;
+	padding: 2em 1em 1em 1.6em;
 	border-bottom-left-radius: var(--aqua-border-radius);
 	border-bottom-right-radius: var(--aqua-border-radius);
 	background: var(--aqua-bg-dark);
@@ -19,7 +19,7 @@
 }
 .aqua.code-block.numbered code::before {
 	content: attr(data-line);
-	max-width: 1.5em;
+	max-width: 2em;
 	width: 100%;
 	display: inline-flex;
 	justify-content: flex-end;

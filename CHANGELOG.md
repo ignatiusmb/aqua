@@ -1,5 +1,10 @@
 # Aqua Changelog
 
+## Unreleased
+
+- Fix default fonts not rendering
+- Adjust space on the left side of code block for triple digit numbers
+
 ## 20.2.1
 
 - Add imported languages to `langMap`
