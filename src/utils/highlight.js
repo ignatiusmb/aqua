@@ -34,6 +34,7 @@ const langMap = {
 	ts: 'typescript',
 	typescript: 'typescript',
 	yaml: 'yaml',
+	yml: 'yaml',
 };
 
 function highlight(source, langInput) {
