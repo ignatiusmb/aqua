@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 }
 html {
-	font-family: var(--aqua-font-default-main);
+	font-family: var(--aqua-default);
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
 }
@@ -40,7 +40,7 @@ kbd,
 pre,
 samp {
 	margin: 0;
-	font-family: var(--aqua-font-code);
+	font-family: var(--aqua-monospace);
 	font-weight: lighter;
 }
 hr {
