@@ -62,6 +62,30 @@ export default [
 			indent: false,
 		},
 	},
+	{
+		input: 'src/cbs.js',
+		plugins: [
+			babel({
+				babelHelpers: 'bundled',
+			}),
+			commonjs(),
+			json(),
+			resolve({
+				browser: true,
+			}),
+			terser({
+				output: {
+					preamble: banner,
+				},
+			}),
+		],
+		output: {
+			name: 'Aqua',
+			file: 'lib/aqua.cbs.js',
+			format: 'umd',
+			indent: false,
+		},
+	},
 	/* ES6 Builds - esm + min */
 	{
 		input,

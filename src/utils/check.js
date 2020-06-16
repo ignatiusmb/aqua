@@ -10,4 +10,4 @@ function isNode(o) {
 		: o && typeof o === 'object' && typeof o.nodeType === 'number' && typeof o.nodeName === 'string';
 }
 
-export default { isElement, isNode };
+export { isElement, isNode };

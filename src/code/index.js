@@ -1,7 +1,7 @@
-import callbacks from './utils/callbacks';
-import check from './utils/check';
-import create from './utils/create';
-import highlight from './utils/highlight';
+import callbacks from '../utils/callbacks';
+import create from '../utils/create';
+import highlight from '../utils/highlight';
+import { isElement, isNode } from '../utils/check';
 
 function createToolbar() {
 	const toggle = create.icon('list', 'Toggle\nNumbering');
@@ -42,7 +42,7 @@ function encloseBlock(source, dataset) {
 }
 
 export default {
-	callbacks: (name) => callbacks.code(name),
+	cbs: (name) => callbacks.code(name),
 	highlightAll: highlight.all,
 
 	highlight: function (source, dataset) {
@@ -50,7 +50,7 @@ export default {
 	},
 	init: function (container) {
 		container = container || document.body;
-		if (check.isElement(container) || check.isNode(container)) {
+		if (isElement(container) || isNode(container)) {
 			for (const node of container.querySelectorAll('pre.aqua code-block')) {
 				if (node.getAttribute('data-aqua') === 'watered') continue;
 				const { textContent, dataset } = node;

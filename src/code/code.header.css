@@ -1,8 +1,8 @@
 .aqua.code-header {
 	padding: 0.5em 1em;
 	margin: 0;
-	border-top-right-radius: var(--aqua-border-curve);
-	border-top-left-radius: var(--aqua-border-curve);
+	border-top-right-radius: var(--aqua-border-radius);
+	border-top-left-radius: var(--aqua-border-radius);
 	background-color: var(--aqua-code-default-bg);
 	color: #fff;
 	font-weight: lighter;
@@ -25,12 +25,12 @@
 	padding-top: 1em;
 }
 .aqua.code-header.empty + .aqua.code-block {
-	border-top-right-radius: var(--aqua-border-curve);
-	border-top-left-radius: var(--aqua-border-curve);
+	border-top-right-radius: var(--aqua-border-radius);
+	border-top-left-radius: var(--aqua-border-radius);
 }
 .aqua.code-header.empty::after {
 	top: 0;
-	border-top-right-radius: var(--aqua-border-curve);
+	border-top-right-radius: var(--aqua-border-radius);
 }
 .aqua.code-header::after,
 .aqua.code-header::before {
@@ -53,8 +53,8 @@
 .aqua.code-header.empty::before {
 	height: 0.6em;
 	top: 0;
-	border-top-left-radius: var(--aqua-border-curve);
-	border-top-right-radius: var(--aqua-border-curve);
+	border-top-left-radius: var(--aqua-border-radius);
+	border-top-right-radius: var(--aqua-border-radius);
 }
 
 .aqua.code-box:hover > .aqua.code-header::before {

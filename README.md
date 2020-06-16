@@ -48,11 +48,11 @@ npm run bundle
 ---
 
 <h3><pre align="center">
-@ignatiusmb/aqua | <a href=LICENSE>MIT licensed</a>
+@ignatiusmb/aqua - <a href=LICENSE>MIT License</a>
 </pre></h3>
 
 ---
 
 <pre align="center">
-Copyright &copy; <a href="https://mauss.dev">Ignatius Bagussuputra</a> 2019 - 2020
+Copyright &copy; <a href="https://mauss.dev">Ignatius Bagussuputra</a> 2019 &ndash; 2020
 </pre>

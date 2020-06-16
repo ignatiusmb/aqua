@@ -1,7 +1,6 @@
-import callbacks from './callbacks';
 export default {
 	icon: (name, tooltip) => {
-		const callback = `onclick="Aqua.code.callbacks('${name}')"`;
+		const callback = `onclick="Aqua.code.cbs('${name}')"`;
 		const span = `<span class="aqua tooltip-hover">${tooltip}</span>`;
 		return `<a class="aqua tooltip-item ${name}" ${callback}>${span}</a>`;
 	},
