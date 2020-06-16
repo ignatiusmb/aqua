@@ -1,5 +1,9 @@
 # Aqua Changelog
 
+## 20.2.1
+
+- Add imported languages to `langMap`
+
 ## 20.2.0
 
 - Add `aqua.cbs.js` for minimal package of only callback functionalities
