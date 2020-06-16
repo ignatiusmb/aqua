@@ -15,16 +15,34 @@ npm install @ignatiusmb/aqua
 or use with CDN via [UNPKG](https://unpkg.com/browse/@ignatiusmb/aqua@latest/) or [jsDelivr](https://www.jsdelivr.com/package/npm/@ignatiusmb/aqua)
 
 ```html
-<!-- via UNPKG -->
-<link rel="stylesheet" href="https://unpkg.com/@ignatiusmb/aqua@20.1.0/lib/aqua.compact.css" />
-<script defer src="https://unpkg.com/@ignatiusmb/aqua@20.1.0/lib/aqua.min.js"></script>
+<!-- Full Package via jsDelivr -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.2.0/lib/aqua.min.css" />
+<script defer src="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.2.0/lib/aqua.min.js"></script>
 
-<!-- via jsDelivr -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.1.0/lib/aqua.compact.css" />
-<script src="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.1.0/lib/aqua.min.js"></script>
+<!-- Full Package via UNPKG -->
+<link rel="stylesheet" href="https://unpkg.com/@ignatiusmb/aqua@20.2.0/lib/aqua.min.css" />
+<script defer src="https://unpkg.com/@ignatiusmb/aqua@20.2.0/lib/aqua.min.js"></script>
+
+<!-- Callback Only via jsDelivr/UNPKG (choose either one) -->
+<script defer src="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.2.0/lib/aqua.cbs.js"></script>
+<script defer src="https://unpkg.com/@ignatiusmb/aqua@20.2.0/lib/aqua.cbs.js"></script>
 ```
 
-### Contributing
+### Usage
+
+Usage with both npm and CDN requires the stylesheet, so either use a bundler to package your app with it or link it through the head, whichever works for you.
+
+```javascript
+import '@ignatiusmb/aqua/lib/aqua.min.css';
+```
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.2.0/lib/aqua.min.css" />
+<!-- or -->
+<link rel="stylesheet" href="https://unpkg.com/@ignatiusmb/aqua@20.2.0/lib/aqua.min.css" />
+```
+
+## Contributing
 
 To start developing and test in the docs, run
 
@@ -54,5 +72,5 @@ npm run bundle
 ---
 
 <pre align="center">
-Copyright &copy; <a href="https://mauss.dev">Ignatius Bagussuputra</a> 2019 &ndash; 2020
+Copyright &copy; 2019 &ndash; 2020 <a href="https://mauss.dev">Ignatius Bagussuputra</a>
 </pre>
