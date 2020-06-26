@@ -8,6 +8,7 @@ import 'prismjs/components/prism-docker';
 import 'prismjs/components/prism-markup';
 import 'prismjs/components/prism-java';
 import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-json';
 import 'prismjs/components/prism-python';
 import 'prismjs/components/prism-sql';
 import 'prismjs/components/prism-typescript';
@@ -26,6 +27,7 @@ const langMap = {
 	html: 'markup',
 	java: 'java',
 	javascript: 'javascript',
+	json: 'json',
 	js: 'javascript',
 	py: 'python',
 	python: 'python',
