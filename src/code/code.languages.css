@@ -8,7 +8,7 @@
 	top: 100%;
 	right: 0;
 	padding: 0.5em 1em;
-	font-weight: 600;
+	font-weight: 500;
 	text-indent: 0.2em;
 	letter-spacing: 0.15em;
 	text-transform: uppercase;
@@ -58,6 +58,11 @@
 .aqua.code-header[data-language='javascript']::before,
 .aqua.code-header[data-language='js']::after,
 .aqua.code-header[data-language='js']::before {
+	background: #f0db4f;
+	color: #323330;
+}
+.aqua.code-header[data-language='json']::after,
+.aqua.code-header[data-language='json']::before {
 	background: #f0db4f;
 	color: #323330;
 }
