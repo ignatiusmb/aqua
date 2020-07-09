@@ -23,7 +23,9 @@ function wrapSource(source, dataset) {
 		if (lineNumber === 1) wsPrefixCount = line.search(/\S/);
 		highlighted += `<code data-line="${lineNumber++}">${line.slice(wsPrefixCount)}</code>\n`;
 	}
+
 	while (/^$|"><\/code>/.test(highlighted.split('\n').slice(-1)[0])) {
+		if (!highlighted) break;
 		highlighted = highlighted.split('\n').slice(0, -1).join('\n');
 	}
 	return `<div ${classes} ${data}>${highlighted}</div>`;
