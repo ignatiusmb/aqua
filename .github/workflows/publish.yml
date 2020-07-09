@@ -1,4 +1,4 @@
-name: Package Manager
+name: Publish to npm
 
 on:
   push:
@@ -6,16 +6,16 @@ on:
       - "v*"
 
 jobs:
-  Publish:
+  npm-publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: "12"
-          registry-url: "https://npm.pkg.github.com"
+          node-version: "12.x"
+          registry-url: "https://registry.npmjs.org"
       - run: |
           npm install
           npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
