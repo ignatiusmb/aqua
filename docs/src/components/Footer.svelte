@@ -14,6 +14,8 @@
 			<Link href="https://svelte.dev/" invert>Svelte</Link>
 			+
 			<Link href="https://sapper.svelte.dev/" invert>Sapper</Link>
+			+
+			<Link href="https://github.com/ignatiusmb/aqua/" invert>Aqua</Link>
 		</p>
 	</section>
 </footer>

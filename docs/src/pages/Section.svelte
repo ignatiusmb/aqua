@@ -8,7 +8,7 @@
 
 <section>
 	<h2 id={docs.slug} class:anchor on:mouseenter={() => (anchor = true)} on:mouseleave={() => (anchor = false)}>
-		<Link href={docs.slug}>
+		<Link href="#{docs.slug}">
 			<Icon name="link" />
 		</Link>
 		<span>{docs.title}</span>
