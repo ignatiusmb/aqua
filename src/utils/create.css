@@ -1,19 +1,25 @@
-.aqua.snackbar {
+.aqua.bars {
 	z-index: 999;
-	position: fixed;
-	bottom: 0;
-	left: 0;
 	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0.8em 1em;
-	background-color: var(--aqua-bg-dark);
+	position: fixed;
+	right: 0;
+	bottom: 0;
 	color: hsla(0, 0%, 100%, 0.87);
-	letter-spacing: 0.25px;
 	font-size: 90%;
-	transform: translateY(100%);
-	transition: 0.2s cubic-bezier(0.4, 0, 1, 1), -webkit-transform 0.2s cubic-bezier(0.4, 0, 1, 1);
+	letter-spacing: 0.25px;
+}
+
+.aqua.snackbar {
+	width: 100%;
+	display: grid;
+	gap: 1em;
+	grid-template-columns: 1fr auto;
+	align-items: center;
+	padding: 0.75em 0.75em 0.75em 1.25em;
+	border-radius: inherit;
+	background-color: var(--aqua-bg-dark);
+	transform: translateY(200%);
+	transition: transform 240ms cubic-bezier(0.4, 0, 1, 1);
 }
 .aqua.snackbar.show {
 	transform: translateY(0);
@@ -27,4 +33,16 @@
 	background-repeat: no-repeat;
 	background-origin: content-box;
 	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-x'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
+}
+
+@media only screen and (min-width: 600px) {
+	.aqua.bars {
+		width: unset;
+		min-width: 24em;
+		right: 1em;
+		border-radius: 0.25em;
+		margin: 1em auto;
+	}
+}
+@media only screen and (min-width: 769px) {
 }
