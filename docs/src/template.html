@@ -6,19 +6,17 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="theme-color" content="#ffffff" />
+	%sapper.base%
 	<link rel="manifest" href="site.webmanifest" crossorigin="use-credentials">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
-
-	<title>Aqua - Native DOM enhancements • Mauss</title>
-	<meta name="description" content="Native DOM enhancements to UI using pure JS and CSS">
-
-	<link rel="stylesheet" href="aqua.compact.css">
-	<link rel="stylesheet" href="build/bundle.css">
-	<script defer src="build/bundle.js"></script>
+	%sapper.styles%
+	%sapper.head%
 </head>
 
 <body>
+	<div id="sapper">%sapper.html%</div>
+	%sapper.scripts%
 </body>
 
 </html>

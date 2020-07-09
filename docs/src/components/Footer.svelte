@@ -1,36 +1,40 @@
 <script>
-  import LinkExt from './LinkExt.svelte';
+	import Link from '../svelte/Link.svelte';
 </script>
 
 <footer>
-  <slot />
-
-  <section>
-    <p>
-      Copyright &copy;
-      <LinkExt href="https://mauss.dev/">Ignatius Bagussuputra</LinkExt>
-      2019 &ndash; {new Date().getFullYear()}
-    </p>
-    <p>
-      Documentation made with ❤️ using
-      <LinkExt href="https://svelte.dev/">Svelte</LinkExt>
-    </p>
-  </section>
+	<section>
+		<p>
+			Copyright &copy;
+			<Link href="https://mauss.dev/" invert>Ignatius Bagussuputra</Link>
+			2019 &ndash; {new Date().getFullYear()}
+		</p>
+		<p>
+			Documentation made with ❤️ using
+			<Link href="https://svelte.dev/" invert>Svelte</Link>
+			+
+			<Link href="https://sapper.svelte.dev/" invert>Sapper</Link>
+			+
+			<Link href="https://github.com/ignatiusmb/aqua/" invert>Aqua</Link>
+		</p>
+	</section>
 </footer>
 
 <style>
-  footer {
-    position: relative;
-    padding: 3em 0;
-    margin: auto 0 3em;
-    text-align: center;
-    font-family: 'Rubik', sans-serif;
-  }
-  section:last-of-type {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    place-items: center;
-    gap: 0.5em;
-    font-family: 'Fira Code', 'Inconsolata', monospace;
-  }
+	footer {
+		width: 100%;
+		max-width: 84em;
+		position: relative;
+		display: grid;
+		gap: 0.5em;
+		padding: 3em 2em;
+		margin: 0 auto;
+		text-align: center;
+		font-family: var(--aqua-monospace);
+		font-size: clamp(0.8em, 3vw, 1em);
+	}
+	section:last-of-type {
+		display: grid;
+		gap: 0.5em;
+	}
 </style>
