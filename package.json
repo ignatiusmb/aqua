@@ -26,8 +26,7 @@
     "url": "https://github.com/ignatiusmb/aqua/issues"
   },
   "files": [
-    "lib/*.css",
-    "lib/*.js",
+    "lib/",
     "LICENSE",
     "README.md"
   ],
