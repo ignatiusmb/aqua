@@ -1,12 +1,12 @@
 <script>
 	import Link from '../svelte/Link.svelte';
 	import Icon from '../svelte/Icon.svelte';
-	import { version } from '../../../package.json';
+	import { version } from '../stores';
 </script>
 
 <header>
 	<h1>Aqua</h1>
-	<h3>Version v{version}</h3>
+	<h3>Version v{$version}</h3>
 	<Link href="https://github.com/ignatiusmb/aqua/" inherit invert>
 		<Icon name="github" size="34" />
 	</Link>
