@@ -1,5 +1,11 @@
 # Aqua Changelog
 
+## Unreleased
+
+- Fix code header overflow ([#17](https://github.com/ignatiusmb/aqua/pull/17))
+- Add JSON highlighting ([#12](https://github.com/ignatiusmb/aqua/pull/12))
+- Reduce code header after pseudo-element font-weight ([#12](https://github.com/ignatiusmb/aqua/pull/12))
+
 ## 20.2.3
 
 - Add prepublish routine
