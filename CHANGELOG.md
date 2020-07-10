@@ -1,6 +1,6 @@
 # Aqua Changelog
 
-## Unreleased
+## 20.3.0
 
 - Fix parser stuck in infinite loop for empty code blocks ([#15](https://github.com/ignatiusmb/aqua/pull/15))
 - Use primary color for code toolbar icons ([#15](https://github.com/ignatiusmb/aqua/pull/15))

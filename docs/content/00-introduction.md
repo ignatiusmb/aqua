@@ -11,8 +11,8 @@ It only utilizes [prism](https://prismjs.com/), everything else is built from th
 ### Quick Start
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.2.3/lib/aqua.min.css" />
-<script defer src="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.2.3/lib/aqua.cbs.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.3.0/lib/aqua.min.css" />
+<script defer src="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.3.0/lib/aqua.cbs.js"></script>
 ```
 
 ```javascript

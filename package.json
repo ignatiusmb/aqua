@@ -3,7 +3,7 @@
   "author": "Ignatius Bagus",
   "homepage": "https://aqua.mauss.dev",
   "description": "Native DOM enhancements to UI using pure JS and CSS",
-  "version": "20.2.3",
+  "version": "20.3.0",
   "license": "MIT",
   "main": "lib/aqua.min.js",
   "module": "lib/aqua.esm.js",

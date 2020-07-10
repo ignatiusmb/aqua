@@ -1,3 +1,3 @@
 import { readable } from 'svelte/store';
 
-export const version = readable('20.2.3');
+export const version = readable('20.3.0');
