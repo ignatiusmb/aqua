@@ -37,6 +37,11 @@
 	font-family: var(--aqua-default);
 	font-size: 0.75rem;
 }
+.aqua.code-header > .overflow-wrapper {
+	overflow: hidden;
+	width: 100%;
+	display: inline-flex;
+}
 /* Language Colored Line */
 .aqua.code-header::before {
 	content: '';
