@@ -7,6 +7,7 @@
 	color: #fff;
 	font-weight: lighter;
 	font-family: var(--aqua-monospace);
+	font-size: clamp(0.8rem, 2vw, 0.95rem);
 }
 .aqua.code-header.empty {
 	padding: 0;
