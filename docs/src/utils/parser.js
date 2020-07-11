@@ -1,11 +1,12 @@
 import { join } from 'path';
 import { readdirSync, readFileSync } from 'fs';
 import { sortCompare, splitAt } from './helper';
-import Aqua from '../aqua';
+
+import Aqua from '@ignatiusmb/aqua';
 const markIt = require('markdown-it')({
 	html: true,
 	typographer: true,
-	highlight: (str: string, language: string) => {
+	highlight: (str, language) => {
 		const strList = str.split('\n');
 		const dataset = { language };
 		if (!str.length) return Aqua.code.highlight('', dataset);
@@ -19,9 +20,9 @@ const markIt = require('markdown-it')({
 	},
 });
 
-export const aquaMark = (content: string) => markIt.render(content);
+export const aquaMark = (content) => markIt.render(content);
 
-export function parseFile(filename: string, parseCallback: Function) {
+export function parseFile(filename, parseCallback) {
 	const content = readFileSync(filename, 'utf-8');
 	const fmExpression = /---\r?\n([\s\S]+?)\r?\n---/;
 	const [rawData, metadata] = fmExpression.exec(content);
@@ -32,7 +33,7 @@ export function parseFile(filename: string, parseCallback: Function) {
 		return acc;
 	}, {});
 
-	const [cleanedFilename] = filename.split(/[\/\\]/).slice(-1);
+	const [cleanedFilename] = filename.split(/\/\\/).slice(-1);
 	const article = content.slice(rawData.length + 1);
 	const result = parseCallback(frontMatter, article, cleanedFilename);
 
@@ -40,7 +41,7 @@ export function parseFile(filename: string, parseCallback: Function) {
 	return result;
 }
 
-export function parseDir(dirname: string, fileParse: Function) {
+export function parseDir(dirname, fileParse) {
 	return readdirSync(dirname)
 		.filter((name) => !name.startsWith('draft.') && name.endsWith('.md'))
 		.map((filename) => parseFile(join(dirname, filename), fileParse))
