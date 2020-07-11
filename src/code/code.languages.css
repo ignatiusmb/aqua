@@ -1,5 +1,6 @@
 .aqua.code-header {
-	--aqua-code-header-cl-light: #feefe8;
+	--aqua-code-header-dark: #323330;
+	--aqua-code-header-light: #feefe8;
 }
 
 .aqua.code-header::after {
@@ -42,34 +43,39 @@
 .aqua.code-header[data-language='css']::after,
 .aqua.code-header[data-language='css']::before {
 	background: #264de4;
-	color: var(--aqua-code-header-cl-light);
+	color: var(--aqua-code-header-light);
+}
+.aqua.code-header[data-language='htaccess']::after,
+.aqua.code-header[data-language='htaccess']::before {
+	background: #8bc34a;
+	color: var(--aqua-code-header-dark);
 }
 .aqua.code-header[data-language='html']::after,
 .aqua.code-header[data-language='html']::before {
 	background: #e34f26;
-	color: var(--aqua-code-header-cl-light);
+	color: var(--aqua-code-header-light);
 }
 .aqua.code-header[data-language='java']::after,
 .aqua.code-header[data-language='java']::before {
 	background: #f89820;
-	color: var(--aqua-code-header-cl-light);
+	color: var(--aqua-code-header-light);
 }
 .aqua.code-header[data-language='javascript']::after,
 .aqua.code-header[data-language='javascript']::before,
 .aqua.code-header[data-language='js']::after,
 .aqua.code-header[data-language='js']::before {
 	background: #f0db4f;
-	color: #323330;
+	color: var(--aqua-code-header-dark);
 }
 .aqua.code-header[data-language='json']::after,
 .aqua.code-header[data-language='json']::before {
 	background: #f0db4f;
-	color: #323330;
+	color: var(--aqua-code-header-dark);
 }
 .aqua.code-header[data-language='python']::after,
 .aqua.code-header[data-language='python']::before {
 	background: #ddd;
-	color: #2d2d2d;
+	color: var(--aqua-code-header-dark);
 }
 .aqua.code-header[data-language='shell']::after,
 .aqua.code-header[data-language='shell']::before {
@@ -79,10 +85,10 @@
 .aqua.code-header[data-language='svelte']::after,
 .aqua.code-header[data-language='svelte']::before {
 	background: #ff3e00;
-	color: var(--aqua-code-header-cl-light);
+	color: var(--aqua-code-header-light);
 }
 .aqua.code-header[data-language='terminal']::after,
 .aqua.code-header[data-language='terminal']::before {
 	background: #ddd;
-	color: #444;
+	color: var(--aqua-code-header-dark);
 }
