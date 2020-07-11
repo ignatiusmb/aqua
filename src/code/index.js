@@ -36,7 +36,7 @@ function encloseBlock(source, dataset) {
 	const classes = `class="aqua code-header ${title ? '' : 'empty'}"`;
 	const data = `data-language="${language ? language : ''}"`;
 
-	const content = `<span class="overflow-wrapper">${title || ''}</span>`;
+	const content = title ? `<span class="overflow-wrapper">${title}</span>` : '';
 	const header = `<header ${classes} ${data}>${content}${createToolbar()}</header>`;
 
 	const codeBlock = wrapSource(source, dataset);

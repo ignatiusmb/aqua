@@ -1,4 +1,4 @@
-name: Publish to npm
+name: Release-CI/CD
 
 on:
   push:
@@ -14,7 +14,8 @@ jobs:
         with:
           node-version: "12.x"
           registry-url: "https://registry.npmjs.org"
-      - run: |
+      - name: Install and publish
+        run: |
           npm install
           npm publish
         env:
