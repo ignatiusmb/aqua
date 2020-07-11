@@ -1,5 +1,9 @@
 # Aqua Changelog
 
+## Unreleased
+
+- Fix empty header causing whitespace ([#18](https://github.com/ignatiusmb/aqua/pull/18))
+
 ## 20.3.0
 
 - Fix parser stuck in infinite loop for empty code blocks ([#15](https://github.com/ignatiusmb/aqua/pull/15))
