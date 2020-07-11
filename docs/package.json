@@ -12,7 +12,7 @@
     "node": "12.x"
   },
   "dependencies": {
-    "@ignatiusmb/aqua": "^20.3.0",
+    "@ignatiusmb/aqua": "^20.3.1",
     "compression": "^1.7.4",
     "markdown-it": "^11.0.0",
     "polka": "^1.0.0-next.11",

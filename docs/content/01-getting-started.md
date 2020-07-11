@@ -13,14 +13,14 @@ npm install @ignatiusmb/aqua
 
 ```html
 ~Direct Include --> jsDelivr CDN
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.3.0/lib/aqua.min.css" />
-<script defer src="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.3.0/lib/aqua.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.3.1/lib/aqua.min.css" />
+<script defer src="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.3.1/lib/aqua.min.js"></script>
 ```
 
 ```html
 ~Direct Include --> UNPKG CDN
-<link rel="stylesheet" href="https://unpkg.com/@ignatiusmb/aqua@20.3.0/lib/aqua.min.css" />
-<script defer src="https://unpkg.com/@ignatiusmb/aqua@20.3.0/lib/aqua.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@ignatiusmb/aqua@20.3.1/lib/aqua.min.css" />
+<script defer src="https://unpkg.com/@ignatiusmb/aqua@20.3.1/lib/aqua.min.js"></script>
 ```
 
 ### Included Font Vars
@@ -61,7 +61,7 @@ Aqua provides stylesheets and script files, linking or including the stylesheet 
 
 ```html
 ~1.0 - without bundler
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.3.0/lib/aqua.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.3.1/lib/aqua.min.css" />
 ```
 
 ```javascript
@@ -73,7 +73,7 @@ On the other hand, there's a couple of ways to use the script files. You can use
 
 ```html
 ~1.0 - Parsing in client-side
-<script defer src="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.3.0/lib/aqua.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.3.1/lib/aqua.min.js"></script>
 ```
 
 ```javascript
@@ -83,5 +83,5 @@ import '@ignatiusmb/aqua/lib/aqua.cbs';
 
 ```html
 ~2.1 - Parsing from server-side | No bundler
-<script defer src="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.3.0/lib/aqua.cbs.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.3.1/lib/aqua.cbs.js"></script>
 ```

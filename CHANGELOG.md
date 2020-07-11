@@ -1,7 +1,8 @@
 # Aqua Changelog
 
-## Unreleased
+## 20.3.1
 
+- Add apacheconf language ([#20](https://github.com/ignatiusmb/aqua/pull/20))
 - Fix empty header causing whitespace ([#18](https://github.com/ignatiusmb/aqua/pull/18))
 
 ## 20.3.0
