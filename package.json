@@ -31,12 +31,12 @@
     "README.md"
   ],
   "scripts": {
-    "bundle": "run-p bundle:*",
+    "bundle": "run-p bundle:**",
     "bundle:js": "rollup -c",
     "bundle:css": "postcss src/aqua.css -o lib/aqua.min.css",
-    "docs": "run-p docs:*",
+    "docs": "run-p docs:**",
     "docs:js": "rollup -c -w",
-    "docs:css": "postcss src/aqua.css -o docs/src/styles/aqua.min.css -w",
+    "docs:css": "postcss src/aqua.css -o lib/aqua.min.css -w",
     "prepublishOnly": "npm run bundle"
   },
   "devDependencies": {

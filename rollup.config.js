@@ -86,30 +86,6 @@ export default [
 			indent: false,
 		},
 	},
-	{
-		input: 'src/cbs.js',
-		plugins: [
-			babel({
-				babelHelpers: 'bundled',
-			}),
-			commonjs(),
-			json(),
-			resolve({
-				browser: true,
-			}),
-			terser({
-				output: {
-					preamble: banner,
-				},
-			}),
-		],
-		output: {
-			name: 'Aqua',
-			file: 'docs/src/aqua.cbs.js',
-			format: 'umd',
-			indent: false,
-		},
-	},
 	/* ES6 Builds - esm + min */
 	{
 		input,
@@ -144,25 +120,6 @@ export default [
 		output: {
 			name: 'Aqua',
 			file: 'lib/aqua.esm.min.js',
-			format: 'esm',
-			indent: false,
-		},
-	},
-	{
-		input,
-		plugins: [
-			commonjs(),
-			json(),
-			resolve(),
-			terser({
-				output: {
-					preamble: banner,
-				},
-			}),
-		],
-		output: {
-			name: 'Aqua',
-			file: 'docs/src/aqua.js',
 			format: 'esm',
 			indent: false,
 		},
