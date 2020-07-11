@@ -4,8 +4,8 @@
 	import Header from '../components/Header.svelte';
 	import Footer from '../components/Footer.svelte';
 
-	import '../aqua.cbs';
-	import '../styles/aqua.min.css';
+	import '@ignatiusmb/aqua/lib/aqua.cbs';
+	import '@ignatiusmb/aqua/lib/aqua.min.css';
 	import '../styles/fonts.css';
 </script>
 
