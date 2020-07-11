@@ -1,4 +1,5 @@
 import Prism from 'prismjs';
+import 'prismjs/components/prism-apacheconf';
 import 'prismjs/components/prism-bash';
 import 'prismjs/components/prism-c';
 import 'prismjs/components/prism-cpp';
@@ -24,6 +25,7 @@ const langMap = {
 	dart: 'dart',
 	docker: 'docker',
 	dockerfile: 'docker',
+	htaccess: 'apacheconf',
 	html: 'markup',
 	java: 'java',
 	javascript: 'javascript',
