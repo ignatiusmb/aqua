@@ -33,7 +33,7 @@ export function parseFile(filename, parseCallback) {
 		return acc;
 	}, {});
 
-	const [cleanedFilename] = filename.split(/\/\\/).slice(-1);
+	const [cleanedFilename] = filename.split(/[/\\]/).slice(-1);
 	const article = content.slice(rawData.length + 1);
 	const result = parseCallback(frontMatter, article, cleanedFilename);
 
