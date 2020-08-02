@@ -1,5 +1,5 @@
 <script>
-	import IconList from '../svelte/IconList.svelte';
+	import { FeatherIcons } from '@ignatiusmb/elements/essentials';
 
 	import Header from '../components/Header.svelte';
 	import Footer from '../components/Footer.svelte';
@@ -9,7 +9,7 @@
 	import '../styles/fonts.css';
 </script>
 
-<IconList />
+<FeatherIcons />
 
 <Header />
 <slot />
