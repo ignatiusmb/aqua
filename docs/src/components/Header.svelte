@@ -1,6 +1,5 @@
 <script>
-	import Link from '../svelte/Link.svelte';
-	import Icon from '../svelte/Icon.svelte';
+	import { Link, Icon } from '@ignatiusmb/elements/essentials';
 	import { version } from '../stores';
 </script>
 

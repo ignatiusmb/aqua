@@ -6,28 +6,13 @@
 
 <script>
 	export let sections;
-	import MetaHead from '../pages/MetaHead.svelte';
-	import Wrapper from '../pages/Wrapper.svelte';
-	import Sidebar from '../pages/Sidebar.svelte';
-	import Section from '../pages/Section.svelte';
+	import MetaHead from '../components/MetaHead.svelte';
+	import { Docs } from '@ignatiusmb/dev-kit';
+	const repo = 'ignatiusmb/aqua';
 </script>
 
 <MetaHead
 	title="Aqua - Native DOM Enhancements"
 	description="Aqua by Ignatius. An npm package to quickly build websites with predefined styles and components." />
 
-<Wrapper>
-	<Sidebar {sections} />
-
-	<article>
-		{#each sections as docs}
-			<Section {docs} />
-		{/each}
-	</article>
-</Wrapper>
-
-<style>
-	article {
-		padding-top: 2em;
-	}
-</style>
+<Docs {sections} {repo} />

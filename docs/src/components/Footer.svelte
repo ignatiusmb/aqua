@@ -1,5 +1,5 @@
 <script>
-	import Link from '../svelte/Link.svelte';
+	import { Link } from '@ignatiusmb/elements/essentials';
 </script>
 
 <footer>

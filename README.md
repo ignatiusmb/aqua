@@ -51,9 +51,15 @@ To start developing and test in the docs, run
 npm run docs
 ```
 
-then, change directory to docs and run
+then, spawn new terminal and run
 
 ```bash
+cd docs
+# Run on first time
+npm install
+
+# Use local package
+npm install ..
 npm run dev
 ```
 
