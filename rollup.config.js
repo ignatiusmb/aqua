@@ -18,66 +18,37 @@ export default [
 	{
 		input,
 		plugins: [
-			babel({
-				babelHelpers: 'bundled',
-			}),
-			cleanup({
-				sourcemap: true,
-			}),
+			babel({ babelHelpers: 'bundled' }),
 			commonjs(),
 			json(),
-			resolve({
-				browser: true,
-			}),
+			resolve({ browser: true }),
+			cleanup({ sourcemap: true }),
 		],
-		output: {
-			name: 'Aqua',
-			file: 'lib/aqua.js',
-			banner,
-			format: 'umd',
-			indent: false,
-		},
-	},
-	{
-		input,
-		plugins: [
-			babel({
-				babelHelpers: 'bundled',
-			}),
-			commonjs(),
-			json(),
-			resolve({
-				browser: true,
-			}),
-			terser({
-				output: {
-					preamble: banner,
-				},
-			}),
+		output: [
+			{
+				name: 'Aqua',
+				file: 'lib/aqua.js',
+				banner,
+				format: 'umd',
+				indent: false,
+			},
+			{
+				name: 'Aqua',
+				file: 'lib/aqua.min.js',
+				format: 'umd',
+				indent: false,
+				plugins: [terser({ output: { preamble: banner } })],
+			},
 		],
-		output: {
-			name: 'Aqua',
-			file: 'lib/aqua.min.js',
-			format: 'umd',
-			indent: false,
-		},
 	},
 	{
 		input: 'src/cbs.js',
 		plugins: [
-			babel({
-				babelHelpers: 'bundled',
-			}),
+			babel({ babelHelpers: 'bundled' }),
 			commonjs(),
 			json(),
-			resolve({
-				browser: true,
-			}),
-			terser({
-				output: {
-					preamble: banner,
-				},
-			}),
+			resolve({ browser: true }),
+			terser({ output: { preamble: banner } }),
 		],
 		output: {
 			name: 'Aqua',
@@ -90,38 +61,26 @@ export default [
 	{
 		input,
 		plugins: [
+			commonjs(),
+			json(),
+			resolve(),
 			cleanup({
 				sourcemap: true,
 			}),
-			commonjs(),
-			json(),
-			resolve(),
 		],
-		output: {
-			name: 'Aqua',
-			file: 'lib/aqua.esm.js',
-			banner,
-			format: 'esm',
-			indent: false,
-		},
-	},
-	{
-		input,
-		plugins: [
-			commonjs(),
-			json(),
-			resolve(),
-			terser({
-				output: {
-					preamble: banner,
-				},
-			}),
+		output: [
+			{
+				file: 'lib/aqua.esm.js',
+				banner,
+				format: 'esm',
+				indent: false,
+			},
+			{
+				file: 'lib/aqua.esm.min.js',
+				format: 'esm',
+				indent: false,
+				plugins: [terser({ output: { preamble: banner } })],
+			},
 		],
-		output: {
-			name: 'Aqua',
-			file: 'lib/aqua.esm.min.js',
-			format: 'esm',
-			indent: false,
-		},
 	},
 ];
