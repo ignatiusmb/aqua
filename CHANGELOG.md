@@ -1,5 +1,9 @@
 # Aqua Changelog
 
+## Unreleased
+
+- Fix code toolbar positioning ([#22](https://github.com/ignatiusmb/aqua/pull/22))
+
 ## 20.3.1
 
 - Add apacheconf language ([#20](https://github.com/ignatiusmb/aqua/pull/20))
