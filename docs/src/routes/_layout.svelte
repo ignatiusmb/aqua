@@ -1,6 +1,4 @@
 <script>
-	import { FeatherIcons } from '@ignatiusmb/elements/essentials';
-
 	import Header from '../components/Header.svelte';
 	import Footer from '../components/Footer.svelte';
 
@@ -8,8 +6,6 @@
 	import '@ignatiusmb/aqua/lib/aqua.min.css';
 	import '../styles/fonts.css';
 </script>
-
-<FeatherIcons />
 
 <Header />
 <slot />
