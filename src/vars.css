@@ -1,5 +1,6 @@
 :root {
-	--aqua-default: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Rubik', 'Ubuntu', 'Roboto', sans-serif;
+	--aqua-default: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Rubik', 'Ubuntu', 'Roboto',
+		sans-serif;
 	--aqua-heading: 'Karla', sans-serif;
 	--aqua-monospace: 'Fira Code', 'Inconsolata', 'Consolas', monospace;
 
