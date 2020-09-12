@@ -1,6 +1,6 @@
 declare module '@ignatiusmb/aqua' {
 	export const code: {
-		cbs(name: string): Promise<void>;
+		cbs(name: string): (type: string) => void;
 		highlightAll(): void;
 		highlight(
 			source: string,
