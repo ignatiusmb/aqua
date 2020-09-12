@@ -9,6 +9,7 @@
   "module": "lib/aqua.esm.js",
   "unpkg": "lib/aqua.min.js",
   "jsdelivr": "lib/aqua.min.js",
+  "types": "index.d.ts",
   "keywords": [
     "aqua",
     "DOM",
@@ -37,6 +38,7 @@
     "docs:css": "postcss src/aqua.css -o lib/aqua.min.css -w",
     "prepublishOnly": "npm run bundle"
   },
+  "dependencies": {},
   "devDependencies": {
     "@rollup/plugin-babel": "^5.0.2",
     "@rollup/plugin-commonjs": "^13.0.0",
@@ -54,6 +56,5 @@
     "rollup": "^2.13.1",
     "rollup-plugin-cleanup": "^3.1.1",
     "rollup-plugin-terser": "^6.1.0"
-  },
-  "dependencies": {}
+  }
 }
