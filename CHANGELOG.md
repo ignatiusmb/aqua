@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Fix code toolbar positioning ([#22](https://github.com/ignatiusmb/aqua/pull/22))
+- Add and publish typings `.d.ts` ([#24](https://github.com/ignatiusmb/aqua/pull/24))
 
 ## 20.3.1
 

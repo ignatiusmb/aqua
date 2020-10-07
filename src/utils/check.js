@@ -1,13 +1,14 @@
-function isElement(o) {
-	return typeof HTMLElement === 'object'
+const isElement = (o) =>
+	typeof HTMLElement === 'object'
 		? o instanceof HTMLElement
 		: o && typeof o === 'object' && o.nodeType === 1 && typeof o.nodeName === 'string';
-}
 
-function isNode(o) {
-	return typeof Node === 'object'
+const isNode = (o) =>
+	typeof Node === 'object'
 		? o instanceof Node
-		: o && typeof o === 'object' && typeof o.nodeType === 'number' && typeof o.nodeName === 'string';
-}
+		: o &&
+		  typeof o === 'object' &&
+		  typeof o.nodeType === 'number' &&
+		  typeof o.nodeName === 'string';
 
 export { isElement, isNode };

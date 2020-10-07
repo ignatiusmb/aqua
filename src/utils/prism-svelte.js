@@ -2,7 +2,9 @@ const blocks = '(if|else if|await|then|catch|each|html|debug)';
 
 Prism.languages.svelte = Prism.languages.extend('markup', {
 	each: {
-		pattern: new RegExp('{[#/]each' + '(?:(?:\\{(?:(?:\\{(?:[^{}])*\\})|(?:[^{}]))*\\})|(?:[^{}]))*}'),
+		pattern: new RegExp(
+			'{[#/]each' + '(?:(?:\\{(?:(?:\\{(?:[^{}])*\\})|(?:[^{}]))*\\})|(?:[^{}]))*}'
+		),
 		inside: {
 			'language-javascript': [
 				{
@@ -26,7 +28,9 @@ Prism.languages.svelte = Prism.languages.extend('markup', {
 		},
 	},
 	block: {
-		pattern: new RegExp('{[#:/@]/s' + blocks + '(?:(?:\\{(?:(?:\\{(?:[^{}])*\\})|(?:[^{}]))*\\})|(?:[^{}]))*}'),
+		pattern: new RegExp(
+			'{[#:/@]/s' + blocks + '(?:(?:\\{(?:(?:\\{(?:[^{}])*\\})|(?:[^{}]))*\\})|(?:[^{}]))*}'
+		),
 		inside: {
 			punctuation: /^{|}$/,
 			keyword: [new RegExp('[#:/@]' + blocks + '( )*'), /as/, /then/],
@@ -83,7 +87,8 @@ Prism.languages.svelte = Prism.languages.extend('markup', {
 	},
 });
 
-Prism.languages.svelte['tag'].inside['attr-value'].inside['entity'] = Prism.languages.svelte['entity'];
+Prism.languages.svelte['tag'].inside['attr-value'].inside['entity'] =
+	Prism.languages.svelte['entity'];
 
 Prism.hooks.add('wrap', (env) => {
 	if (env.type === 'entity') {
@@ -115,7 +120,10 @@ Object.defineProperty(Prism.languages.svelte.tag, 'addInlined', {
 		const def = {};
 		def[tagName] = {
 			pattern: RegExp(
-				/(<__[\s\S]*?>)(?:<!\[CDATA\[[\s\S]*?\]\]>\s*|[\s\S])*?(?=<\/__>)/.source.replace(/__/g, tagName),
+				/(<__[\s\S]*?>)(?:<!\[CDATA\[[\s\S]*?\]\]>\s*|[\s\S])*?(?=<\/__>)/.source.replace(
+					/__/g,
+					tagName
+				),
 				'i'
 			),
 			lookbehind: true,
