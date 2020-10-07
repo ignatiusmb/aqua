@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Add button reset to remove default border and background ([#25](https://github.com/ignatiusmb/aqua/pull/25))
 - Fix code toolbar positioning ([#22](https://github.com/ignatiusmb/aqua/pull/22))
 - Add and publish typings `.d.ts` ([#24](https://github.com/ignatiusmb/aqua/pull/24))
 
