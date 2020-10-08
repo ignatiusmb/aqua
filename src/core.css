@@ -88,8 +88,10 @@ select {
 }
 button {
 	cursor: pointer;
-	padding: 0.2em 1em;
+	padding: 0.2em 0.5em;
+	border: 0;
 	outline: 0;
+	background: 0;
 }
 [type='button'],
 [type='reset'],
