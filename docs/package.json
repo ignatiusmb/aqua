@@ -6,7 +6,7 @@
     "lint": "eslint src --ext svelte,js",
     "dev": "sapper dev",
     "build": "sapper build --legacy",
-    "export": "sapper export --legacy"
+    "export": "cd .. && npm run bundle && cd docs && sapper export --legacy"
   },
   "engines": {
     "node": "12.x"
