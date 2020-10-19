@@ -1,5 +1,5 @@
 <script>
-	import { Link, Icon } from '@ignatiusmb/elements/essentials';
+	import { Feather, Link } from '@ignatiusmb/elements';
 	import { version } from '../stores';
 </script>
 
@@ -7,7 +7,7 @@
 	<h1>Aqua</h1>
 	<h3>Version v{$version}</h3>
 	<Link href="https://github.com/ignatiusmb/aqua/" inherit invert>
-		<Icon name="github" size="34" />
+		<Feather.Github size="34" />
 	</Link>
 </header>
 
