@@ -1,7 +1,5 @@
 <script>
 	export let status, error;
-
-	const dev = process.env.NODE_ENV === 'development';
 </script>
 
 <svelte:head>
@@ -14,7 +12,7 @@
 		<p>{error.message}</p>
 	</section>
 
-	{#if dev && error.stack}
+	{#if process.dev && error.stack}
 		<section>
 			<pre>{error.stack}</pre>
 		</section>

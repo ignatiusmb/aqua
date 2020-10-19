@@ -37,11 +37,11 @@ export default {
 		plugins: [
 			replace({
 				'process.browser': true,
-				'process.env.NODE_ENV': JSON.stringify(mode),
+				'process.dev': dev,
 			}),
 			svelte({
-				preprocess,
 				dev,
+				preprocess,
 				hydratable: true,
 				emitCss: true,
 			}),
@@ -59,7 +59,10 @@ export default {
 					babelHelpers: 'runtime',
 					exclude: ['node_modules/@babel/**'],
 					presets: [['@babel/preset-env', { targets: '> 0.25%, not dead' }]],
-					plugins: ['@babel/plugin-syntax-dynamic-import', ['@babel/plugin-transform-runtime', { useESModules: true }]],
+					plugins: [
+						'@babel/plugin-syntax-dynamic-import',
+						['@babel/plugin-transform-runtime', { useESModules: true }],
+					],
 				}),
 
 			!dev && terser({ module: true }),
@@ -75,11 +78,11 @@ export default {
 		plugins: [
 			replace({
 				'process.browser': false,
-				'process.env.NODE_ENV': JSON.stringify(mode),
+				'process.dev': dev,
 			}),
 			svelte({
-				preprocess,
 				dev,
+				preprocess,
 				hydratable: true,
 				generate: 'ssr',
 			}),
@@ -87,22 +90,6 @@ export default {
 			commonjs(),
 			typescript({ noEmitOnError: false }),
 			json(),
-		],
-	},
-
-	serviceworker: {
-		input: config.serviceworker.input(),
-		output: config.serviceworker.output(),
-		preserveEntrySignatures: false,
-		onwarn,
-		plugins: [
-			resolve(),
-			replace({
-				'process.browser': true,
-				'process.env.NODE_ENV': JSON.stringify(mode),
-			}),
-			commonjs(),
-			!dev && terser(),
 		],
 	},
 };
