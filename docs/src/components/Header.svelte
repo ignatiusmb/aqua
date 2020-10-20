@@ -1,11 +1,11 @@
 <script>
 	import { Feather, Link } from '@ignatiusmb/elements';
-	import { version } from '../stores';
+	import { version } from '../package';
 </script>
 
 <header>
 	<h1>Aqua</h1>
-	<h3>Version v{$version}</h3>
+	<h3>Version v{version}</h3>
 	<Link href="https://github.com/ignatiusmb/aqua/" inherit invert>
 		<Feather.Github size="34" />
 	</Link>
