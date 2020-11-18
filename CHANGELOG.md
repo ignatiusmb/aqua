@@ -1,6 +1,6 @@
 # Aqua Changelog
 
-## Unreleased
+## 20.3.2
 
 - Add button reset to remove default border and background ([#25](https://github.com/ignatiusmb/aqua/pull/25))
 - Fix code toolbar positioning ([#22](https://github.com/ignatiusmb/aqua/pull/22))
