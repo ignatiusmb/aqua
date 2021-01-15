@@ -26,9 +26,6 @@
   "bugs": {
     "url": "https://github.com/ignatiusmb/aqua/issues"
   },
-  "files": [
-    "lib"
-  ],
   "scripts": {
     "bundle": "run-p bundle:**",
     "bundle:js": "rollup -c",
