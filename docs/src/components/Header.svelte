@@ -1,6 +1,7 @@
 <script>
-	import { Feather, Link } from '@ignatiusmb/elements';
-	import { version } from '../package';
+	import { version } from '@ignatiusmb/aqua/package.json';
+	import { Feather } from 'svelement/icons';
+	import { Link } from 'svelement';
 </script>
 
 <header>

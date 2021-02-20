@@ -1,7 +1,7 @@
 import type { Request, Response } from 'express';
-import { parseDir } from '../utils/parser';
-import { splitAt } from '../utils/helper';
-import { version } from '../package';
+import { version } from '@ignatiusmb/aqua/package.json';
+import { parseDir } from '$utils/parser';
+import { splitAt } from '$utils/helper';
 
 export function get(_: Request, res: Response) {
 	const docs = parseDir('content', (data: any, content: string, filename: string) => {

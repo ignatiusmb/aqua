@@ -85,7 +85,7 @@ const options = {
       const [title, lineNumber] = strList[0].split('#');
       dataset['title'] = title.slice(1);
       // Check if there's a hash '#' in the title and use it as start line number
-      if (lineNumber) dataset['lineStart'] = parseInt(lineNumber);
+      if (lineNumber) dataset['lineStart'] = +lineNumber;
     }
     const content = strList.slice(dataset['title'] ? 1 : 0).join('\n');
 

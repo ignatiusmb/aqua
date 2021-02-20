@@ -1,5 +1,5 @@
 <script>
-	import { Link } from '@ignatiusmb/elements';
+	import { Link } from 'svelement';
 </script>
 
 <footer>

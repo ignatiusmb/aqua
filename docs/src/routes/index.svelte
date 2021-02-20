@@ -6,7 +6,7 @@
 
 <script>
 	export let sections;
-	import { Docs } from '@ignatiusmb/dev-kit';
+	import { Docs } from '@mauss/devtools';
 	import MetaHead from '../components/MetaHead.svelte';
 	const repo = 'ignatiusmb/aqua';
 </script>
