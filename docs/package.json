@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "lint": "eslint src --ext svelte,js",
     "dev": "sapper dev",
-    "build": "sapper build --legacy",
     "export": "run-s export:*",
     "export:bundle": "cd .. && npm run bundle",
-    "export:sapper": "sapper export --legacy"
+    "export:sapper": "sapper export --legacy",
+    "lint": "eslint src --ext svelte,js"
   },
   "engines": {
-    "node": "12.x"
+    "node": ">=12.x"
   },
   "dependencies": {
     "compression": "^1.7.4",
@@ -32,14 +31,16 @@
     "@mauss/devtools": "^0.0.1",
     "@rollup/plugin-alias": "^3.1.2",
     "@rollup/plugin-babel": "^5.2.2",
-    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
     "@rollup/plugin-replace": "^2.3.4",
-    "@rollup/plugin-typescript": "^6.1.0",
+    "@rollup/plugin-typescript": "^8.2.0",
     "@tsconfig/svelte": "^1.0.10",
     "@types/express": "^4.17.11",
     "@types/node": "^14.14.21",
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
     "autoprefixer": "^9.8.6",
     "eslint": "^7.17.0",
     "eslint-plugin-svelte3": "^3.1.1",
