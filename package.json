@@ -40,7 +40,6 @@
     "check": "prettier -c src",
     "format": "prettier -w src"
   },
-  "dependencies": {},
   "devDependencies": {
     "@rollup/plugin-babel": "^5.0.2",
     "@rollup/plugin-commonjs": "^13.0.0",
