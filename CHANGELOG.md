@@ -1,6 +1,6 @@
 # Aqua Changelog
 
-## Unreleased
+## 20.3.3
 
 - Actually publish typings ([#30](https://github.com/ignatiusmb/aqua/pull/30))
 
