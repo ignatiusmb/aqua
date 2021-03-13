@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "sapper dev",
-    "export": "run-s export:bundle export:sapper",
-    "export:bundle": "cd .. && npm run bundle",
+    "export": "run-s export:*",
+    "export:bundle": "cd .. && npm i && npm run bundle",
     "export:sapper": "sapper export --legacy",
     "lint": "eslint src --ext svelte,js"
   },
