@@ -1,0 +1,8 @@
+.*
+*.ts
+*.config.js
+docs/
+src/
+tsconfig.json
+
+!*.d.ts
