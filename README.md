@@ -16,16 +16,16 @@ or use with CDN via [UNPKG](https://unpkg.com/browse/@ignatiusmb/aqua@latest/) o
 
 ```html
 <!-- Full Package via jsDelivr -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.3.2/lib/aqua.min.css" />
-<script defer src="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.3.2/lib/aqua.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.3.3/lib/aqua.min.css" />
+<script defer src="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.3.3/lib/aqua.min.js"></script>
 
 <!-- Full Package via UNPKG -->
-<link rel="stylesheet" href="https://unpkg.com/@ignatiusmb/aqua@20.3.2/lib/aqua.min.css" />
-<script defer src="https://unpkg.com/@ignatiusmb/aqua@20.3.2/lib/aqua.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/@ignatiusmb/aqua@20.3.3/lib/aqua.min.css" />
+<script defer src="https://unpkg.com/@ignatiusmb/aqua@20.3.3/lib/aqua.min.js"></script>
 
 <!-- Callback Only via jsDelivr/UNPKG (choose either one) -->
-<script defer src="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.3.2/lib/aqua.cbs.js"></script>
-<script defer src="https://unpkg.com/@ignatiusmb/aqua@20.3.2/lib/aqua.cbs.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.3.3/lib/aqua.cbs.js"></script>
+<script defer src="https://unpkg.com/@ignatiusmb/aqua@20.3.3/lib/aqua.cbs.js"></script>
 ```
 
 ### Usage
@@ -37,9 +37,9 @@ import '@ignatiusmb/aqua/lib/aqua.min.css';
 ```
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.3.2/lib/aqua.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ignatiusmb/aqua@20.3.3/lib/aqua.min.css" />
 <!-- or -->
-<link rel="stylesheet" href="https://unpkg.com/@ignatiusmb/aqua@20.3.2/lib/aqua.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/@ignatiusmb/aqua@20.3.3/lib/aqua.min.css" />
 ```
 
 ## Contributing
