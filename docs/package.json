@@ -1,40 +1,26 @@
 {
-  "name": "aqua-docs",
-  "version": "1.0.0",
+  "name": "docs",
+  "version": "2.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "sapper dev",
-    "export": "run-s export:*",
-    "export:bundle": "cd .. && npm i && npm run bundle",
-    "export:sapper": "sapper export --legacy",
-    "lint": "eslint src --ext svelte,js"
+    "dev": "svelte-kit dev",
+    "build": "run-s build:*",
+    "build:bundle": "cd .. && npm i && npm run bundle",
+    "build:svelte": "svelte-kit build",
+    "lint": "run-p lint:**",
+    "lint:eslint": "eslint src --ext svelte,js"
   },
   "dependencies": {
-    "compression": "^1.7.4",
-    "polka": "^1.0.0-next.11",
-    "sirv": "^1.0.10"
+    "marqua": "^0.1.2",
+    "mauss": "^0.0.9",
+    "svelement": "^0.0.10"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/plugin-proposal-class-properties": "^7.12.1",
-    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
-    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-    "@babel/plugin-transform-object-assign": "^7.12.1",
-    "@babel/plugin-transform-runtime": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "@babel/preset-typescript": "^7.12.7",
-    "@babel/runtime": "^7.12.5",
     "@ignatiusmb/aqua": "file:..",
     "@mauss/devtools": "^0.0.1",
-    "@rollup/plugin-alias": "^3.1.2",
-    "@rollup/plugin-babel": "^5.2.2",
-    "@rollup/plugin-commonjs": "^17.1.0",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^11.2.0",
-    "@rollup/plugin-replace": "^2.3.4",
-    "@rollup/plugin-typescript": "^8.2.0",
-    "@tsconfig/svelte": "^1.0.10",
-    "@types/express": "^4.17.11",
+    "@sveltejs/adapter-static": "^1.0.0-next.6",
+    "@sveltejs/kit": "^1.0.0-next.89",
     "@types/node": "^14.14.21",
     "@typescript-eslint/eslint-plugin": "^4.15.1",
     "@typescript-eslint/parser": "^4.15.1",
@@ -42,16 +28,10 @@
     "eslint": "^7.17.0",
     "eslint-plugin-svelte3": "^3.1.1",
     "markdown-it": "^11.0.1",
-    "mauss": "^0.0.7",
     "npm-run-all": "^4.1.5",
-    "rollup": "^2.36.1",
-    "rollup-plugin-svelte": "^7.1.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "sapper": "^0.29.1",
-    "svelement": "^0.0.10",
     "svelte": "^3.31.2",
     "svelte-preprocess": "^4.6.1",
-    "tslib": "^2.1.0",
-    "typescript": "^4.1.3"
+    "typescript": "^4.1.3",
+    "vite": "^2.2.2"
   }
 }

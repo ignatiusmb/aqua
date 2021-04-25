@@ -1,24 +1,12 @@
 {
 	"extends": "mauss/tsconfig.json",
 	"compilerOptions": {
-		// Project Options
-		"lib": ["DOM", "ES2020", "WebWorker"],
+		"target": "ES2020",
 		"sourceMap": true,
-
-		// Module Resolution
-		"baseUrl": "src",
+		"baseUrl": ".",
 		"paths": {
-			"$components/*": ["components/*"],
-			"$pages/*": ["pages/*"],
-			"$styles/*": ["styles/*"],
-			"$utils/*": ["utils/*"]
-		},
-		"typeRoots": ["src/typings"],
-		"types": ["svelte"],
-
-		// Advanced
-		"resolveJsonModule": true
+			"$lib/*": ["src/lib/*"]
+		}
 	},
-	"include": ["src/**/*", "src/node_modules/**/*"],
-	"exclude": ["node_modules/*", "__sapper__/*", "static/*"]
+	"include": ["src/**/*"]
 }

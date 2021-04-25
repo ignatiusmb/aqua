@@ -1,16 +1,16 @@
-import type { Request, Response } from 'express';
+import type { RequestHandler } from '@sveltejs/kit';
 import { version } from '@ignatiusmb/aqua/package.json';
-import { parseDir } from '$utils/parser';
-import { splitAt } from '$utils/helper';
+import { traverse } from 'marqua';
 
-export function get(_: Request, res: Response) {
-	const docs = parseDir('content', (data: any, content: string, filename: string) => {
-		const [index, slug] = splitAt(2, filename.split('.')[0]);
-		const path = `docs/content/${index}-${slug}.md`;
+type Metadata = Record<'title', string>;
+type Section = Record<'index' | 'slug' | 'content' | 'path', string>;
+
+export const get: RequestHandler = () => ({
+	body: traverse<Metadata, Section & Metadata>('content', ({ frontMatter, content, filename }) => {
+		if (filename.includes('draft')) return;
+		const path = `docs/content/${filename}.md`;
+		const [index, slug] = filename.split('.')[0].split('-');
 		content = content.replace(/@VERSION/g, `@${version}`);
-		return { index, slug, ...data, content, path };
-	}).sort((x: any, y: any) => x.index - y.index);
-
-	res.writeHead(200, { 'Content-Type': 'application/json' });
-	res.end(JSON.stringify(docs));
-}
+		return { index, slug, ...frontMatter, content, path };
+	}),
+});
