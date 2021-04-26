@@ -1,6 +1,6 @@
 <script>
 	import { version } from '@ignatiusmb/aqua/package.json';
-	import { Feather } from 'svelement/icons';
+	import { Github } from 'svelement/icons/feather';
 	import { Link } from 'svelement';
 </script>
 
@@ -8,7 +8,7 @@
 	<h1>Aqua</h1>
 	<h3>Version v{version}</h3>
 	<Link href="https://github.com/ignatiusmb/aqua/" inherit invert>
-		<Feather.Github size="34" />
+		<Github size="34" />
 	</Link>
 </header>
 
