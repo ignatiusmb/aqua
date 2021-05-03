@@ -7,7 +7,7 @@
 <header>
 	<h1>Aqua</h1>
 	<h3>Version v{version}</h3>
-	<Link href="https://github.com/ignatiusmb/aqua/" inherit invert>
+	<Link href="https://github.com/ignatiusmb/aqua" inherit invert>
 		<Github size="34" />
 	</Link>
 </header>
