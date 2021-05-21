@@ -4,7 +4,7 @@
 
 ## Getting started
 
-Full documentation, demos, and example, visit [aqua.mauss.dev](https://aqua.mauss.dev/)
+The official recommended way to build with Aqua is to use [Marqua](https://github.com/ignatiusmb/marqua). Full documentation, demos, and example, visit [aqua.mauss.dev](https://aqua.mauss.dev/).
 
 ### Installing
 
@@ -69,14 +69,10 @@ npm run dev
 npm run bundle
 ```
 
----
+***
 
-<h3><pre align="center">
-@ignatiusmb/aqua - <a href=LICENSE>MIT License</a>
-</pre></h3>
+<h3><pre align="center">@ignatiusmb/aqua - <a href=LICENSE>MIT License</a></pre></h3>
 
----
+***
 
-<pre align="center">
-Copyright &copy; 2019 &ndash; 2020 <a href="https://mauss.dev">Ignatius Bagussuputra</a>
-</pre>
+<pre align="center">Copyright &copy; 2019 &ndash; 2021 <a href="https://mauss.dev">Ignatius Bagussuputra</a></pre>
