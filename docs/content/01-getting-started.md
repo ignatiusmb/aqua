@@ -2,6 +2,8 @@
 title: Getting Started
 ---
 
+The official recommended way to build with Aqua is to use [Marqua](https://github.com/ignatiusmb/marqua).
+
 ### Use in Node.js
 
 ```bash

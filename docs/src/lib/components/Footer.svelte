@@ -13,7 +13,7 @@
 			Documentation made with ❤️ using
 			<Link href="https://kit.svelte.dev/" invert>SvelteKit</Link>
 			+
-			<Link href="https://github.com/ignatiusmb/aqua/" invert>Aqua</Link>
+			<Link href="https://github.com/ignatiusmb/marqua/" invert>Marqua</Link>
 		</p>
 	</section>
 </footer>

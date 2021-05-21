@@ -1,9 +1,8 @@
 <script context="module">
 	/** @type {import('@sveltejs/kit').Load} */
 	export async function load({ fetch }) {
-		return {
-			props: { sections: await fetch('docs.json').then((r) => r.json()) },
-		};
+		const sections = await fetch('/docs.json').then((r) => r.json());
+		return { props: { sections } };
 	}
 </script>
 
