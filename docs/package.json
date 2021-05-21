@@ -15,7 +15,7 @@
   "prettier": "mauss/prettier.json",
   "dependencies": {
     "marqua": "^0.2.2",
-    "mauss": "^0.0.9",
+    "mauss": "^0.0.11",
     "svelement": "^0.0.11"
   },
   "devDependencies": {
