@@ -8,12 +8,12 @@ const banner = `/*! Aqua v${version} by @ignatiusmb - https://mauss.dev
 
 module.exports = (context) => {
 	console.info(`Compiling CSS - ${new Date().toUTCString()}`);
-	const { env, options, file } = context;
+	const { options = {}, file = {} } = context;
 	return {
 		map: false,
 		parser: options.parser,
 		plugins: {
-			'postcss-import': { root: file.dirname },
+			'postcss-import': { root: file.dirname || '' },
 			'postcss-preset-env': {
 				autoprefixer: { cascade: false },
 				features: { 'custom-properties': true },

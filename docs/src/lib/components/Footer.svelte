@@ -1,5 +1,5 @@
 <script>
-	import { Link } from '@ignatiusmb/elements';
+	import { Link } from 'svelement';
 </script>
 
 <footer>
@@ -11,11 +11,9 @@
 		</p>
 		<p>
 			Documentation made with ❤️ using
-			<Link href="https://svelte.dev/" invert>Svelte</Link>
+			<Link href="https://kit.svelte.dev/" invert>SvelteKit</Link>
 			+
-			<Link href="https://sapper.svelte.dev/" invert>Sapper</Link>
-			+
-			<Link href="https://github.com/ignatiusmb/aqua/" invert>Aqua</Link>
+			<Link href="https://github.com/ignatiusmb/marqua/" invert>Marqua</Link>
 		</p>
 	</section>
 </footer>

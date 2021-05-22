@@ -3,10 +3,9 @@
 	export let title, description;
 
 	const hostTitle = 'Mauss';
-	const hostname = 'mauss.dev';
+	const hostname = 'aqua.mauss.dev';
 
-	import { stores } from '@sapper/app';
-	const { page } = stores();
+	import { page } from '$app/stores';
 	$: url = $page.host === hostname ? `https://${hostname}/${canonical}` : null;
 </script>
 

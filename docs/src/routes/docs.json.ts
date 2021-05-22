@@ -1,16 +1,21 @@
-import type { Request, Response } from 'express';
-import { parseDir } from '../utils/parser';
-import { splitAt } from '../utils/helper';
-import { version } from '../package';
+import type { RequestHandler } from '@sveltejs/kit';
+import { version } from '@ignatiusmb/aqua/package.json';
+import { forge, traverse } from 'marqua';
 
-export function get(_: Request, res: Response) {
-	const docs = parseDir('content', (data: any, content: string, filename: string) => {
-		const [index, slug] = splitAt(2, filename.split('.')[0]);
-		const path = `docs/content/${index}-${slug}.md`;
-		content = content.replace(/@VERSION/g, `@${version}`);
-		return { index, slug, ...data, content, path };
-	}).sort((x: any, y: any) => x.index - y.index);
+type Metadata = Record<'title', string>;
+type Section = Record<'index' | 'slug' | 'content' | 'path', string>;
 
-	res.writeHead(200, { 'Content-Type': 'application/json' });
-	res.end(JSON.stringify(docs));
-}
+export const get: RequestHandler = () => ({
+	body: traverse(
+		'content',
+		({ frontMatter, content, breadcrumb }) => {
+			const [filename] = breadcrumb.slice(-1);
+			if (filename.includes('draft')) return;
+			const path = `docs/content/${filename}.md`;
+			const [index, slug] = filename.split('.')[0].split('-');
+			content = content.replace(/@VERSION/g, `@${version}`);
+			return { index, slug, ...frontMatter, content, path };
+		},
+		forge.types<Metadata, Section & Metadata>()
+	),
+});

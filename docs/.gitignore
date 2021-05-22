@@ -1,8 +1,4 @@
-yarn-error.log
-.DS_Store
-
-**/node_modules/
-/src/node_modules/@sapper/
-/coverage/
-
-/__sapper__/
+node_modules
+/.svelte-kit
+/build
+/functions

@@ -1,18 +1,19 @@
 <script context="module">
-	export async function preload() {
-		return { sections: await this.fetch('docs.json').then((r) => r.json()) };
+	/** @type {import('@sveltejs/kit').Load} */
+	export async function load({ fetch }) {
+		const sections = await fetch('/docs.json').then((r) => r.json());
+		return { props: { sections } };
 	}
 </script>
 
 <script>
 	export let sections;
-	import { Docs } from '@ignatiusmb/dev-kit';
-	import MetaHead from '../components/MetaHead.svelte';
-	const repo = 'ignatiusmb/aqua';
+	import { Docs } from '@mauss/devtools';
+	import MetaHead from '$lib/components/MetaHead.svelte';
 </script>
 
 <MetaHead
 	title="Aqua - Native DOM Enhancements"
 	description="Aqua by Ignatius. An npm package to quickly build websites with predefined styles and components." />
 
-<Docs {sections} {repo} />
+<Docs {sections} repo="ignatiusmb/aqua" />

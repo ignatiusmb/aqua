@@ -1,10 +1,10 @@
 <script>
-	import Header from '../components/Header.svelte';
-	import Footer from '../components/Footer.svelte';
+	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 
-	import '@ignatiusmb/aqua/lib/aqua.cbs';
+	import '@ignatiusmb/aqua/lib/aqua.cbs.js';
 	import '@ignatiusmb/aqua/lib/aqua.min.css';
-	import '../styles/fonts.css';
+	import '$lib/styles/fonts.css';
 </script>
 
 <Header />
@@ -12,7 +12,7 @@
 <Footer />
 
 <style>
-	:global(#sapper) {
+	:global(body) {
 		min-height: 100vh;
 		display: grid;
 		font-family: var(--aqua-default);
