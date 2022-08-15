@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 const blocks = '(if|else if|await|then|catch|each|html|debug)';
 
 Prism.languages.svelte = Prism.languages.extend('markup', {

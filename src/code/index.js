@@ -9,6 +9,20 @@ function createToolbar() {
 	return `<div class="aqua code-toolbar">${toggle}${copy}</div>`;
 }
 
+/**
+ * @typedef {{
+ * 	language: string;
+ * 	lineStart: string;
+ * 	title: string;
+ * }} CodeDataset
+ */
+
+/**
+ *
+ * @param {string} source
+ * @param {CodeDataset} dataset
+ * @returns {string}
+ */
 function wrapSource(source, dataset) {
 	const { language, lineStart } = dataset;
 	const langClass = `language-${language ? language : 'none'}`;
@@ -31,6 +45,12 @@ function wrapSource(source, dataset) {
 	return `<div ${classes} ${data}>${highlighted}</div>`;
 }
 
+/**
+ *
+ * @param {string} source
+ * @param {CodeDataset} dataset
+ * @returns {string}
+ */
 function encloseBlock(source, dataset) {
 	const { language, title } = dataset;
 	const classes = `class="aqua code-header ${title ? '' : 'empty'}"`;
@@ -44,19 +64,25 @@ function encloseBlock(source, dataset) {
 }
 
 export default {
+	/** @param {Parameters<typeof callbacks.code>[0]} name */
 	cbs: (name) => callbacks.code(name),
 	highlightAll: highlight.all,
 
+	/**
+	 * @param {string} source
+	 * @param {CodeDataset} dataset
+	 */
 	highlight: function (source, dataset) {
 		return encloseBlock(source, dataset);
 	},
+	/** @param {HTMLElement} container */
 	init: function (container) {
 		container = container || document.body;
 		if (isElement(container) || isNode(container)) {
 			for (const node of container.querySelectorAll('pre.aqua code-block')) {
 				if (node.getAttribute('data-aqua') === 'watered') continue;
-				const { textContent, dataset } = node;
-				node.outerHTML = encloseBlock(textContent, dataset);
+				const { textContent, dataset } = /** @type {HTMLElement} */ (node);
+				node.outerHTML = encloseBlock(textContent || '', /** @type {CodeDataset} */ (dataset));
 			}
 		}
 	},

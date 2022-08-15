@@ -1,6 +1,9 @@
+// @ts-nocheck
 import create from './create';
 
 const cache = { toolbar: { add: null, remove: null } };
+
+/** @param {'clipboard' | 'list'} name */
 const codeCallback = async (name) => {
 	if (name === 'clipboard') {
 		let codeBlock = window.event.target;
@@ -37,5 +40,6 @@ const codeCallback = async (name) => {
 };
 
 export default {
+	/** @param {'clipboard' | 'list'} name */
 	code: (name) => codeCallback(name),
 };
