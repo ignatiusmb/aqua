@@ -37,6 +37,7 @@
     "check": "prettier -c src",
     "format": "prettier -w src"
   },
+  "prettier": "mauss/prettier.json",
   "devDependencies": {
     "@rollup/plugin-babel": "^5.2.2",
     "@rollup/plugin-commonjs": "^13.0.2",
@@ -44,6 +45,7 @@
     "@rollup/plugin-node-resolve": "^8.4.0",
     "autoprefixer": "^9.8.6",
     "cssnano": "^4.1.10",
+    "mauss": "^0.3.3",
     "postcss-cli": "^7.1.2",
     "postcss-header": "^2.0.0",
     "postcss-import": "^12.0.1",
