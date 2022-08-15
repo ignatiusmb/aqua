@@ -9,7 +9,7 @@
     "build:bundle": "cd .. && npm i && npm run bundle",
     "build:svelte": "vite build",
     "lint": "npm run lint:eslint && npm run lint:ts",
-    "lint:eslint": "eslint src --ext svelte,js",
+    "lint:es": "eslint src --ext js,ts,svelte",
     "lint:ts": "tsc --strict --noEmit --skipLibCheck"
   },
   "prettier": "mauss/prettier.json",
