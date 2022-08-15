@@ -27,10 +27,10 @@
     "url": "https://github.com/ignatiusmb/aqua/issues"
   },
   "scripts": {
-    "bundle": "run-p bundle:**",
+    "bundle": "npm run bundle:js && npm run bundle:css",
     "bundle:js": "rollup -c",
     "bundle:css": "postcss src/aqua.css -o lib/aqua.min.css",
-    "docs": "run-p docs:**",
+    "docs": "npm run docs:js && npm run docs:css",
     "docs:js": "rollup -c -w",
     "docs:css": "postcss src/aqua.css -o lib/aqua.min.css -w",
     "prepublishOnly": "npm run bundle",
@@ -44,7 +44,6 @@
     "@rollup/plugin-node-resolve": "^8.4.0",
     "autoprefixer": "^9.8.6",
     "cssnano": "^4.1.10",
-    "npm-run-all": "^4.1.5",
     "postcss-cli": "^7.1.2",
     "postcss-header": "^2.0.0",
     "postcss-import": "^12.0.1",
