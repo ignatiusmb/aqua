@@ -1,12 +1,13 @@
-<script>
+<script lang="ts">
 	export let canonical = '';
-	export let title, description;
+	export let title: string;
+	export let description: string;
 
 	const hostTitle = 'Mauss';
 	const hostname = 'aqua.mauss.dev';
 
 	import { page } from '$app/stores';
-	$: url = $page.host === hostname ? `https://${hostname}/${canonical}` : null;
+	$: url = $page.url.hostname === hostname ? `https://${hostname}/${canonical}` : null;
 </script>
 
 <svelte:head>
