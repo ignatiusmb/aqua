@@ -1,9 +1,10 @@
-<script context="module">
-	export const load = (props) => ({ props });
+<script context="module" lang="ts">
+	import type { Load } from '@sveltejs/kit';
+	export const load: Load = (props) => ({ props });
 </script>
 
-<script>
-	export let status, error;
+<script lang="ts">
+	export let status: number, error: Error;
 </script>
 
 <svelte:head>

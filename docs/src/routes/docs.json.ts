@@ -1,4 +1,4 @@
-import type { RequestHandler } from '@sveltejs/kit';
+import type { RequestHandler } from './__types/docs.json';
 import { version } from '@ignatiusmb/aqua/package.json';
 import { forge, traverse } from 'marqua';
 

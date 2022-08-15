@@ -12,7 +12,7 @@
 <Footer />
 
 <style>
-	:global(body) {
+	:global(#mauss) {
 		min-height: 100vh;
 		display: grid;
 		font-family: var(--aqua-default);
