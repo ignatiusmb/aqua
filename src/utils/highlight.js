@@ -1,4 +1,4 @@
-import Prism from 'prismjs';
+import * as Prism from 'prismjs';
 import 'prismjs/components/prism-apacheconf';
 import 'prismjs/components/prism-bash';
 import 'prismjs/components/prism-c';
@@ -42,11 +42,24 @@ const langMap = {
 	yml: 'yaml',
 };
 
+const replacement = {
+	'&': '&amp;',
+	'<': '&lt;',
+	'>': '&gt;',
+};
+
+/**
+ *
+ * @param {string} source
+ * @param {string} langInput
+ * @returns
+ */
 function highlight(source, langInput) {
+	// @ts-ignore
 	const lang = langInput ? langMap[langInput.toLowerCase()] || '' : '';
 	return lang
 		? Prism.highlight(source, Prism.languages[lang], langInput)
-		: source.replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+		: source.replace(/[&<>]/g, (c) => replacement[/** @type {keyof typeof replacement} */ (c)]);
 }
 
 highlight.all = () => Prism.highlightAll();

@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 const blocks = '(if|else if|await|then|catch|each|html|debug)';
 
 Prism.languages.svelte = Prism.languages.extend('markup', {
@@ -41,7 +43,8 @@ Prism.languages.svelte = Prism.languages.extend('markup', {
 		},
 	},
 	tag: {
-		pattern: /<\/?(?!\d)[^\s>\/=$<%]+(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?:"[^"]*"|'[^']*'|{[\s\S]+?}(?=[\s/>])))|(?=[\s/>])))+)?\s*\/?>/i,
+		pattern:
+			/<\/?(?!\d)[^\s>\/=$<%]+(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?:"[^"]*"|'[^']*'|{[\s\S]+?}(?=[\s/>])))|(?=[\s/>])))+)?\s*\/?>/i,
 		greedy: true,
 		inside: {
 			tag: {

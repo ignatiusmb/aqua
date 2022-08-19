@@ -1,6 +1,5 @@
-import create from '../utils/create';
-
 export default {
+	/** @param {HTMLInputElement} input */
 	wrapInput: (input) => {
 		const label = document.createElement('label');
 		const placeholder = document.createElement('span');
@@ -13,12 +12,12 @@ export default {
 		return label;
 	},
 
+	/** @param {HTMLElement} container */
 	init: function (container) {
 		container = container || document.body;
-		const snackbar = create.snackbar('form');
 		for (const form of container.querySelectorAll('form.aqua-form')) {
 			for (const input of form.querySelectorAll('input')) {
-				input.replaceWith(this.wrapInput(document.cloneNode(input)));
+				input.replaceWith(this.wrapInput(/** @type {HTMLInputElement} */ (input.cloneNode())));
 			}
 		}
 	},
