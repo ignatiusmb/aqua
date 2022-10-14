@@ -1,14 +1,14 @@
 <script>
 	import { version } from '@ignatiusmb/aqua/package.json';
-	import { Github } from 'svelement/icons/feather';
-	import { Link } from 'svelement';
+	import { Link } from 'syv';
+	import { Github } from 'syv/icons/feather';
 </script>
 
 <header>
 	<h1>Aqua</h1>
 	<h3>Version v{version}</h3>
 	<Link href="https://github.com/ignatiusmb/aqua" inherit invert>
-		<Github size="34" />
+		<Github size={34} />
 	</Link>
 </header>
 

@@ -1,5 +1,5 @@
 <script>
-	import { Link } from 'svelement';
+	import { Link } from 'syv';
 </script>
 
 <footer>
