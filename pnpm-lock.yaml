@@ -8,7 +8,7 @@ specifiers:
   '@types/prismjs': ^1.26.0
   autoprefixer: ^10.4.8
   cssnano: ^5.1.13
-  mauss: ^0.3.3
+  mauss: ^0.4.6
   postcss-cli: ^10.0.0
   postcss-header: ^3.0.2
   postcss-import: ^14.1.0
@@ -27,7 +27,7 @@ devDependencies:
   '@types/prismjs': 1.26.0
   autoprefixer: 10.4.13
   cssnano: 5.1.14
-  mauss: 0.3.3
+  mauss: 0.4.6
   postcss-cli: 10.1.0
   postcss-header: 3.0.3
   postcss-import: 14.1.0
@@ -995,8 +995,8 @@ packages:
       sourcemap-codec: 1.4.8
     dev: true
 
-  /mauss/0.3.3:
-    resolution: {integrity: sha512-NSTslY2so2r6+cEwQi5Yc6i+L2aEEesd1WPOfYommjmg8UAXS87MVWnLXuR0XR0gWS3ukit+JMCKuT1Xkg7EvQ==}
+  /mauss/0.4.6:
+    resolution: {integrity: sha512-Q4XwfBDiJETZLsRzxfUEXoS94t6Dq5mNhUla7Oh7pExUK7t63j8Md3+gda3xePVU24D4waOOVYAqLOl6ospUxg==}
     dev: true
 
   /mdn-data/2.0.14:
