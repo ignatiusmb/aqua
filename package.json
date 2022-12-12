@@ -9,9 +9,6 @@
   "types": "./index.d.ts",
   "scripts": {
     "watch": "pnpm pub:build --watch",
-    "docs": "npm run docs:js && npm run docs:css",
-    "docs:js": "rollup -c -w",
-    "docs:css": "postcss src/aqua.css -o lib/aqua.min.css -w",
     "check": "pnpm check:style",
     "check:style": "prettier -c src",
     "pub:build": "tsc",
