@@ -1,4 +1,5 @@
 import { clipboard } from 'mauss/web';
+import { getHighlighter } from 'shiki';
 import { create } from './utils.js';
 
 interface CodeDataset {
@@ -7,26 +8,7 @@ interface CodeDataset {
 	title: string;
 }
 
-function wrapSource(source: string, dataset: CodeDataset) {
-	const { language, lineStart } = dataset;
-	const classes = `class="aqua code-block language-${language || 'none'}"`;
-	const data = `data-language="${language || ''}" `;
-
-	let highlighted = '';
-	let wsPrefixCount = 0;
-	let lineNumber = lineStart ? parseInt(lineStart) : 1;
-	for (const line of highlight(source, language).split('\n')) {
-		if (!line && lineNumber === 1) continue;
-		if (lineNumber === 1) wsPrefixCount = line.search(/\S/);
-		highlighted += `<code data-line="${lineNumber++}">${line.slice(wsPrefixCount)}</code>\n`;
-	}
-
-	while (/^$|"><\/code>/.test(highlighted.split('\n').slice(-1)[0])) {
-		if (!highlighted) break;
-		highlighted = highlighted.split('\n').slice(0, -1).join('\n');
-	}
-	return `<div ${classes} ${data}>${highlighted}</div>`;
-}
+const highlighter = getHighlighter({ theme: 'github-dark' });
 
 // const cache = {
 // 	toolbar: { add: null, remove: null },
@@ -68,29 +50,58 @@ export const code = {
 		}
 	},
 
-	highlight(source: string, dataset: CodeDataset) {
-		const { language, title } = dataset;
-		const classes = `class="aqua code-header ${title ? '' : 'empty'}"`;
-		const data = `data-language="${language ? language : ''}"`;
+	async transform(source: string, dataset: CodeDataset) {
+		const { codeToHtml } = await highlighter;
+		const { language, title, lineStart } = dataset;
 
-		const content = title ? `<span class="overflow-wrapper">${title}</span>` : '';
+		let highlighted = '';
+		let wsPrefixCount = 0;
+		let lineNumber = lineStart ? +lineStart : 1;
+		for (const line of codeToHtml(source, { lang: language }).split('\n')) {
+			if (!line && lineNumber === 1) continue;
+			if (lineNumber === 1) wsPrefixCount = line.search(/\S/);
+			highlighted += `<code data-line="${lineNumber++}">${line.slice(wsPrefixCount)}</code>\n`;
+		}
 
-		const toggle = create.icon('list', 'Toggle\nNumbering');
-		const copy = create.icon('clipboard', 'Copy');
-		const header = `
-	<header ${classes} ${data}>
-		${content}
-		<div class="aqua code-toolbar">${toggle}${copy}</div>
-	</header>`;
+		while (highlighted && /^$|"><\/code>/.test(highlighted.split('\n').slice(-1)[0])) {
+			highlighted = highlighted.split('\n').slice(0, -1).join('\n');
+		}
 
-		const codeBlock = wrapSource(source, dataset);
-		return `<pre class="aqua code-box">${header}${codeBlock}</pre>`;
+		return `
+		<pre class="aqua code-box">
+			<header 
+				class="aqua code-header ${title ? '' : 'empty'}"
+				data-language="${language || ''}"
+			>
+				${title ? `<span class="overflow-wrapper">${title}</span>` : ''}
+				<div class="aqua code-toolbar">
+					${create.icon('list', 'Toggle\nNumbering')}
+					${create.icon('clipboard', 'Copy')}
+				</div>
+			</header>
+
+			<div 
+				class="aqua code-block language-${language || 'none'}"
+				data-language="${language || ''}"
+			>
+				${highlighted}
+			</div>
+		</pre>`;
 	},
-	init(node: HTMLElement) {
+
+	async highlight(node: HTMLElement) {
 		for (const child of node.querySelectorAll('pre.aqua code-block')) {
-			if (child.getAttribute('data-aqua') === 'watered') continue;
-			const { textContent, dataset } = child as HTMLElement;
-			child.outerHTML = this.highlight(textContent || '', dataset as unknown as CodeDataset);
+			if (child.getAttribute('data-aqua') === 'hydrated') continue;
+			const dataset = (child as HTMLElement).dataset as unknown as CodeDataset;
+			child.outerHTML = await this.transform(child.textContent || '', dataset);
+		}
+	},
+
+	async init(node: HTMLElement) {
+		for (const child of node.querySelectorAll('pre.aqua code-block')) {
+			if (child.getAttribute('data-aqua') === 'hydrated') continue;
+			const dataset = (child as HTMLElement).dataset as unknown as CodeDataset;
+			child.outerHTML = await this.transform(child.textContent || '', dataset);
 		}
 	},
 };
