@@ -1,7 +1,6 @@
 {
 	"extends": "mauss/tsconfig.json",
-	"compilerOptions": {
-		"noEmit": true
-	},
-	"include": ["src/**/*"]
+	"compilerOptions": { "outDir": "." },
+	"include": ["src/**/*"],
+	"exclude": ["node_modules"]
 }

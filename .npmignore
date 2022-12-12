@@ -1,8 +1,4 @@
 .*
-*.ts
-*.config.js
-docs/
 src/
+docs/
 tsconfig.json
-
-!*.d.ts
