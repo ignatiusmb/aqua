@@ -21,7 +21,6 @@
   "exports": {
     ".": "./index.js",
     "./styles/var.css": "./styles/var.css",
-    "./styles/core.css": "./styles/core.css",
     "./styles/code.css": "./styles/code.css",
     "./package.json": "./package.json"
   },
