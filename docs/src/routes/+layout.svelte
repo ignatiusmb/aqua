@@ -2,17 +2,20 @@
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 
-	import '@ignatiusmb/aqua/lib/aqua.cbs.js';
-	import '@ignatiusmb/aqua/lib/aqua.min.css';
+	import '@ignatiusmb/styles/core.css';
+	import '@ignatiusmb/aqua/styles/var.css';
+	import '@ignatiusmb/aqua/styles/code.css';
 	import '$lib/styles/fonts.css';
 </script>
 
 <Header />
+
 <slot />
+
 <Footer />
 
 <style>
-	:global(#mauss) {
+	:global(body) {
 		min-height: 100vh;
 		display: grid;
 		font-family: var(--aqua-default);
