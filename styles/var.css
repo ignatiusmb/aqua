@@ -1,3 +1,20 @@
+:root {
+	--aqua-default: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Rubik', 'Ubuntu', 'Roboto',
+		sans-serif;
+	--aqua-heading: 'Karla', sans-serif;
+	--aqua-monospace: 'Fira Code', 'Inconsolata', 'Consolas', monospace;
+
+	--aqua-border-radius: 0.3em;
+
+	--aqua-primary: #0070bb;
+	--aqua-bg-dark: #2d2d2d;
+	--aqua-bg-light: #f7f7f7;
+	--aqua-cl-dark: #242424;
+	--aqua-cl-light: #ccc;
+}
+
+/* ---- UTILS ---- */
+
 .aqua.bars {
 	z-index: 999;
 	width: 100%;
@@ -43,6 +60,4 @@
 		border-radius: 0.25em;
 		margin: 1em auto;
 	}
-}
-@media only screen and (min-width: 769px) {
 }
