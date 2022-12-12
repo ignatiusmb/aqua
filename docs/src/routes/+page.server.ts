@@ -7,8 +7,7 @@ type Section = Record<'index' | 'slug' | 'content' | 'path', string>;
 export const load: import('./$types').PageServerLoad = () => {
 	const docs = traverse(
 		'content',
-		({ frontMatter, content, breadcrumb }) => {
-			const [filename] = breadcrumb.slice(-1);
+		({ frontMatter, content, breadcrumb: [filename] }) => {
 			if (filename.includes('draft')) return;
 			const path = `docs/content/${filename}.md`;
 			const [index, slug] = filename.split('.')[0].split('-');
