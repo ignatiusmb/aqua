@@ -7,7 +7,7 @@
 <header>
 	<h1>Aqua</h1>
 	<h3>Version v{version}</h3>
-	<Link href="https://github.com/ignatiusmb/aqua" inherit invert>
+	<Link href="https://github.com/ignatiusmb/aqua">
 		<Github size={34} />
 	</Link>
 </header>
@@ -32,5 +32,9 @@
 	h3 {
 		font-size: 1.5rem;
 		font-family: var(--aqua-monospace);
+	}
+
+	header > :global(.syv-core-link) {
+		color: inherit;
 	}
 </style>

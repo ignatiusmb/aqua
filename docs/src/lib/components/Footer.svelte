@@ -6,14 +6,14 @@
 	<section>
 		<p>
 			Copyright &copy;
-			<Link href="https://mauss.dev/" invert>Ignatius Bagussuputra</Link>
+			<Link href="https://mauss.dev/">Ignatius Bagussuputra</Link>
 			2019 &ndash; {new Date().getFullYear()}
 		</p>
 		<p>
 			Documentation made with ❤️ using
-			<Link href="https://kit.svelte.dev/" invert>SvelteKit</Link>
+			<Link href="https://kit.svelte.dev/">SvelteKit</Link>
 			+
-			<Link href="https://github.com/ignatiusmb/marqua/" invert>Marqua</Link>
+			<Link href="https://github.com/ignatiusmb/marqua/">Marqua</Link>
 		</p>
 	</section>
 </footer>
