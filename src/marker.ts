@@ -2,9 +2,9 @@ import { getHighlighter } from 'shiki';
 import { create, escape } from './utils.js';
 
 export interface Dataset {
-	language: string;
-	lineStart: number;
-	title: string;
+	language?: string;
+	lineStart?: number;
+	title?: string;
 }
 
 const highlighter = await getHighlighter({ theme: 'github-dark' });
