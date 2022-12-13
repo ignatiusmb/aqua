@@ -2,94 +2,64 @@
 title: Modules / API
 ---
 
-Aqua doesn't have any named export by default, but it provides many props that has it, all available and listed below. First, import the entire module through its default export with the name `Aqua`.
+Aqua provides a couple of modules and exports.
 
-```javascript
-import Aqua from '@ignatiusmb/aqua';
+### Core
+
+This is the main module from the root import.
+
+```typescript
+import type { ActionReturn } from 'svelte/action';
+
+export function listen(node: HTMLElement): void;
+export function hydrate(node: HTMLElement, _: any): ActionReturn
 ```
 
-### Code.js
+Usage using [SvelteKit](https://kit.svelte.dev/) would simply be
 
-```javascript
-const { cbs, highlight, highlightAll, init } = Aqua.code;
-```
-
-`Aqua.code` provides 4 public methods
-
-1. `init` - method used for client-side parsing
-2. `cbs` - all the needed callbacks for toolbar onclick events
-3. `highlight` - the highlighter function to parse code blocks
-4. `highlightAll` - wrapper to call Prism highlightAll function
-
-```html
-~Client-side usage
-<body>
-  <pre class="aqua code-block" data-language="" data-title="">
-  <!-- text to be preformatted -->
-  </pre>
-
-  <div id="root" class="container">
-    <pre class="aqua code-block" data-language="" data-title="">
-    <!-- text to be preformatted -->
-    </pre>
-  </div>
-</body>
-
+```svelte
 <script>
-  // Defaults to document.body if no argument is passed
-  // This will parse and highlight all <pre> tags
-  // with class of 'aqua code-block' inside <body>
-  Aqua.code.init();
-
-  // Select tag with class of 'container' and id 'root'
-  // as the starting element and will only parse
-  // all <pre> tags inside tags with this class and id
-  Aqua.code.init(document.querySelector('.container#root'));
+  import { hydrate } from '@ignatiusmb/aqua';
+	import { navigating } from '$app/stores';
 </script>
+
+<main use:hydrate={$navigating}>
+  <!-- content here -->
+</main>
 ```
 
-```javascript
-~Server-side usage | Simple
-const markIt = require('markdown-it')({ highlight: (str, language) => Aqua.code.highlight(str, { language }) });
-```
+Passing in the `navigating` store is used to trigger the update inside `hydrate` function and re-hydrate the DOM when the page changes but is not remounted.
 
-```javascript
-~Server-side usage | With title parsing
-const options = {
-  highlight: (str, language) => {
-    const strList = str.split('\n');
-    const dataset = { language };
+### Marker
 
-    // If the first line has a prefix of '~'
-    // It will use the first line as the title
-    if (strList[0][0] === '~') {
-      dataset['title'] = strList[0].slice(1);
-    }
-    // Check if title exist and remove it from string to be parsed
-    const content = strList.slice(dataset['title'] ? 1 : 0).join('\n');
+This isn't usually necessary if you're using [Marqua](https://github.com/ignatiusmb/marqua), but in case you didn't, here's how you can tap into the function provided by the marker module.
 
-    return Aqua.code.highlight(content, dataset);
-  },
+```typescript
+export interface Dataset {
+	language?: string;
+	lineStart?: number;
+	title?: string;
 }
+
+export function transform(source: string, dataset: Dataset): string;
 ```
 
+A simple example would be passing a raw source code as a string.
+
 ```javascript
-~Server-side usage | With title and lineStart parsing
-import Aqua from '@ignatiusmb/aqua';
-const options = {
-  highlight: (str, language) => {
-    const strList = str.split('\n');
-    const dataset = { language };
+import { transform } from '@ignatiusmb/aqua/marker'
 
-    if (strList[0][0] === '~') {
-      const [title, lineNumber] = strList[0].split('#');
-      dataset['title'] = title.slice(1);
-      // Check if there's a hash '#' in the title and use it as start line number
-      if (lineNumber) dataset['lineStart'] = +lineNumber;
-    }
-    const content = strList.slice(dataset['title'] ? 1 : 0).join('\n');
-
-    return Aqua.code.highlight(content, dataset);
-  },
+const source = `
+interface User {
+  id: number;
+  name: string;
 }
+
+const user: User = {
+  id: 0,
+  name: 'User'
+}
+`
+
+transform(source, { language: 'typescript' });
 ```
