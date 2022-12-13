@@ -11,12 +11,13 @@
     "watch": "pnpm pub:build --watch",
     "check": "pnpm check:style",
     "check:style": "prettier -c src",
-    "pub:build": "tsc",
+    "pub:build": "tsc --declaration",
     "pub:format": "prettier -w .",
     "prepublishOnly": "pnpm pub:build && pnpm pub:format"
   },
   "exports": {
     ".": "./index.js",
+    "./marker": "./marker.js",
     "./styles/var.css": "./styles/var.css",
     "./styles/code.css": "./styles/code.css",
     "./package.json": "./package.json"

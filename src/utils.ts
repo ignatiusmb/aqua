@@ -1,25 +1,11 @@
 export const create = {
-	icon(name: string, tooltip: string) {
-		const callback = `onclick="Aqua.code.cbs('${name}')"`;
-		const span = `<span class="aqua tooltip-hover">${tooltip}</span>`;
-		return `<a class="aqua tooltip-item ${name}" ${callback}>${span}</a>`;
-	},
-	snackbar(type: string) {
-		let container = document.querySelector('.aqua.bars');
-		if (!container) {
-			const wrapper = document.createElement('div');
-			wrapper.className = 'aqua bars';
-			container = document.body.appendChild(wrapper);
-		}
-		const snackbar = document.createElement('section');
-		snackbar.className = `aqua snackbar ${type}`;
-
-		const div = document.createElement('div');
-		const icon = document.createElement('span');
-		icon.addEventListener('click', () => snackbar.classList.remove('show'));
-
-		snackbar.appendChild(div);
-		snackbar.appendChild(icon);
-		return container.appendChild(snackbar);
+	icon(name: 'clipboard' | 'list', tooltip: string) {
+		const span = `<span data-aqua="tooltip" class="aqua">${tooltip}</span>`;
+		return `<button data-aqua-toolbar="${name}" class="aqua">${span}</button>`;
 	},
 };
+
+export function escape(source: string) {
+	const symbols = { '&': '&amp;', '<': '&lt;', '>': '&gt;' } as const;
+	return source.replace(/[&<>]/g, (s) => symbols[s as keyof typeof symbols]);
+}
