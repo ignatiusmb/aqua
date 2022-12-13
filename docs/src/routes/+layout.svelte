@@ -1,11 +1,11 @@
 <script>
-	import Header from '$lib/components/Header.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-
 	import '@ignatiusmb/styles/core.css';
 	import '@ignatiusmb/aqua/styles/var.css';
 	import '@ignatiusmb/aqua/styles/code.css';
-	import '$lib/styles/fonts.css';
+	import './fonts.css';
+
+	import Header from './Header.svelte';
+	import Footer from './Footer.svelte';
 </script>
 
 <Header />
