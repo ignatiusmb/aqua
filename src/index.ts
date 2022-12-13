@@ -29,6 +29,6 @@ export function listen(node: HTMLElement) {
 	}
 }
 
-export const hydrate = (node: HTMLElement, _: any) => (
+export const hydrate = (node: HTMLElement, _?: any) => (
 	listen(node), { update: () => listen(node) }
 );

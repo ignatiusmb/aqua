@@ -20,7 +20,7 @@ Usage using [SvelteKit](https://kit.svelte.dev/) would simply be
 ```svelte
 <script>
   import { hydrate } from '@ignatiusmb/aqua';
-	import { navigating } from '$app/stores';
+  import { navigating } from '$app/stores';
 </script>
 
 <main use:hydrate={$navigating}>

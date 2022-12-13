@@ -24,8 +24,6 @@ export function transform(source: string, dataset: Dataset) {
 		highlighted += `${code}</code>\n`;
 	}
 
-	console.log({ source, highlighted });
-
 	return `<pre data-aqua="block" class="aqua">
 	<header 
 		data-aqua="header"
