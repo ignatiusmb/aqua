@@ -2,11 +2,10 @@
   "name": "@ignatiusmb/aqua",
   "author": "Ignatius Bagus",
   "homepage": "https://aqua.mauss.dev",
-  "description": "Native DOM enhancements",
+  "description": "Code Syntax Highlighter",
   "version": "21.0.0",
   "license": "MIT",
   "type": "module",
-  "types": "./index.d.ts",
   "scripts": {
     "watch": "pnpm pub:build --watch",
     "check": "pnpm check:style",
@@ -27,13 +26,10 @@
   "repository": "github:ignatiusmb/aqua",
   "bugs": "https://github.com/ignatiusmb/aqua/issues",
   "keywords": [
-    "aqua",
-    "DOM",
-    "enhancements",
-    "UI",
-    "pure",
-    "JS",
-    "CSS"
+    "preprocessor",
+    "markdown",
+    "syntax",
+    "highlighter"
   ],
   "dependencies": {
     "shiki": "^0.11.1"

@@ -6,8 +6,8 @@
 </script>
 
 <MetaHead
-	title="Aqua - Native DOM Enhancements"
-	description="A package to quickly build websites with predefined styles and components."
+	title="Aqua - Code Syntax Highlighter"
+	description="A preprocessor for code syntax highlighting"
 />
 
 <Docs repo="ignatiusmb/aqua" sections={data.docs} />
