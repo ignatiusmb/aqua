@@ -7,6 +7,10 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
+
+		alias: {
+			'@ignatiusmb/aqua': '..',
+		},
 	},
 };
 

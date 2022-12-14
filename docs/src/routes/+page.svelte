@@ -1,8 +1,10 @@
 <script lang="ts">
 	export let data: import('./$types').PageData;
 
+	import { hydrate } from '@ignatiusmb/aqua';
 	import { Docs } from '@mauss/devtools';
-	import MetaHead from '$lib/components/MetaHead.svelte';
+	import { navigating } from '$app/stores';
+	import MetaHead from './MetaHead.svelte';
 </script>
 
 <MetaHead
@@ -10,4 +12,6 @@
 	description="A preprocessor for code syntax highlighting"
 />
 
-<Docs repo="ignatiusmb/aqua" sections={data.docs} />
+<div style="display: contents" use:hydrate={$navigating}>
+	<Docs repo="ignatiusmb/aqua" sections={data.docs} />
+</div>
