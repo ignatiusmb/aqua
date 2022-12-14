@@ -7,6 +7,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
+    "clean": "git add * && git clean -dfx -e node_modules",
     "watch": "pnpm pub:build --watch",
     "check": "pnpm check:style",
     "check:style": "prettier -c src",
